@@ -3,6 +3,12 @@ var config = require('../config')
 var utils = require('./utils')
 var projectRoot = path.resolve(__dirname, '../')
 
+var autoprefixer = require('autoprefixer');
+var nested = require('postcss-nested');
+var cssnext = require('postcss-cssnext');
+var flexFallback = require('postcss-flex-fallback');
+var precss = require('precss');
+
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
 // various preprocessor loaders added to vue-loader at the end of this file
@@ -77,6 +83,11 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      //在原有基础上加上一个postcss的loader就可以了
+      {
+        test:/\.css$/,
+        loaders:['css-loader','postcss-loader']
       }
     ]
   },
@@ -85,10 +96,14 @@ module.exports = {
   },
   vue: {
     loaders: utils.cssLoaders({ sourceMap: useCssSourceMap }),
+    // postcss: [
+    //   require('autoprefixer')({browsers: ['last 2 versions']})
+    // ]
+    autoprefixer: true,
     postcss: [
-      require('autoprefixer')({
-        browsers: ['last 2 versions']
-      })
+      nested(),
+      cssnext({ browsers: ['last 2 versions', 'Android >= 2.1', 'iOS >= 7.0'] }),
+      flexFallback(),
     ]
   }
 }
