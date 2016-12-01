@@ -25,3 +25,19 @@ npm test
 ```
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+##About this project
+``` bash
+
+vue-cli, 
+
+vue 2.1.0
+
+vue-router,
+
+vue-resource ( axios 考虑ing);
+
+vuex
+
+然后针对 css 兼容 做了  postcss 兼容处理
+```
