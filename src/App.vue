@@ -1,22 +1,28 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <hello></hello>
+    <img src="./assets/logo.png" @click="test">
+    <test></test>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
+import Test from './components/Hello'
 
 export default {
-  name: 'app',
-  components: {
-    Hello
-  }
+    name: 'app',
+    components: {
+        Test
+    },
+    methods: {
+        test () {
+            console.log(11)
+        }
+    }
 }
 </script>
 
-<style>
+<style lang="less">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
