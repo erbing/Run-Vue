@@ -7,7 +7,6 @@ var autoprefixer = require('autoprefixer');
 var nested = require('postcss-nested');
 var cssnext = require('postcss-cssnext');
 var flexFallback = require('postcss-flex-fallback');
-var precss = require('precss');
 
 var env = process.env.NODE_ENV
 // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
