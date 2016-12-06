@@ -452,17 +452,6 @@ th {
   font-size: 8em;
 }
 
-/* viewport settings */
-@-webkit-viewport {
-  width: device-width;
-  user-zoom: fixed;
-}
-
-@-moz-viewport {
-  width: device-width;
-  user-zoom: fixed;
-}
-
 @media (max-width: 1024px) {
   @-ms-viewport {
     width: device-width;
@@ -544,9 +533,6 @@ input, button, select, textarea {
 
 input[type="text"], input[type="password"], input[type="email"], input[type="number"],
 input[type="url"], input[type="search"], select, textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
   appearance: none;
 }
 
@@ -826,40 +812,40 @@ label {
   border-radius: 2px;
 }
 
-::-webkit-scrollbar-track:vertical, ::-webkit-scrollbar-track:horizontal {
+::scrollbar-track:vertical, ::scrollbar-track:horizontal {
   background-clip: padding-box;
   background-color: transparent;
 }
 
-::-webkit-scrollbar-thumb {
-  -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
+::scrollbar-thumb {
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.07);
   background-clip: padding-box;
   background-color: rgba(0, 0, 0, 0.2);
   min-height: 28px;
   padding-top: 100px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  -webkit-box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.25);
+::scrollbar-thumb:hover {
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.25);
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-::-webkit-scrollbar-thumb:active {
-  -webkit-box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.35);
+::scrollbar-thumb:active {
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.35);
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-::-webkit-scrollbar-track:vertical, ::-webkit-scrollbar-track:horizontal, ::-webkit-scrollbar-thumb:vertical, ::-webkit-scrollbar-thumb:horizontal {
+::scrollbar-track:vertical, ::crollbar-track:horizontal, ::scrollbar-thumb:vertical, ::scrollbar-thumb:horizontal {
   border-width: 0;
 }
 
-::-webkit-scrollbar-track:hover {
-  -webkit-box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1);
+::scrollbar-track:hover {
+  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-::-webkit-scrollbar-track:active {
-  -webkit-box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.14), inset -1px -1px 0 rgba(0, 0, 0, 0.07);
+::scrollbar-track:active {
+  box-shadow: inset 1px 0 0 rgba(0, 0, 0, 0.14), inset -1px -1px 0 rgba(0, 0, 0, 0.07);
   background-color: rgba(0, 0, 0, 0.05);
 }
 
