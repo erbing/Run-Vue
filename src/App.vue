@@ -8,6 +8,8 @@
 
 <script>
 import Test from './components/Hello'
+// 引入 基础 less 文件
+import './assets/ui/base.less'
 
 export default {
     name: 'app',
@@ -23,6 +25,7 @@ export default {
 </script>
 
 <style lang="less">
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
