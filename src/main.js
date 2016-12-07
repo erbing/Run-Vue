@@ -2,19 +2,16 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import App from './App'
-import Home from './components/Home'
+import Mains from './mains/mains'
 import Hello from './components/Hello'
-
+// 引入基础 less
+import './assets/less/base.less'
 Vue.use(VueRouter)
 
 const routes = [
     {
         path: '/',
-        component: Home
-    },
-    {
-        path: '/home',
-        component: App
+        component: Mains
     },
     {
         path: '/hello',

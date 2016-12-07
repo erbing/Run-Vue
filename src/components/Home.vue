@@ -1,14 +1,17 @@
 <template>
     <div class="home">
-        <h1>this is home page</h1>
-
-        <h2>{{msg}}</h2>
+        <ui-head></ui-head>
     </div>
 </template>
 
 <script>
+import Head from './Head'
+
 export default {
-    name: 'hello',
+    name: 'home',
+    components: {
+        'ui-head': Head
+    },
     data () {
         return {
             msg: 'Welcome to Your Vue.js SPA'
@@ -19,26 +22,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="less" scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-
 .home{
     color: #fff;
-    background: green;
+    background: #41464B;
 }
 </style>
