@@ -1,6 +1,8 @@
 <template>
   <div class="main">
-    <ui-head></ui-head>
+    <ui-head>
+      
+    </ui-head>
     <ui-slide>
         <ui-head :title=" 'Run-Vue' "></ui-head>
     </ui-slide>

@@ -6,6 +6,8 @@
 
 <script>
 // 引入 基础 less 文件
+import './assets/less/base.less'
+
 export default {
     name: 'app',
     methods: {
@@ -17,7 +19,7 @@ export default {
 </script>
 
 <style lang="less">
-@import 'assets/less/import.less';
+
 #app {
 
 }
