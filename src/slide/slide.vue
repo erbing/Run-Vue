@@ -1,7 +1,17 @@
 <template>
-<div class="mu-paper" :class="paperClass">
-  <slot></slot>
-</div>
+
+    <div class="mu-paper mu-drawer">
+        <div class="mu-appbar exmaples-nav-appbar">
+            <div class="left"></div> 
+            <div class="mu-appbar-title"><a href="#/index" class="exmaples-appbar-title" style="display: inline-block;">Muse-UI</a> 
+              <div class="mu-badge-container exmaples-version"> 
+                <em class="mu-badge mu-badge-secondary">alpha</em>
+              </div>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+
 </template>
 
 <script>
@@ -40,6 +50,31 @@ export default {
   color: @textColor;
   background-color: @dialogBackgroundColor;
   .depth(1);
+}
+
+.mu-drawer {
+  width: 256px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  .scrollable();
+  .no-scrollbar();
+  transition-property: transform, visibility;
+  transition-duration: 0.45s;
+  transform: translate3d(-100%, 0, 0);
+  border-radius: 0;
+  left: 0;
+  visibility: hidden;
+  z-index: 200;
+  &.right {
+    right: 0;
+    left: auto;
+    transform: translate3d(100%, 0, 0);
+  }
+  &.open {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
 }
 
 .mu-paper-round {
