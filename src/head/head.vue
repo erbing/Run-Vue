@@ -1,16 +1,16 @@
 <template>
-<div class="mu-appbar" :class="{'mu-paper-1': zDepth}">
-  <div class="left">
-    <slot name="left"></slot>
-  </div>
-  <div class="mu-appbar-title" :class="titleClass">
-    <slot>
-      <span>{{title}}</span>
-    </slot>
-  </div>
-  <div class="right">
-    <slot name="right"></slot>
-  </div>
+<div class="mu-appbar example-appbar">
+    <div class="left">
+      <slot name="left"></slot>
+    </div>
+    <div class="mu-appbar-title">
+      <slot>
+        <span>这里是title</span>
+      </slot>
+    </div>
+    <div class="right">
+      <slot name="right"></slot>
+    </div>
 </div>
 </template>
 
@@ -64,6 +64,15 @@ export default {
     line-height: 100%;
     min-width: auto;
   }
+}
+
+.example-appbar{
+  position: fixed;
+  left: 256px;
+  right: 0;
+  top: 0;
+  width: auto;
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .mu-appbar-title {
