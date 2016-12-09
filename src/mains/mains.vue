@@ -1,10 +1,13 @@
 <template>
   <div class="main">
-    <ui-head>
+    <!--<ui-head>
       
-    </ui-head>
+    </ui-head>-->
     <ui-slide>
-        <ui-head :title=" 'Run-Vue' "></ui-head>
+        <ui-head>
+            <a href="#/index" class="exmaples-appbar-title" 
+            style="display: inline-block;">Run-UI</a>
+        </ui-head>
     </ui-slide>
   </div>
 </template>
