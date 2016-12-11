@@ -1,15 +1,19 @@
 <template>
 <div class="mu-appbar example-appbar">
-    <div class="left">
-      <i class="fa-reorder fa-lg"></i>
+    <div class="title-left">
+      <button class="ui-btn btn">
+        <i class="fa-reorder"></i>
+      </button>
     </div>
     <div class="mu-appbar-title">
       <slot>
         <span>这里是title</span>
       </slot>
     </div>
-    <div class="right">
+    <div class="title-right">
+      <button class="ui-btn btn">
        <i class="fa-github"></i>
+       </button>
     </div>
 </div>
 </template>
@@ -47,22 +51,80 @@ export default {
   width: 100%;
   .flex-shrink(0);
   z-index: 100;
-  > .left,
-  > .right{
+  .left{
     .flex-shrink(0);
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 100%;
+    box-flex: 0;
   }
-  .mu-icon-button {
-    color: inherit;
+  .right{
+    .flex-shrink(0);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    box-flex: 0;
   }
-  .mu-flat-button {
+
+  .title-left{
+    .flex-shrink(0);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    box-flex: 0;
+    width:46px;
+    float: left;
+  }
+  .title-right{
+    .flex-shrink(0);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    box-flex: 0;
+    width:46px;
+    float: right;
+  }
+
+
+  .ui-btn {
     color: inherit;
     height: 100%;
     line-height: 100%;
     min-width: auto;
+  }
+
+  .btn{
+    position: relative;
+    display: inline-block;
+    overflow: visible;
+    line-height: 1;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 24px;
+    padding: 12px;
+    border: none;
+    appearance: none;
+    appearance: none;
+    appearance: none;
+    background: none;
+    color: inherit;
+    text-decoration: none;
+    transition-duration: .3s;
+    transition-timing-function: cubic-bezier(.23,1,.32,1);
+    transform: translateZ(0);
+    box-flex: 0;
+    flex-shrink: 0;
+    flex: 0 0 auto;
+    flex-negative: 0;
+    flex-shrink: 0;
+    margin: 0;
+    outline: 0;
+    cursor: pointer;
   }
 }
 
@@ -86,6 +148,13 @@ export default {
   font-size: 20px;
   font-weight: 400;
   line-height: 56px;
+  width: 80%;
+  float: left;
+}
+
+.head-title{
+  width: 80%;
+  float: left;
 }
 
 @media (min-width: 480px) {
