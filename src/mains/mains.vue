@@ -1,25 +1,27 @@
 <template>
   <div class="main">
-    <!--<ui-head>
-      
-    </ui-head>-->
+ 
+    <ui-head></ui-head>
+    
     <ui-slide>
-        <ui-head>
-            <a href="#/index" class="exmaples-appbar-title" 
-            style="display: inline-block;">Run-UI</a>
-        </ui-head>
     </ui-slide>
+
+    <ui-content>
+
+    </ui-content>
   </div>
 </template>
 
 <script>
 import head from '../head/head'
 import slide from '../slide/slide'
+import content from '../content/content'
 export default {
     name: 'main',
     components: {
         'ui-head': head,
-        'ui-slide': slide
+        'ui-slide': slide,
+        'ui-content': content
     }
 }
 </script>

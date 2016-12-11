@@ -1,7 +1,7 @@
 <template>
 <div class="mu-appbar example-appbar">
     <div class="left">
-      <slot name="left"></slot>
+      <i class="fa-reorder fa-lg"></i>
     </div>
     <div class="mu-appbar-title">
       <slot>
@@ -9,7 +9,7 @@
       </slot>
     </div>
     <div class="right">
-      <slot name="right"></slot>
+       <i class="fa-github"></i>
     </div>
 </div>
 </template>
@@ -42,7 +42,7 @@ export default {
   align-items: center;
   color: @alternateTextColor;
   background-color: @primaryColor;
-  height: 56px;
+  height: 64px;
   padding: 0 8px;
   width: 100%;
   .flex-shrink(0);
