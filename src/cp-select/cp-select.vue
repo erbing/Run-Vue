@@ -34,16 +34,17 @@
     }
     .run-select{
         height: 48px;
-        line-height: 48px;
-        margin-left: 16px;
-        margin-right: 16px;
-        margin-top: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 8px;
         position: relative;
         cursor: pointer;
         &:hover{
-            backgroud-color: #666;
+            transition: all 0.25s;
+            background-color: rgba(0,0,0,.12);
         }
         .select-title{
+            margin-top: 6px;
             font-size: 16px;
             font-family: Roboto,Lato,sans-serif;
             display: flex;
@@ -52,6 +53,7 @@
             width: 100%;
         }
         .icon{
+            line-height:48px;
             font-size: 5px;
             display: flex;
             flex: 1;
