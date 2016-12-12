@@ -62,12 +62,40 @@
         <i class="fa-minus"></i>
         <i class="fa-reorder"></i>
         <i class="fa-github"></i>
+
+        <div v-for="(val, key) in info">
+            {{key}} : {{val}}
+            <div v-if=" key === Object.keys(info)[Object.keys(info).length -1] ">
+                this is the last key {{key}}
+            </div>
+        </div>
+
+        <div>
+            {{arr}}
+        </div>
+
     </div>
 </template>
 
 <script>
     export default {
-        name: 'content'
+        name: 'content',
+        data () {
+            return {
+                info: {
+                    name: 'zz',
+                    agr: '11',
+                    sex: 'f'
+                }
+            }
+        },
+        computed: {
+            arr () {
+                let res = Object.keys(this.info)
+                return res
+            }
+        },
+        mounted () {}
     }
 </script>
 

@@ -3,10 +3,9 @@
         <div class="select-title">
             {{title}}
         </div>
-        <div class="icon">
+        <div class="icon" @click="plus">
             <i class="fa-plus"></i>
         </div>
-
     </div>
 </template>
 
@@ -17,6 +16,11 @@
             title: {
                 type: String,
                 default: ''
+            }
+        },
+        methods: {
+            plus () {
+                console.log(1)
             }
         }
     }
@@ -36,6 +40,9 @@
         margin-top: 8px;
         position: relative;
         cursor: pointer;
+        &:hover{
+            backgroud-color: #666;
+        }
         .select-title{
             font-size: 16px;
             font-family: Roboto,Lato,sans-serif;
