@@ -49,7 +49,6 @@ export default {
   height: 64px;
   padding: 0 8px;
   width: 100%;
-  .flex-shrink(0);
   z-index: 100;
   .left{
     .flex-shrink(0);
@@ -148,8 +147,6 @@ export default {
   font-size: 20px;
   font-weight: 400;
   line-height: 56px;
-  width: 80%;
-  float: left;
 }
 
 .head-title{
