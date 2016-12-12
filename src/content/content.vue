@@ -1,7 +1,6 @@
 <template>
     <div class="mian-content">
         <i class="fa-music"></i>
-        123
         <i class="fa-glass"></i>
         <i class="fa-search"></i>
         <i class="fa-envelope-o"></i>

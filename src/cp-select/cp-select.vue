@@ -4,7 +4,8 @@
             {{title}}
         </div>
         <div class="icon" @click="plus">
-            <i class="fa-plus"></i>
+            <i class="fa-plus" v-if="puls"></i>
+            <i class="fa-minus" v-if="!puls"></i>
         </div>
     </div>
 </template>
@@ -18,9 +19,14 @@
                 default: ''
             }
         },
+        data () {
+            return {
+                puls: true
+            }
+        },
         methods: {
             plus () {
-                console.log(1)
+                this.puls = !this.plus
             }
         }
     }

@@ -7,7 +7,7 @@
     </div>
     <div class="mu-appbar-title">
       <slot>
-        <span>这里是title</span>
+        <span>Vuejs 中文社区</span>
       </slot>
     </div>
     <div class="title-right">
