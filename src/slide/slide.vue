@@ -28,7 +28,7 @@
         <hr class="divider">
         <cp-select :title=" '更多信息' "></cp-select>
         <hr class="divider">
-        <cp-select :title=" '关于我们' "></cp-select>
+        <cp-select :title=" '关于我们' " :to=" '/about' "></cp-select>
 
         <hr class="divider">
     </div>
