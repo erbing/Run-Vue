@@ -7,7 +7,7 @@
     </ui-slide>
 
     <ui-content>
-
+         <router-view></router-view>
     </ui-content>
   </div>
 </template>
