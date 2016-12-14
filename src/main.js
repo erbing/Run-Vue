@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Mains from './mains/mains'
-import Hello from './components/Hello'
+import Start from './components/start'
 import Index from './components/index'
 // 引入基础 less
 import './assets/less/base.less'
@@ -13,8 +13,8 @@ const routes = [
         component: Index
     },
     {
-        path: '/hello',
-        component: Hello
+        path: '/start',
+        component: Start
     }
 ]
 

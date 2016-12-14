@@ -1,5 +1,5 @@
 <template>
-    <div class="run-select">
+    <router-link class="run-select" :to="to" tag="div">
         <div class="select-title">
             {{title}}
         </div>
@@ -7,13 +7,17 @@
             <i class="fa-plus" v-if="puls"></i>
             <i class="fa-minus" v-if="!puls"></i>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <script>
     export default {
         name: 'select',
         props: {
+            to: {
+                type: String,
+                default: '/'
+            },
             title: {
                 type: String,
                 default: ''

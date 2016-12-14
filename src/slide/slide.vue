@@ -18,7 +18,7 @@
           </div>
         </div>
 
-        <cp-select :title=" '如何使用' "></cp-select>
+        <cp-select :title=" '如何使用' " :to=" '/start' "></cp-select>
         <hr class="divider">
         <cp-select :title=" '个性定制' "></cp-select>
         <hr class="divider">
