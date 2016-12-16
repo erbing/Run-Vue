@@ -138,7 +138,7 @@ export default {
 }
 
 .mu-appbar-title {
-  flex: 1;
+  box-flex: 1;
   padding-left: 8px;
   padding-right: 8px;
   white-space: nowrap;
@@ -148,7 +148,6 @@ export default {
   font-size: 20px;
   font-weight: 400;
   line-height: 56px;
-  width: 80%;
   float: left;
 }
 
