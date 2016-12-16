@@ -7,7 +7,7 @@
     </div>
     <div class="mu-appbar-title">
       <slot>
-        <span>这里是title</span>
+        <span>Vuejs 中文社区</span>
       </slot>
     </div>
     <div class="title-right">
@@ -49,7 +49,6 @@ export default {
   height: 64px;
   padding: 0 8px;
   width: 100%;
-  .flex-shrink(0);
   z-index: 100;
   .left{
     .flex-shrink(0);
@@ -138,7 +137,7 @@ export default {
 }
 
 .mu-appbar-title {
-  box-flex: 1;
+  flex: 1;
   padding-left: 8px;
   padding-right: 8px;
   white-space: nowrap;
@@ -148,7 +147,6 @@ export default {
   font-size: 20px;
   font-weight: 400;
   line-height: 56px;
-  float: left;
 }
 
 .head-title{

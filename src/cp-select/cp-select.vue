@@ -1,26 +1,36 @@
 <template>
-    <div class="run-select">
+    <router-link class="run-select" :to="to" tag="div">
         <div class="select-title">
             {{title}}
         </div>
         <div class="icon" @click="plus">
-            <i class="fa-plus"></i>
+            <i class="fa-plus" v-if="puls"></i>
+            <i class="fa-minus" v-if="!puls"></i>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <script>
     export default {
         name: 'select',
         props: {
+            to: {
+                type: String,
+                default: '/'
+            },
             title: {
                 type: String,
                 default: ''
             }
         },
+        data () {
+            return {
+                puls: true
+            }
+        },
         methods: {
             plus () {
-                console.log(1)
+                this.puls = !this.plus
             }
         }
     }

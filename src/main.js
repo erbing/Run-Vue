@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
-import App from './App'
 import Mains from './mains/mains'
-import Hello from './components/Hello'
+import Start from './components/start'
+import Index from './components/index'
+import About from './components/about'
 // 引入基础 less
 import './assets/less/base.less'
 Vue.use(VueRouter)
@@ -11,11 +11,15 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
-        component: Mains
+        component: Index
     },
     {
-        path: '/hello',
-        component: Hello
+        path: '/start',
+        component: Start
+    },
+    {
+        path: '/about',
+        component: About
     }
 ]
 
@@ -26,5 +30,5 @@ const router = new VueRouter({
 new Vue({
     el: '#app',
     router,
-    ...App
+    ...Mains
 })
