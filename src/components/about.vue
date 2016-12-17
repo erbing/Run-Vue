@@ -16,10 +16,17 @@
 
                 <tr>
                     <td><h4>组件开发</h4></td>
-                    <td> <a>@秋水</a> </td>
+                    <td> <a>@秋水</a>、<a>@宛如大空</a>
+                         <a>@秋水</a>、<a>@宛如大空</a>
+                    </td>
                     <td>组件的开发以及维护</td>
                 </tr>
 
+                <tr>
+                    <td><h4>UI以及logo设计</h4></td>
+                    <td><a href="https://github.com/erbing" target="_blank">@秋水</a></td>
+                    <td>UI 修改 以及 logo 修改</td>
+                </tr>
             </tbody>
         </table>
     </div>
