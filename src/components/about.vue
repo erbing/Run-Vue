@@ -33,7 +33,7 @@
 
 <style lang="less">
     .main-about{
-        padding: 48px 72px;
+        padding: 48px;
     }
     .table{
         border: 1px solid #ddd;
