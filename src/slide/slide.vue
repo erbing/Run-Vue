@@ -1,6 +1,5 @@
 <template>
-
-    <div class="paper run-slider">
+    <div class="paper run-slider" v-if="true">
         <div class="mu-appbar leftbar">
             <div class="left">
               <img src="../assets/images/logo2.png" class="logo"/>
@@ -37,6 +36,7 @@
 
 <script>
 import cpselect from '../cp-select/cp-select'
+import store from '../vuex/store'
 export default {
     name: 'mu-paper',
     components: {
@@ -64,6 +64,10 @@ export default {
             arr.push('mu-paper-' + this.zDepth)
             return arr
         }
+    },
+    store: store,
+    vuex: {
+        showSlider: state => state.showSlider
     }
 }
 </script>

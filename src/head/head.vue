@@ -1,7 +1,7 @@
 <template>
 <div class="mu-appbar example-appbar">
     <div class="title-left">
-      <button class="ui-btn btn">
+      <button class="ui-btn btn" @click="hideSlider"> 
         <i class="fa-reorder"></i>
       </button>
     </div>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+import store from '../vuex/store'
 export default {
     name: 'mu-appbar',
     props: {
@@ -33,6 +34,15 @@ export default {
             type: Number,
             default: 1
         }
+    },
+    methods: {
+        hideSlider () {
+            window.alert(1)
+        }
+    },
+    store: store,
+    vuex: {
+        showSlider: state => state.showSlider
     }
 }
 </script>
