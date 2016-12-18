@@ -13,6 +13,8 @@
 </template>
 
 <script>
+// 引入vuex
+
 import head from '../head/head'
 import slide from '../slide/slide'
 import content from '../content/content'

@@ -20,6 +20,7 @@
 
 <script>
 import store from '../vuex/store'
+import { getShow } from '../vuex/actions'
 export default {
     name: 'mu-appbar',
     props: {
@@ -42,7 +43,9 @@ export default {
     },
     store: store,
     vuex: {
-        showSlider: state => state.showSlider
+        actions: {
+            getShow
+        }
     }
 }
 </script>
