@@ -1,4 +1,6 @@
 import Vue from 'vue'
+// 引入 vuex
+import store from './vuex/store'
 import VueRouter from 'vue-router'
 import Mains from './mains/mains'
 import Start from './components/start'
@@ -29,6 +31,7 @@ const router = new VueRouter({
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
+    store,
     router,
-    ...Mains
+    render: h => h(Mains)
 })

@@ -1,3 +1,3 @@
-export const getShow = function ({ dispath, state }, showSlider) {
-    dispath('SHOW', showSlider)
+export const getShow = ({ dispath }) => {
+    dispath('GETSHOW')
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="paper run-slider" v-if="true">
+    <div class="paper run-slider" :class="showSlider ? '' : 'hide-slider' ">
         <div class="mu-appbar leftbar">
             <div class="left">
               <img src="../assets/images/logo2.png" class="logo"/>
@@ -36,27 +36,20 @@
 
 <script>
 import cpselect from '../cp-select/cp-select'
-import store from '../vuex/store'
 export default {
+    vuex: {
+        getters: {
+            showSlider: state => state.showSlider
+        }
+    },
     name: 'mu-paper',
     components: {
         'cp-select': cpselect
     },
-    props: {
-        circle: {
-            type: Boolean,
-            default: false
-        },
-        rounded: {
-            type: Boolean,
-            default: true
-        },
-        zDepth: {
-            type: Number,
-            default: 1
-        }
-    },
     computed: {
+        showSlider () {
+            return this.$store.state.showSlider
+        },
         paperClass () {
             var arr = []
             if (this.circle) arr.push('mu-paper-circle')
@@ -64,10 +57,6 @@ export default {
             arr.push('mu-paper-' + this.zDepth)
             return arr
         }
-    },
-    store: store,
-    vuex: {
-        showSlider: state => state.showSlider
     }
 }
 </script>
@@ -96,6 +85,10 @@ i{
   left: 0;
   /*visibility: hidden;*/
   z-index: 200;
+}
+
+.hide-slider {
+  display: none;
 }
 
 .divider{

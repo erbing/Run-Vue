@@ -9,9 +9,8 @@ const state = {
 }
 
 const mutations = {
-    // 初始化 state
-    SHOW (state, data) {
-        state.showSlider = data.showSlider
+    GETSHOW (state) {
+        state.showSlider = !state.showSlider
     }
 }
 

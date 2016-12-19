@@ -1,5 +1,5 @@
 <template>
-<div class="mu-appbar example-appbar">
+<div class="mu-appbar example-appbar" :style=" showSlider ? '' : 'position: relative; left: 0' ">
     <div class="title-left">
       <button class="ui-btn btn" @click="hideSlider"> 
         <i class="fa-reorder"></i>
@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import store from '../vuex/store'
 import { getShow } from '../vuex/actions'
 export default {
     name: 'mu-appbar',
@@ -36,15 +35,19 @@ export default {
             default: 1
         }
     },
-    methods: {
-        hideSlider () {
-            window.alert(1)
+    computed: {
+        showSlider () {
+            return this.$store.state.showSlider
         }
     },
-    store: store,
+    methods: {
+        hideSlider () {
+            this.$store.state.showSlider = !this.$store.state.showSlider
+        }
+    },
     vuex: {
         actions: {
-            getShow
+            getShows: getShow
         }
     }
 }
@@ -52,6 +55,10 @@ export default {
 
 <style lang="less">
 @import "../assets/less/import.less";
+.hide-left-bar {
+  position: relative
+}
+
 .mu-appbar {
   display: flex;
   align-self: flex-start;

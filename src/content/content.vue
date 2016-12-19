@@ -1,5 +1,5 @@
 <template>
-    <div class="mian-content">
+    <div class="mian-content" :class=" showSlider ? '' : 'hide-left-content' ">
         <slot></slot>
     </div>
 </template>
@@ -20,6 +20,9 @@
             arr () {
                 let res = Object.keys(this.info)
                 return res
+            },
+            showSlider () {
+                return this.$store.state.showSlider
             }
         },
         mounted () {}
@@ -38,5 +41,10 @@
         padding-top: 64px;
         padding-left: 256px;
         transition: all .45s cubic-bezier(.23,1,.32,1);
+    }
+
+    .hide-left-content {
+        padding-top: 32px;
+        padding-left: 0;
     }
 </style>
