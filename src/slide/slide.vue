@@ -17,8 +17,9 @@
           </div>
         </div>
 
-        <cp-select :title=" '如何使用' " :to=" '/start' "></cp-select>
+        <cp-select :title=" titles " :to=" '/start' "></cp-select>
         <hr class="divider">
+        <cp-list :texts=" listText "></cp-list>
         <cp-select :title=" '个性定制' "></cp-select>
         <hr class="divider">
         <cp-select :title=" '基础组件' "></cp-select>
@@ -35,16 +36,24 @@
 </template>
 
 <script>
-import cpselect from '../cp-select/cp-select'
+import cpSelect from '../cp-select/cp-select'
+import cpList from '../cp-list/cp-list'
 export default {
+    name: 'slide',
     vuex: {
         getters: {
             showSlider: state => state.showSlider
         }
     },
-    name: 'mu-paper',
+    data: function () {
+        return {
+            titles: '如何使用',
+            listText: ['入门基础', '使用教程']
+        }
+    },
     components: {
-        'cp-select': cpselect
+        'cp-select': cpSelect,
+        'cp-list': cpList
     },
     computed: {
         showSlider () {

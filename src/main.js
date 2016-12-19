@@ -7,6 +7,7 @@ import Start from './components/start'
 import Index from './components/index'
 import About from './components/about'
 // 引入基础 less
+
 import './assets/less/base.less'
 Vue.use(VueRouter)
 
