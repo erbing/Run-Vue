@@ -1,7 +1,7 @@
 <template>
     <div class="paper run-slider" :class="showSlider ? '' : 'hide-slider' ">
         <div class="mu-appbar leftbar">
-            <div class="left">
+            <div class="left" @click="test">
               <img src="../assets/images/logo2.png" class="logo"/>
               <span class="logo-text">Run-vue</span>
               <em class="beta">Beta</em>
@@ -58,13 +58,11 @@ export default {
     computed: {
         showSlider () {
             return this.$store.state.showSlider
-        },
-        paperClass () {
-            var arr = []
-            if (this.circle) arr.push('mu-paper-circle')
-            if (this.rounded) arr.push('mu-paper-round')
-            arr.push('mu-paper-' + this.zDepth)
-            return arr
+        }
+    },
+    methods: {
+        test () {
+            this.$store.dispatch('getShow')
         }
     }
 }

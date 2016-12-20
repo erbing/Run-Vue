@@ -2,7 +2,9 @@
     <div class="list">
         <ul>
             <li v-for="item in texts"> 
-                {{item}}
+                <span class="spanborder">
+                    {{item}}
+                </span>
             </li>
         </ul>
     </div>
@@ -37,5 +39,9 @@
                 color: #888;
             }
         }
+    }
+    .spanborder{
+        display: block;
+        border-bottom: 1px solid #333;
     }
 </style>
