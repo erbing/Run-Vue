@@ -2,9 +2,9 @@
     <div class="list">
         <ul>
             <li v-for="item in texts"> 
-                <span class="spanborder">
+                <div class="spanborder">
                     {{item}}
-                </span>
+                </div>
             </li>
         </ul>
     </div>
@@ -34,14 +34,18 @@
                 height: 48px;
                 padding-left: 32px; 
                 cursor: pointer;
-                background: #ddd;
+                background: rgba(0,0,0,.12);
                 line-height: 48px;
                 color: #888;
+                margin-bottom: 1px;
+                transition: all 0.45s;
+                &:hover{
+                    background: #fff;
+                }
             }
         }
     }
     .spanborder{
-        display: block;
-        border-bottom: 1px solid #333;
+        border-bottom: 1px solid #fff;
     }
 </style>

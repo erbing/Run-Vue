@@ -37,6 +37,7 @@
 </script>
 
 <style lang="less">
+    @import "../assets/less/import.less";
     i{
         font-family: FontAwesome;
         font-style: normal;
@@ -51,7 +52,8 @@
         cursor: pointer;
         &:hover{
             transition: all 0.25s;
-            background-color: rgba(0,0,0,.12);
+            background-color: @primaryColor;
+            color: #fff;
         }
         .select-title{
             margin-top: 6px;
