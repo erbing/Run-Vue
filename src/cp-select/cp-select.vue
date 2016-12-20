@@ -1,11 +1,13 @@
 <template>
     <router-link class="run-select" :to="to" tag="div">
-        <div class="select-title">
-            {{title}}
-        </div>
-        <div class="icon" @click="plus">
-            <i class="fa-plus" v-if="puls"></i>
-            <i class="fa-minus" v-if="!puls"></i>
+        <div @click="showList">
+            <div class="select-title">
+                {{title}}
+            </div>
+            <div class="icon" @click="plusact">
+                <i class="fa-plus" v-if="plus"></i>
+                <i class="fa-minus" v-if="!plus"></i>
+            </div>
         </div>
     </router-link>
 </template>
@@ -22,7 +24,7 @@
                 type: String,
                 default: ''
             },
-            puls: {
+            plus: {
                 type: Boolean,
                 default: true
             }
@@ -32,8 +34,11 @@
             }
         },
         methods: {
-            plus () {
-                this.puls = !this.plus
+            plusact () {
+                this.plus = !this.plus
+            },
+            showList () {
+                this.plus = !this.plus
             }
         }
     }

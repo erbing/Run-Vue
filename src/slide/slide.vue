@@ -17,27 +17,27 @@
           </div>
         </div>
 
-        <cp-select :title=" titles " :to=" '/start' " :puls="false"></cp-select>
+        <cp-select :title=" titles " :to=" '/start' " :plus="false"></cp-select>
         <hr class="divider">
         <cp-list :texts=" listText "></cp-list>
 
-        <cp-select :title=" '个性定制' " :puls="true"></cp-select>
+        <cp-select :title=" '个性定制' " :plus="true"></cp-select>
         <hr class="divider">
         <cp-list :texts=" customText "></cp-list>
 
-        <cp-select :title=" '基础组件' " :puls="true"></cp-select>
+        <cp-select :title=" '基础组件' " :plus="true"></cp-select>
         <hr class="divider">
         <cp-list :texts=" baseCptText "></cp-list>
 
-        <cp-select :title=" '功能组件' " :puls="true"></cp-select>
+        <cp-select :title=" '功能组件' " :plus="true"></cp-select>
         <hr class="divider">
         <cp-list :texts=" funcCptText "></cp-list>
 
-        <cp-select :title=" '更多信息' " :puls="true"></cp-select>
+        <cp-select :title=" '更多信息' " :plus="true"></cp-select>
         <hr class="divider">
         <cp-list :texts=" moreInfoText "></cp-list>
 
-        <cp-select :title=" '关于我们' " :to=" '/about' " :puls="true"></cp-select>
+        <cp-select :title=" '关于我们' " :to=" '/about' " :plus="true"></cp-select>
         <hr class="divider">
         <cp-list :texts=" aboutUsText "></cp-list>
     </div>
