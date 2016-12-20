@@ -21,11 +21,14 @@
             title: {
                 type: String,
                 default: ''
+            },
+            puls: {
+                type: Boolean,
+                default: true
             }
         },
         data () {
             return {
-                puls: true
             }
         },
         methods: {
@@ -38,11 +41,6 @@
 
 <style lang="less">
     @import "../assets/less/import.less";
-    i{
-        font-family: FontAwesome;
-        font-style: normal;
-        font-weight: normal;
-    }
     .run-select{
         height: 48px;
         padding-left: 16px;
@@ -52,8 +50,7 @@
         cursor: pointer;
         &:hover{
             transition: all 0.25s;
-            background-color: @primaryColor;
-            color: #fff;
+            background-color: rgba(0,0,0,.12);
         }
         .select-title{
             margin-top: 6px;

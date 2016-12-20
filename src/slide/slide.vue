@@ -17,20 +17,29 @@
           </div>
         </div>
 
-        <cp-select :title=" titles " :to=" '/start' "></cp-select>
+        <cp-select :title=" titles " :to=" '/start' " :puls="false"></cp-select>
         <hr class="divider">
         <cp-list :texts=" listText "></cp-list>
-        <cp-select :title=" '个性定制' "></cp-select>
-        <hr class="divider">
-        <cp-select :title=" '基础组件' "></cp-select>
-        <hr class="divider">
-        <cp-select :title=" '功能组件' "></cp-select>
-        <hr class="divider">
-        <cp-select :title=" '更多信息' "></cp-select>
-        <hr class="divider">
-        <cp-select :title=" '关于我们' " :to=" '/about' "></cp-select>
 
+        <cp-select :title=" '个性定制' " :puls="true"></cp-select>
         <hr class="divider">
+        <cp-list :texts=" customText "></cp-list>
+
+        <cp-select :title=" '基础组件' " :puls="true"></cp-select>
+        <hr class="divider">
+        <cp-list :texts=" baseCptText "></cp-list>
+
+        <cp-select :title=" '功能组件' " :puls="true"></cp-select>
+        <hr class="divider">
+        <cp-list :texts=" funcCptText "></cp-list>
+
+        <cp-select :title=" '更多信息' " :puls="true"></cp-select>
+        <hr class="divider">
+        <cp-list :texts=" moreInfoText "></cp-list>
+
+        <cp-select :title=" '关于我们' " :to=" '/about' " :puls="true"></cp-select>
+        <hr class="divider">
+        <cp-list :texts=" aboutUsText "></cp-list>
     </div>
 
 </template>
@@ -48,7 +57,12 @@ export default {
     data: function () {
         return {
             titles: '如何使用',
-            listText: ['入门基础', '使用教程']
+            listText: [{name: '入门基础', eName: 'introduction'}, {name: '使用教程', eName: 'use'}],
+            customText: [{name: '一键换肤', eName: 'skinPeeler'}, {name: '选择主题', eName: 'theme'}],
+            baseCptText: [{name: 'Button', eName: 'Button'}, {name: 'Select', eName: 'Select'}, {name: 'Radio', eName: 'Radio'}],
+            funcCptText: [{name: 'Slider', eName: 'slider'}, {name: 'Calendar', eName: 'calendar'}],
+            moreInfoText: [{name: 'Source', eName: 'source'}],
+            aboutUsText: [{name: '开发组成员', eName: 'team'}]
         }
     },
     components: {
@@ -92,6 +106,9 @@ i{
   left: 0;
   /*visibility: hidden;*/
   z-index: 200;
+  overflow: auto;
+  overflow-scrolling: touch;
+  .no-scrollbar
 }
 
 .hide-slider {

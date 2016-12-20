@@ -1,11 +1,11 @@
 <template>
     <div class="list">
         <ul>
-            <li v-for="item in texts"> 
+            <router-link v-for="item in texts" tag="li" :to="item.eName">
                 <div class="spanborder">
-                    {{item}}
+                    {{item.name}}
                 </div>
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>
@@ -17,6 +17,10 @@
             texts: {
                 type: Array,
                 default: ['二级目录', '三级目录']
+            },
+            to: {
+                type: String,
+                default: '/'
             }
         },
         methods: {
