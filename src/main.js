@@ -4,6 +4,7 @@ import store from './vuex/store'
 import VueRouter from 'vue-router'
 import Mains from './mains/mains'
 import Start from './components/start'
+import Tree from './tree/tree'
 import Index from './components/index'
 import About from './components/about'
 // 引入基础 less
@@ -15,6 +16,10 @@ const routes = [
     {
         path: '/',
         component: Index
+    },
+    {
+        path: '/tree',
+        component: Tree
     },
     {
         path: '/start',

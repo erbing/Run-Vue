@@ -35,7 +35,7 @@
         },
         methods: {
             plusact () {
-                this.plus = !this.plus
+                this.$emit('')
             },
             showList () {
                 this.plus = !this.plus

@@ -60,7 +60,7 @@ export default {
             listText: [{name: '入门基础', eName: 'introduction'}, {name: '使用教程', eName: 'use'}],
             customText: [{name: '一键换肤', eName: 'skinPeeler'}, {name: '选择主题', eName: 'theme'}],
             baseCptText: [{name: 'Button', eName: 'Button'}, {name: 'Select', eName: 'Select'}, {name: 'Radio', eName: 'Radio'}],
-            funcCptText: [{name: 'Slider', eName: 'slider'}, {name: 'Calendar', eName: 'calendar'}],
+            funcCptText: [{name: 'Slider', eName: 'slider'}, {name: 'Calendar', eName: 'calendar'}, {name: 'Tree', eName: 'tree'}],
             moreInfoText: [{name: 'Source', eName: 'source'}],
             aboutUsText: [{name: '开发组成员', eName: 'team'}]
         }
