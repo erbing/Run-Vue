@@ -40,6 +40,7 @@
         <cp-select :title=" '关于我们' " :to=" '/about' " :plus="true"></cp-select>
         <hr class="divider">
         <cp-list :texts=" aboutUsText "></cp-list>
+        <cp-list :texts=" aboutUsText "></cp-list>
     </div>
 
 </template>
