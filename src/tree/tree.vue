@@ -19,7 +19,7 @@
         data () {
             return {
                 treeData: {
-                    name: 'My Tree',
+                    name: 'This is My Tree',
                     children: [
                         { name: 'hello' },
                         { name: 'wat' },
