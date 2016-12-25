@@ -1,5 +1,4 @@
 <template>
-    <!--<div id="tree">123</div>-->
     <div id="cp-tree">
         <li>
             <div
@@ -19,7 +18,6 @@
             </ul>
         </li>
     </div>
-
 </template>
 
 <script>
