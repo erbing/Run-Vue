@@ -7,7 +7,7 @@ import Start from './components/start'
 import Tree from './tree/tree'
 import Index from './components/index'
 import About from './components/about'
-import SlideTree from './slide-tree/slide-tree'
+import ShowSlide from './showSlide/showSlide'
 // 引入基础 less
 
 import './assets/less/base.less'
@@ -23,8 +23,8 @@ const routes = [
         component: Tree
     },
     {
-        path: '/slide-tree',
-        component: SlideTree
+        path: '/showSlide',
+        component: ShowSlide
     },
     {
         path: '/start',

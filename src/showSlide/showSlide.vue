@@ -1,5 +1,5 @@
 <template>
-    <div id="slide-tree">
+    <div id="show-tree">
         <ul>
             <slide-tree
                 class="item"
@@ -12,14 +12,18 @@
 <script>
     import SlideTree from '../slide-tree/slide-tree'
     export default {
-        name: 'slide-tree',
+        name: 'show-tree',
         components: {
             'slide-tree': SlideTree
         },
         data () {
             return {
                 slideData: {
-
+                    name: '如何使用',
+                    children: [
+                        {name: '入门基础'},
+                        {name: '使用教程'}
+                    ]
                 }
             }
         }
