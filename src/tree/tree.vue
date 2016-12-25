@@ -1,10 +1,10 @@
 <template>
     <div id="tree">
         <ul>
-            <item
+            <cp-tree
                 class="item"
                 :model="treeData">
-            </item>
+            </cp-tree>
         </ul>
     </div>
 </template>
@@ -14,7 +14,7 @@
     export default {
         name: 'tree',
         components: {
-            'item': cpTree
+            'cp-tree': cpTree
         },
         data () {
             return {

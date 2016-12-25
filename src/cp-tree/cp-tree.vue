@@ -44,7 +44,7 @@
             },
             changeType () {
                 if (!this.isFolder) {
-                    this.$Vue.set(this.model, 'children', [])
+                    this.$set(this.model, 'children', [])
                     this.addChild()
                     this.open = true
                 }
