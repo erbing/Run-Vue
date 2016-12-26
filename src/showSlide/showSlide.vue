@@ -1,6 +1,6 @@
 <template>
     <div id="show-tree">
-        <ul>
+        <ul class="useUl">
             <slide-tree
                 class="item"
                 :model="slideData">
@@ -21,7 +21,9 @@
                 slideData: {
                     name: '如何使用',
                     children: [
-                        {name: '入门基础'},
+                        {name: '入门基础',
+                            children: ['vuejs', '社区']
+                        },
                         {name: '使用教程'}
                     ]
                 }
@@ -29,3 +31,9 @@
         }
     }
 </script>
+
+<style lang="less">
+    .useUl {
+        list-style: none;
+    }
+</style>

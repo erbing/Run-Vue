@@ -2,11 +2,16 @@
     <div id="slide-tree">
         <li class="item">
             <div
-            :class="{ bold: isFolder }"
-            @click="toggle">
-            {{model.name}}
+                class="treeTitle"
+                :class="{ bolds: isFolder }"
+                @click="toggle">
+                {{model.name}}
+
+                <div class="icon">
+                    <i class="fa-plus" :class="{ 'fa-minus': open }" v-if="isFolder"></i>
+                </div>
             </div>
-            <i class="fa-plus" :class="{ 'fa-minus': !open }" v-if="isFolder"></i>
+            
             <!--<i class="fa-minus" v-if="!isFolder"></i>-->
             <ul v-show="open" v-if="isFolder">
                 <slide-tree
@@ -66,4 +71,18 @@
             right: 12px;
             max-height: 72px;
         }
+    .treeTitle{
+        height: 48px;
+        line-height: 48px;
+        position: relative;
+        cursor: pointer;
+        &:hover{
+            transition: all 0.25s;
+            background-color: rgba(0,0,0,.12);
+        }
+    }
+    .bolds{
+        font-size: 16px;
+        font-weight: bold;
+    }
 </style>
