@@ -58,7 +58,7 @@ export default {
     data: function () {
         return {
             titles: '如何使用',
-            listText: [{name: '入门基础', eName: 'introduction'}, {name: '使用教程', eName: 'use'}],
+            listText: [{name: '入门基础', eName: 'introduction'}, {name: '使用教程', eName: 'use'}, {name: 'showSlide', eName: 'showSlide'}],
             customText: [{name: '一键换肤', eName: 'skinPeeler'}, {name: '选择主题', eName: 'theme'}],
             baseCptText: [{name: 'Button', eName: 'Button'}, {name: 'Select', eName: 'Select'}, {name: 'Radio', eName: 'Radio'}],
             funcCptText: [

@@ -6,8 +6,8 @@
             @click="toggle">
             {{model.name}}
             </div>
-            <i class="fa-plus" v-if="isFolder"></i>
-            <i class="fa-minus" v-if="!isFolder"></i>
+            <i class="fa-plus" :class="{ 'fa-minus': !open }" v-if="isFolder"></i>
+            <!--<i class="fa-minus" v-if="!isFolder"></i>-->
             <ul v-show="open" v-if="isFolder">
                 <slide-tree
                     class="item"
@@ -27,17 +27,21 @@
         },
         data () {
             return {
-                open: true
+                open: true,
+                isFolder: true
             }
         },
         computed: {
             isFolder () {
-                return true
+                return this.model.children && this.model.children.length
             }
         },
         methods: {
             toggle () {
-                this.isFolder = !this.isFolder
+                // window.alert(this.isFolder)
+                if (this.isFolder) {
+                    this.open = !this.open
+                }
             }
         }
     }
