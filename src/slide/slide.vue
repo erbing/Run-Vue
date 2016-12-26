@@ -17,6 +17,13 @@
           </div>
         </div>
 
+        <ul class="useUl">
+            <slide-tree
+                class="item"
+                :model="slideData">
+            </slide-tree>
+        </ul>
+
         <cp-select :title=" titles " :to=" '/start' " :plus="false"></cp-select>
         <hr class="divider">
         <cp-list :texts=" listText "></cp-list>
@@ -46,15 +53,11 @@
 </template>
 
 <script>
+import SlideTree from '../slide-tree/slide-tree'
 import cpSelect from '../cp-select/cp-select'
 import cpList from '../cp-list/cp-list'
 export default {
     name: 'slide',
-    vuex: {
-        getters: {
-            showSlider: state => state.showSlider
-        }
-    },
     data: function () {
         return {
             titles: '如何使用',
@@ -68,12 +71,20 @@ export default {
                 {name: 'slide-tree', eName: 'slide-tree'}
             ],
             moreInfoText: [{name: 'Source', eName: 'source'}],
-            aboutUsText: [{name: '开发组成员', eName: 'team'}]
+            aboutUsText: [{name: '开发组成员', eName: 'team'}],
+            slideData: {
+                name: '如何使用',
+                children: [
+                    {name: '入门基础'},
+                    {name: '使用教程'}
+                ]
+            }
         }
     },
     components: {
         'cp-select': cpSelect,
-        'cp-list': cpList
+        'cp-list': cpList,
+        'slide-tree': SlideTree
     },
     computed: {
         showSlider () {

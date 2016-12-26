@@ -22,7 +22,9 @@
                     name: '如何使用',
                     children: [
                         {name: '入门基础',
-                            children: ['vuejs', '社区']
+                            children: [
+                                {name: 'vuejs'},
+                                {name: '社区'}]
                         },
                         {name: '使用教程'}
                     ]
@@ -35,5 +37,8 @@
 <style lang="less">
     .useUl {
         list-style: none;
+        padding: 0px;
+        padding-left: 16px;
+        margin: 0;
     }
 </style>

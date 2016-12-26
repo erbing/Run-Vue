@@ -13,7 +13,7 @@
             </div>
             
             <!--<i class="fa-minus" v-if="!isFolder"></i>-->
-            <ul v-show="open" v-if="isFolder">
+            <ul v-show="open" v-if="isFolder" class="useUl">
                 <slide-tree
                     class="item"
                     v-for="model in model.children"
