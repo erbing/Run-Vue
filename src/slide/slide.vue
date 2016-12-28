@@ -17,29 +17,44 @@
           </div>
         </div>
 
+        <!--如何使用-->
         <ul class="useUl">
             <slide-tree
                 class="item"
-                :model="slideData">
+                :model="startData">
+            </slide-tree>
+        </ul>
+        <!--个性定制-->
+        <ul class="useUl">
+            <slide-tree
+                class="item"
+                :model="customizeData">
+            </slide-tree>
+        </ul>
+        <!--基础组件-->
+        <ul class="useUl">
+            <slide-tree
+                class="item"
+                :model="baseCptData">
             </slide-tree>
         </ul>
 
-        <cp-select :title=" titles " :to=" '/start' " :plus="false"></cp-select>
-        <hr class="divider">
-        <cp-list :texts=" listText "></cp-list>
+        <!--表单组件-->
+        <ul class="useUl">
+            <slide-tree
+                class="item"
+                :model="fromCptData">
+            </slide-tree>
+        </ul>
 
-        <cp-select :title=" '个性定制' " :plus="true"></cp-select>
-        <hr class="divider">
-        <cp-list :texts=" customText "></cp-list>
-
-        <cp-select :title=" '基础组件' " :plus="true"></cp-select>
-        <hr class="divider">
-        <cp-list :texts=" baseCptText "></cp-list>
-
-        <cp-select :title=" '功能组件' " :plus="true"></cp-select>
-        <hr class="divider">
-        <cp-list :texts=" funcCptText "></cp-list>
-
+        <!--功能组件-->
+        <ul class="useUl">
+            <slide-tree
+                class="item"
+                :model="funcCptData">
+            </slide-tree>
+        </ul>
+        
         <cp-select :title=" '更多信息' " :plus="true"></cp-select>
         <hr class="divider">
         <cp-list :texts=" moreInfoText "></cp-list>
@@ -72,13 +87,64 @@ export default {
             ],
             moreInfoText: [{name: 'Source', eName: 'source'}],
             aboutUsText: [{name: '开发组成员', eName: 'team'}],
-            slideData: {
+
+            startData: {
                 name: '如何使用',
+                router: '/use',
                 children: [
-                    {name: '入门基础'},
-                    {name: '使用教程'}
+                    {name: '入门基础', router: '/use/base'},
+                    {name: '使用教程', router: '/use/base'},
+                    {name: '文档资源', router: '/use/resource'}
+                ]
+            },
+            customizeData: {
+                name: '个性定制',
+                router: '/self',
+                children: [
+                    {name: '一键换肤', router: '/self/skin'},
+                    {name: '选择主题', router: '/self/theme'}
+                ]
+            },
+            baseCptData: {
+                name: '基础组件',
+                router: '/base',
+                children: [
+                    {name: 'Layout 栅格 (娟姐)', router: '/base/layout'},
+                    {name: 'Color 色彩 (娟姐)', router: '/base/layout'},
+                    {name: 'Typography 字体 (娟姐)', router: '/base/layout'},
+                    {name: 'Icon - loading (娟姐)', router: '/base/layout'},
+                    {name: 'Button (娟姐)', router: '/base/layout'}
+                ]
+            },
+            fromCptData: {
+                name: '表单组件',
+                router: '/from',
+                children: [
+                    {name: 'checkbox (刘刚)', router: '/from/checkbox'},
+                    {name: 'radio (刘刚)', router: '/from/checkbox'},
+                    {name: 'input (刘刚)', router: '/from/checkbox'},
+                    {name: 'input-password (刘刚)', router: '/from/checkbox'},
+                    {name: 'input-search (刘刚)', router: '/from/checkbox'},
+                    {name: 'textarea (刘刚)', router: '/from/checkbox'},
+                    {name: 'switch (刘刚)', router: '/from/checkbox'},
+                    {name: 'select (刘刚)', router: '/from/checkbox'}
+                ]
+            },
+            funcCptData: {
+                name: '功能组件',
+                router: '/func',
+                children: [
+                    {name: 'talble'},
+                    {name: 'Swipe'},
+                    {name: 'DatePicker'},
+                    {name: 'toast'},
+                    {name: 'modal'},
+                    {name: 'Progress'},
+                    {name: 'BackTop'},
+                    {name: 'Lazy load'}
                 ]
             }
+
         }
     },
     components: {

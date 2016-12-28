@@ -38,7 +38,6 @@
     .useUl {
         list-style: none;
         padding: 0px;
-        padding-left: 16px;
         margin: 0;
     }
 </style>
