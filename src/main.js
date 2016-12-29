@@ -13,6 +13,21 @@ import Use from './use/use'
 import UseStart from './use/start'
 import UseBase from './use/base'
 import UseResource from './use/resource'
+// 引入左边 基础组件
+import BaseLayout from './base/layout'
+import BaseColor from './base/color'
+import BaseTypography from './base/typography'
+import BaseIcon from './base/icon'
+import BaseButton from './base/button'
+// 引入左边 表单组件
+import BaseCheckbox from './from/checkbox'
+import BaseRadio from './from/radio'
+import BaseInput from './from/input'
+import BasePassword from './from/password'
+import BaseSearch from './from/search'
+import BaseTextarea from './from/textarea'
+import BaseSwitch from './from/switch'
+import BaseSelect from './from/select'
 // 引入基础 less
 import './assets/less/base.less'
 Vue.use(VueRouter)
@@ -29,6 +44,31 @@ const routes = [
             {path: 'start', component: UseStart},
             {path: 'base', component: UseBase},
             {path: 'resource', component: UseResource}
+        ]
+    },
+    {
+        path: '/base',
+        component: Use,
+        children: [
+            {path: 'layout', component: BaseLayout},
+            {path: 'color', component: BaseColor},
+            {path: 'typography', component: BaseTypography},
+            {path: 'icon', component: BaseIcon},
+            {path: 'button', component: BaseButton}
+        ]
+    },
+    {
+        path: '/from',
+        component: Use,
+        children: [
+            {path: 'checkbox', component: BaseCheckbox},
+            {path: 'radio', component: BaseRadio},
+            {path: 'input', component: BaseInput},
+            {path: 'password', component: BasePassword},
+            {path: 'search', component: BaseSearch},
+            {path: 'textarea', component: BaseTextarea},
+            {path: 'switch', component: BaseSwitch},
+            {path: 'select', component: BaseSelect}
         ]
     },
     {

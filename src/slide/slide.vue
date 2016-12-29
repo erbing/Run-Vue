@@ -84,6 +84,7 @@ export default {
                 children: [
                     {name: '开始', router: '/use/start'},
                     {name: '使用教程', router: '/use/base'},
+                    {name: '如何开发', router: '/use/base'},
                     {name: '文档资源', router: '/use/resource'}
                 ]
             },
@@ -100,10 +101,10 @@ export default {
                 router: '/base',
                 children: [
                     {name: 'Layout 栅格 (娟姐)', router: '/base/layout'},
-                    {name: 'Color 色彩 (娟姐)', router: '/base/layout'},
-                    {name: 'Typography 字体 (娟姐)', router: '/base/layout'},
-                    {name: 'Icon - loading (娟姐)', router: '/base/layout'},
-                    {name: 'Button (娟姐)', router: '/base/layout'}
+                    {name: 'Color 色彩 (娟姐)', router: '/base/color'},
+                    {name: 'Typography 字体 (娟姐)', router: '/base/typography'},
+                    {name: 'Icon - loading (娟姐)', router: '/base/icon'},
+                    {name: 'Button (娟姐)', router: '/base/button'}
                 ]
             },
             fromCptData: {
@@ -111,13 +112,13 @@ export default {
                 router: '/from',
                 children: [
                     {name: 'checkbox (刘刚)', router: '/from/checkbox'},
-                    {name: 'radio (刘刚)', router: '/from/checkbox'},
-                    {name: 'input (刘刚)', router: '/from/checkbox'},
-                    {name: 'input-password (刘刚)', router: '/from/checkbox'},
-                    {name: 'input-search (刘刚)', router: '/from/checkbox'},
-                    {name: 'textarea (刘刚)', router: '/from/checkbox'},
-                    {name: 'switch (刘刚)', router: '/from/checkbox'},
-                    {name: 'select (刘刚)', router: '/from/checkbox'}
+                    {name: 'radio (刘刚)', router: '/from/radio'},
+                    {name: 'input (刘刚)', router: '/from/input'},
+                    {name: 'input-password (刘刚)', router: '/from/password'},
+                    {name: 'input-search (刘刚)', router: '/from/search'},
+                    {name: 'textarea (刘刚)', router: '/from/textarea'},
+                    {name: 'switch (刘刚)', router: '/from/switch'},
+                    {name: 'select (刘刚)', router: '/from/select'}
                 ]
             },
             funcCptData: {
