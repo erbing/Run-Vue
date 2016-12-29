@@ -1,7 +1,7 @@
 <template>
   <div class="main">
  
-    <ui-head></ui-head>
+    <ui-head :title="title"></ui-head>
     
     <ui-slide>
     </ui-slide>
@@ -22,6 +22,11 @@ export default {
         'ui-head': head,
         'ui-slide': slide,
         'ui-content': content
+    },
+    computed: {
+        title () {
+            return 'VueJs 中文社区'
+        }
     }
 }
 </script>

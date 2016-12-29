@@ -1,7 +1,7 @@
 <template>
     <div id="slide-tree">
         <li class="item">
-            <div class="treeTitle" :class="{ bolds: isFolder }" @click="toggle">
+            <div class="treeTitle" :class="{ bolds: isFolder }" @click="toggle(model.name)">
                 <router-link exact :to="toRouter"  tag="div">
                     {{model.name}}
                     <div class="icon">
@@ -48,11 +48,12 @@
             }
         },
         methods: {
-            toggle () {
+            toggle (title) {
                 // window.alert(this.isFolder)
                 if (this.isFolder) {
                     this.open = !this.open
                 }
+                this.$store.state.title = title
             }
         }
     }

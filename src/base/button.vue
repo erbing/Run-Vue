@@ -1,6 +1,6 @@
 <template>
     <div class="main-info" id="start">
-        this is base - button
+        this is base - buttonsss
     </div>
 </template>
 

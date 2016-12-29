@@ -7,7 +7,8 @@ Vue.use(Vuex)
 
 // 需要维护的状态
 const state = {
-    showSlider: true
+    showSlider: true,
+    title: '首页'
 }
 
 export default new Vuex.Store({

@@ -7,7 +7,7 @@
     </div>
     <div class="mu-appbar-title">
       <slot>
-        <span>Vuejs 中文社区</span>
+        <span>{{title}} - Vuejs 中文社区</span>
       </slot>
     </div>
     <div class="title-right">
@@ -38,6 +38,9 @@ export default {
     computed: {
         showSlider () {
             return this.$store.state.showSlider
+        },
+        title () {
+            return this.$store.state.title
         }
     },
     methods: {
