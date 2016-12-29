@@ -1,5 +1,5 @@
 <template>
-    <div class="main-about">
+    <div class="main-info">
         <table class="table" width="100%">
             <tbody>
                 <tr>
@@ -39,7 +39,7 @@
 </script>
 
 <style lang="less">
-    .main-about{
+    .main-info{
         padding: 48px;
     }
     .table{

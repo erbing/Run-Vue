@@ -82,7 +82,7 @@ export default {
                 name: '如何使用',
                 router: '/use',
                 children: [
-                    {name: '入门基础', router: '/use/base'},
+                    {name: '开始', router: '/use/start'},
                     {name: '使用教程', router: '/use/base'},
                     {name: '文档资源', router: '/use/resource'}
                 ]

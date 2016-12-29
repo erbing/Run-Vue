@@ -8,8 +8,12 @@ import Tree from './tree/tree'
 import Index from './components/index'
 import About from './components/about'
 import ShowSlide from './showSlide/showSlide'
+// 引入左边 如何使用 相关组件
+import Use from './use/use'
+import UseStart from './use/start'
+import UseBase from './use/base'
+import UseResource from './use/resource'
 // 引入基础 less
-
 import './assets/less/base.less'
 Vue.use(VueRouter)
 
@@ -17,6 +21,16 @@ const routes = [
     {
         path: '/',
         component: Index
+    },
+    {
+        path: '/use',
+        component: Use,
+        children: [
+            {path: '', component: Use},
+            {path: 'start', component: UseStart},
+            {path: 'base', component: UseBase},
+            {path: 'resource', component: UseResource}
+        ]
     },
     {
         path: '/tree',

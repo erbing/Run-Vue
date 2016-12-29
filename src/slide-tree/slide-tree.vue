@@ -40,7 +40,11 @@
                 return this.model.children && this.model.children.length
             },
             toRouter () {
-                return this.model.router || '#'
+                if (this.model.children && this.model.children.length) {
+                    return '#'
+                } else {
+                    return this.model.router
+                }
             }
         },
         methods: {
