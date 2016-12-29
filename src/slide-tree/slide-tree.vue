@@ -2,7 +2,7 @@
     <div id="slide-tree">
         <li class="item">
             <div class="treeTitle" :class="{ bolds: isFolder }" @click="toggle">
-                <router-link :to="toRouter"  tag="div">
+                <router-link exact :to="toRouter"  tag="div">
                     {{model.name}}
                     <div class="icon">
                         <i class="fa-plus" :class="{ 'fa-minus': open }" v-if="isFolder"></i>

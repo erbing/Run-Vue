@@ -1,6 +1,6 @@
 <template>
     <div class="main-info" id="start">
-        this is start1111111111111
+        this is start
     </div>
 </template>
 

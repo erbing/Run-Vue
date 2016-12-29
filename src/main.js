@@ -26,7 +26,6 @@ const routes = [
         path: '/use',
         component: Use,
         children: [
-            {path: '', component: Use},
             {path: 'start', component: UseStart},
             {path: 'base', component: UseBase},
             {path: 'resource', component: UseResource}
@@ -51,6 +50,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
+    // mode: 'history',
+    // base: __dirname,
     routes
 })
 /* eslint-disable no-new */

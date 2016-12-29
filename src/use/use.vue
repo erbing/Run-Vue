@@ -1,7 +1,5 @@
 <template>
-    <div class="main-info" id="use">
-        this is use
-    </div>
+    <router-view></router-view>
 </template>
 
 <script>
