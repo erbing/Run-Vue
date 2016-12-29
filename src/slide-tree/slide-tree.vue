@@ -41,7 +41,7 @@
             },
             toRouter () {
                 if (this.model.children && this.model.children.length) {
-                    return '#'
+                    return ''
                 } else {
                     return this.model.router
                 }
