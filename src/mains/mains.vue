@@ -25,7 +25,7 @@ export default {
     },
     computed: {
         title () {
-            return 'VueJs 中文社区'
+            return '首页'
         }
     }
 }
@@ -33,5 +33,4 @@ export default {
 
 <style lang="less">
 @import "../assets/less/import.less";
-
 </style>
