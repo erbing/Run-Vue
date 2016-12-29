@@ -20,13 +20,11 @@
             return {
                 slideData: {
                     name: '如何使用',
+                    router: '/use',
                     children: [
-                        {name: '入门基础',
-                            children: [
-                                {name: 'vuejs'},
-                                {name: '社区'}]
-                        },
-                        {name: '使用教程'}
+                        {name: '入门基础', router: '/use/base'},
+                        {name: '使用教程', router: '/use/base'},
+                        {name: '文档资源', router: '/use/resource'}
                     ]
                 }
             }

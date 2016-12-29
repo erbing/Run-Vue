@@ -75,16 +75,6 @@ export default {
     name: 'slide',
     data: function () {
         return {
-            titles: '如何使用',
-            listText: [{name: '入门基础', eName: 'introduction'}, {name: '使用教程', eName: 'use'}, {name: 'showSlide', eName: 'showSlide'}],
-            customText: [{name: '一键换肤', eName: 'skinPeeler'}, {name: '选择主题', eName: 'theme'}],
-            baseCptText: [{name: 'Button', eName: 'Button'}, {name: 'Select', eName: 'Select'}, {name: 'Radio', eName: 'Radio'}],
-            funcCptText: [
-                {name: 'Slider', eName: 'slider'},
-                {name: 'Calendar', eName: 'calendar'},
-                {name: 'Tree', eName: 'tree'},
-                {name: 'slide-tree', eName: 'slide-tree'}
-            ],
             moreInfoText: [{name: 'Source', eName: 'source'}],
             aboutUsText: [{name: '开发组成员', eName: 'team'}],
 
@@ -134,17 +124,16 @@ export default {
                 name: '功能组件',
                 router: '/func',
                 children: [
-                    {name: 'talble'},
-                    {name: 'Swipe'},
-                    {name: 'DatePicker'},
-                    {name: 'toast'},
-                    {name: 'modal'},
-                    {name: 'Progress'},
-                    {name: 'BackTop'},
-                    {name: 'Lazy load'}
+                    {name: 'talble', router: '/from/checkbox'},
+                    {name: 'Swipe', router: '/from/checkbox'},
+                    {name: 'DatePicker', router: '/from/checkbox'},
+                    {name: 'toast', router: '/from/checkbox'},
+                    {name: 'modal', router: '/from/checkbox'},
+                    {name: 'Progress', router: '/from/checkbox'},
+                    {name: 'BackTop', router: '/from/checkbox'},
+                    {name: 'Lazy load', router: '/from/checkbox'}
                 ]
             }
-
         }
     },
     components: {

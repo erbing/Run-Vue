@@ -2,7 +2,7 @@
     <div id="slide-tree">
         <li class="item">
             <div class="treeTitle" :class="{ bolds: isFolder }" @click="toggle">
-                <router-link :to="model.router"  tag="div">
+                <router-link :to="toRouter"  tag="div">
                     {{model.name}}
                     <div class="icon">
                         <i class="fa-plus" :class="{ 'fa-minus': open }" v-if="isFolder"></i>
@@ -40,7 +40,7 @@
                 return this.model.children && this.model.children.length
             },
             toRouter () {
-                return this.model.router || this.model.children.router
+                return this.model.router || '#'
             }
         },
         methods: {
