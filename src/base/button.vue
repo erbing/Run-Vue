@@ -8,13 +8,16 @@
             </div>
             <div class="codecontent">
                 <div class="codeabout">
-                    默认、主色、强调色, 不可用、全宽五种不同状态的按钮示例
+                   <span> 默认、主色、强调色, 不可用、全宽五种不同状态的按钮示例</span>
+                    <uiButton :text=" 'Btn' " ></uiButton>
+                    <uiButton :text=" 'Click' "></uiButton>
+                    <uiButton :text=" '1123' "></uiButton>
                 </div>
             </div>
         </div>
 
         <h2>Code</h2>
-        <p class="mark-p">组件实现的代码</p>
+        <p class="mark-p">组件实现的代码 （ 其中包括了 html、less、js ） </p>
         <div class="codebox">
             <div class="codetitle">
                <span>Code</span>
@@ -27,7 +30,7 @@
         </div>
 
         <h2>API</h2>
-        <p class="mark-p">我们提供了基本的API</p>
+        <p class="mark-p">我们提供了基本的API ( 里面主要包括了 props、 slot、 event ) </p>
         <div class="codebox">
             <div class="codetitle">
                <span>API</span>
@@ -42,8 +45,12 @@
 </template>
 
 <script>
+    import uiButton from '../components/base/button'
     export default {
-        name: 'start'
+        name: 'start',
+        components: {
+            uiButton
+        }
     }
 </script>
 
@@ -95,6 +102,11 @@
             overflow: auto;
             padding: 10px 20px 0;
             margin: 0;
+            padding-bottom: 20px;
+            span{
+                display: block;
+                margin-bottom: 20px;
+            }
         }
     }
 </style>
