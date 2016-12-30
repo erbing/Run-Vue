@@ -44,7 +44,7 @@
     }
 
     .hide-left-content {
-        padding-top: 32px;
+        padding-top: 0px;
         padding-left: 0;
     }
 </style>
