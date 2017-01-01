@@ -48,6 +48,22 @@
             </div>
         </div>
     </div>
+
+    <div class="index-driver">
+    </div>
+
+
+    <div class="index-desc">
+        <h3>致谢</h3>
+        <div>
+            Run-Vue UI 基于一个非常优秀的前端框架 Vue 开发， 并且参考了 Muse-ui 、 element 
+            等众多优秀的UI框架的API和代码， 为了鼓励开发人员使用 Run-Vue UI，我们在MIT开源协议基础上开放 Run-Vue UI的源代码。
+        </div>
+    </div>
+
+    <div class="index-bottom">
+
+    </div>    
     </div>
 </template>
 
@@ -150,5 +166,13 @@
                 font-size: 16px;
             }
         }
+    }
+
+    .index-driver{
+        margin: 0;
+        height: 1px;
+        border: none;
+        background-color: rgba(0,0,0,.12);
+        width: 100%;
     }
 </style>
