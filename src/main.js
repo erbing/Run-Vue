@@ -12,6 +12,7 @@ import ShowSlide from './showSlide/showSlide'
 import Use from './use/use'
 import UseStart from './use/start'
 import UseBase from './use/base'
+import UseDev from './use/dev'
 import UseResource from './use/resource'
 // 引入左边 基础组件
 import BaseLayout from './base/layout'
@@ -43,6 +44,7 @@ const routes = [
         children: [
             {path: 'start', component: UseStart},
             {path: 'base', component: UseBase},
+            {path: 'dev', component: UseDev},
             {path: 'resource', component: UseResource}
         ]
     },

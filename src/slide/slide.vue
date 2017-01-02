@@ -84,7 +84,7 @@ export default {
                 children: [
                     {name: '开始', router: '/use/start'},
                     {name: '使用教程', router: '/use/base'},
-                    {name: '如何开发', router: '/use/base'},
+                    {name: '如何开发', router: '/use/dev'},
                     {name: '文档资源', router: '/use/resource'}
                 ]
             },
