@@ -5,31 +5,31 @@
 <script>
 import marked from 'marked'
 export default {
-  props: {
-    text: {
-      type: String,
-      default: ''
+    props: {
+        text: {
+            type: String,
+            default: ''
+        }
+    },
+    created () {
+        marked.setOptions({
+            gfm: true,
+            tables: true,
+            breaks: false,
+            pedantic: false,
+            sanitize: false,
+            smartLists: true,
+            smartypants: false,
+            highlight (code, lang) {
+                return require('highlight.js').highlight(lang, code).value
+            }
+        })
+    },
+    methods: {
+        marked (text) {
+            return marked(text)
+        }
     }
-  },
-  created () {
-    marked.setOptions({
-      gfm: true,
-      tables: true,
-      breaks: false,
-      pedantic: false,
-      sanitize: false,
-      smartLists: true,
-      smartypants: false,
-      highlight (code, lang) {
-        return require('highlight.js').highlight(lang, code).value
-      }
-    })
-  },
-  methods: {
-    marked (text) {
-      return marked(text)
-    }
-  }
 }
 </script>
 

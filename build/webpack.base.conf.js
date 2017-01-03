@@ -64,6 +64,10 @@ module.exports = {
         exclude: /(node_modules|static)/
       },
       {
+        test: /\.md$/,
+        loader: 'raw-loader',
+      },
+      {
         test: /\.json$/,
         loader: 'json'
       },
