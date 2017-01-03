@@ -1,17 +1,25 @@
 <template>
     <div class="main-info" id="start">
         <h2>目录 && 路由规则</h2>
-        <p class="mark-p">熟悉项目目录，是</p>
+        <p class="mark-p">熟悉项目目录，是交接一个项目的开始</p>
         <div class="codebox">
             <div class="codetitle">
-               <span>简单的使用</span>
+               <span>文件目录 　&&　作用</span>
             </div>
             <div class="codecontent">
                 <div class="codeabout">
-                   <span> 默认、主色、强调色, 不可用、全宽五种不同状态的按钮示例</span>
-                    <uiButton :text=" 'Btn' " ></uiButton>
-                    <uiButton :text=" 'Click' "></uiButton>
-                    <uiButton :text=" '1123' "></uiButton>
+                   <span> build  --- webpack 的整个开发框架</span>
+                   <span> config --- webpack 构建开发、测试、发布环境配置</span>
+                   <span> dist   --- prod 发布之后的文件</span>
+                   <span> src   --- 当前所有 项目文件都在其中</span>
+                   <span> &nbsp; &nbsp; &nbsp; &nbsp; --- assets   
+                       --- 当前项目所有静态文件（img 字体 less 等）</span>
+                   <span> &nbsp; &nbsp; &nbsp; &nbsp; --- use   
+                       --- 当前项目路由 /use/  以及其自路由页面的展示</span> 
+                   <span> &nbsp; &nbsp; &nbsp; &nbsp; --- components 
+                       --- 当前项目 所有组件 （基础组件、form组件、功能组件等）</span> 
+                    <span> &nbsp; &nbsp; &nbsp; &nbsp; --- vuex 
+                       --- 当前项目 所有组件 通信相关</span> 
                 </div>
             </div>
         </div>
