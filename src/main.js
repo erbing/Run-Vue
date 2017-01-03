@@ -31,6 +31,7 @@ import BaseSwitch from './from/switch'
 import BaseSelect from './from/select'
 // 引入基础 less
 import './assets/less/base.less'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -42,7 +43,7 @@ const routes = [
         path: '/use',
         component: Use,
         children: [
-            {path: 'start', component: UseStart},
+            {path: 'start', component: Index},
             {path: 'base', component: UseBase},
             {path: 'dev', component: UseDev},
             {path: 'resource', component: UseResource}
@@ -88,6 +89,10 @@ const routes = [
     {
         path: '/about',
         component: About
+    },
+    {
+        path: '/useStart',
+        component: UseStart
     }
 ]
 

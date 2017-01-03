@@ -7,11 +7,11 @@
     </div>
     <div class="mu-appbar-title">
       <slot>
-        <span>{{title}} - Vuejs 中文社区</span>
+        <span>{{title}} - VueJs 中文社区</span>
       </slot>
     </div>
     <div class="title-right">
-      <button class="ui-btn btn">
+      <button class="ui-btn btn" @click="goGithub">
        <i class="fa-github"></i>
        </button>
     </div>
@@ -46,6 +46,9 @@ export default {
     methods: {
         hideSlider () {
             this.$store.state.showSlider = !this.$store.state.showSlider
+        },
+        goGithub () {
+            window.location.href = '/'
         }
     },
     vuex: {

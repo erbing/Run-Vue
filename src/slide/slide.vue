@@ -3,7 +3,7 @@
         <div class="mu-appbar leftbar">
             <div class="left" @click="test">
               <img src="../assets/images/logo2.png" class="logo"/>
-              <span class="logo-text">Run-vue</span>
+              <span class="logo-text">Run-Vue</span>
               <em class="beta">Beta</em>
             </div>
             <div class="mu-appbar-title"></div>

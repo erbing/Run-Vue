@@ -26,8 +26,8 @@
             <div class="desc-item">
                 <h4>组件丰富</h4>
                 <div class="desc-item-text">
-                    Run-Vue UI 期望是 实现大家都能用且具有一定规范的组件，
-                    另外还准备开发许多的功能性的组件。
+                    Run-Vue UI 期望是 实现大家都能使用且具有一定<b>规范</b>的组件，
+                    另外我们 还准备开发更多的 <b>功能性</b> 的组件满足更为复杂的使用场景。
                 </div>
             </div>
             <div class="desc-item">
@@ -55,14 +55,33 @@
 
     <div class="index-desc">
         <h3>致谢</h3>
-        <div>
+        <div style="padding-left: 16px; margin-bottom: 20px;">
             Run-Vue UI 基于一个非常优秀的前端框架 Vue 开发， 并且参考了 Muse-ui 、 element 
             等众多优秀的UI框架的API和代码， 为了鼓励开发人员使用 Run-Vue UI，我们在MIT开源协议基础上开放 Run-Vue UI的源代码。
+            <b>最后说一句，如果生活中没有 VueJs 那该是多么的艰难。</b>
+        </div>
+
+        <div style="padding-left: 16px;">
+            最后的最后，感谢 组内的开发的小伙伴，以及 github 热衷开源的一群小伙伴。
+        </div>
+    </div>
+
+    <div class="index-desc">
+        <h3>成为开发者</h3>
+        <div style="padding-left: 16px; margin-bottom: 20px;">
+            Run-Vue UI 是基于一个非常优秀的前端框架 <b>Vue</b> 开发， 所以我们也希望能够开发出非常优秀的 Vue 的组件 以及更多相关的内容。
+        </div>
+
+        <div style="padding-left: 16px;">
+            <router-link to="/use/dev" tag="a">github / gitlab 地址(欢迎star)</router-link>  &&  
+            <router-link to="/use/dev" tag="a">成为开发者</router-link> && 
+            <router-link to="/use/dev" tag="a">联系我们</router-link>
         </div>
     </div>
 
     <div class="index-bottom">
-
+        Run-Vue UI is open source and released under the MIT Licence.<br>
+        Copyright (c) 2017 <a href="https://github.com/redwing-team" target="_blank">RedWind</a> and <a>ZJCS</a>
     </div>    
     </div>
 </template>
@@ -153,7 +172,7 @@
 
     .index-desc{
         padding: 24px 24px 48px;
-        max-width: 800px;
+        max-width: 1000px;
         margin: auto;
         .desc-items{
             display: flex;
@@ -174,5 +193,11 @@
         border: none;
         background-color: rgba(0,0,0,.12);
         width: 100%;
+    }
+    .index-bottom{
+        background-color: #212121;
+        text-align: center;
+        color: #fff;
+        padding: 50px 40px;
     }
 </style>
