@@ -59,7 +59,7 @@
 
 <script>
     import uiButton from '../components/base/button'
-    import btnCode from 'raw!../components/base/test'
+    import btnCode from '!raw!../components/base/test'
     import codeBlock from '../components/codeBlock'
     export default {
         name: 'start',
