@@ -8,7 +8,7 @@
             </div>
             <div class="codecontent">
                 <div class="codeabout">
-                   <span> 默认、主色、强调色, 不可用、全宽五种不同状态的按钮示例</span>
+                   <span class="spa"> 默认、主色、强调色, 不可用、全宽五种不同状态的按钮示例</span>
                     <uiButton :text=" 'Btn' " ></uiButton>
                     <uiButton :text=" 'Click' "></uiButton>
                     <uiButton :text=" '1123' "></uiButton>
@@ -24,7 +24,7 @@
             </div>
             <div class="codecontent">
                 <div class="codeabout">
-                    默认、主色、强调色, 不可用、全宽五种不同状态的按钮示例
+                    <codeBlock :code="codeButton"></codeBlock>
                 </div>
             </div>
         </div>
@@ -46,10 +46,19 @@
 
 <script>
     import uiButton from '../components/base/button'
+    import codeBlock from '../components/codeBlock'
+    import codeButton from '!raw!../components/base/button'
+
     export default {
         name: 'start',
         components: {
-            uiButton
+            uiButton,
+            codeBlock
+        },
+        data () {
+            return {
+                codeButton
+            }
         }
     }
 </script>
@@ -103,7 +112,7 @@
             padding: 10px 20px 0;
             margin: 0;
             padding-bottom: 20px;
-            span{
+            .spa{
                 display: block;
                 margin-bottom: 20px;
             }

@@ -26,8 +26,8 @@ export default {
     computed: {
         text () {
             return `\`\`\`html
-        ${this.code}
-                    \`\`\``
+${this.code}
+        \`\`\``
         }
     },
     methods: {
@@ -37,6 +37,10 @@ export default {
     },
     components: {
         markdown
+    },
+    created () {
+        console.log(this.code.match(/<template>([\s\S]*?)<\/template>/)[1])
+        console.log(this.text)
     }
 }
 </script>

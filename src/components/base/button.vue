@@ -1,25 +1,36 @@
 <template>
-<mu-appbar title="Title">
-  <mu-text-field icon="search" class="appbar-search-field"  slot="right" hintText="请输入搜索内容"/>
-  <mu-flat-button color="white" label="flat Button" slot="right"/>
-</mu-appbar>
+    <button class='btn'>{{text}}</button>
 </template>
 
+<script>
+    export default {
+        name: 'button',
+        props: {
+            text: String
+        }
+    }
+</script>
+
 <style lang="less">
-.appbar-search-field{
-  color: #FFF;
-  margin-bottom: 0;
-  &.focus-state {
-    color: #FFF;
-  }
-  .mu-text-field-hint {
-    color: fade(#FFF, 54%);
-  }
-  .mu-text-field-input {
-    color: #FFF;
-  }
-  .mu-text-field-focus-line {
-    background-color: #FFF;
-  }
-}
+    .btn {
+        display: inline-block;
+        padding: 8px 20px;
+        text-decoration: none;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        outline: none;
+        font-size: 16px;
+        color: #fff;
+        border: 1px solid #6fb92c;
+        border-radius: 5px;
+        background-color: #6fb92c;
+        cursor: pointer;
+        outline: 0;
+        user-select: none;
+        word-wrap: normal;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
 </style>
