@@ -43,6 +43,7 @@ ${this.code}
         console.log(this.text)
     }
 }
+
 </script>
 
 <style lang="less">
