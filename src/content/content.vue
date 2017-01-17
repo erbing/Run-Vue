@@ -30,7 +30,8 @@
 </script>
 
 <style lang="less">
-    @import "../assets/less/import.less";
+    @import '../assets/less/normalize.less';
+    @import '../assets/less/base.less';
     i{
         font-family: FontAwesome;
         font-style: normal;
@@ -40,6 +41,7 @@
     .mian-content{
         padding-top: 64px;
         padding-left: 256px;
+        background-color: @color-white;
         transition: all .45s cubic-bezier(.23,1,.32,1);
     }
 

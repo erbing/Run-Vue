@@ -23,10 +23,6 @@ import { getShow } from '../vuex/actions'
 export default {
     name: 'mu-appbar',
     props: {
-        title: {
-            type: String,
-            default: ''
-        },
         titleClass: {
             type: [String, Array, Object]
         },
@@ -60,7 +56,8 @@ export default {
 </script>
 
 <style lang="less">
-@import "../assets/less/import.less";
+@import  '../assets/less/normalize.less';
+@import  '../assets/less/base.less';
 .hide-left-bar {
   position: relative
 }
@@ -70,22 +67,23 @@ export default {
   align-self: flex-start;
   justify-content: flex-start;
   align-items: center;
-  color: @alternateTextColor;
-  background-color: @primaryColor;
+  color: #fff;
+  background-color: #58B7FF;
   height: 64px;
   padding: 0 8px;
   width: 100%;
   z-index: 100;
-  .left{
-    .flex-shrink(0);
+
+  .left {
+    flex-shrink: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     height: 100%;
     box-flex: 0;
   }
-  .right{
-    .flex-shrink(0);
+  .right {
+    flex-shrink: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -94,7 +92,7 @@ export default {
   }
 
   .title-left{
-    .flex-shrink(0);
+    flex-shrink: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -104,7 +102,7 @@ export default {
     float: left;
   }
   .title-right{
-    .flex-shrink(0);
+    flex-shrink: 0;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -133,8 +131,6 @@ export default {
     font-size: 24px;
     padding: 12px;
     border: none;
-    appearance: none;
-    appearance: none;
     appearance: none;
     background: none;
     color: inherit;

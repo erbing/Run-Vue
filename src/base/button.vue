@@ -1,17 +1,55 @@
 <template>
     <div class="main-info" id="start">
-        <h2>Button</h2>
-        <p class="mark-p">按钮在页面开发的时候是经常会用到的</p>
+        <h2>Button 按钮</h2>
+        <p class="mark-p">基础组件，触发业务逻辑时使用。</p>
         <div class="codebox">
             <div class="codetitle">
-               <span>简单的使用</span>
+                <span>基础用法</span>
             </div>
             <div class="codecontent">
                 <div class="codeabout">
-                   <span class="spa"> 默认、主色、强调色, 不可用、全宽五种不同状态的按钮示例</span>
-                    <uiButton :text=" 'Btn' " ></uiButton>
-                    <uiButton :text=" 'Click' "></uiButton>
-                    <uiButton :text=" '1123' "></uiButton>
+                    <span class="spa">基础的按钮用法。</span>
+                    <uiButton>默认按钮</uiButton>
+                    <uiButton type="primary">主要按钮</uiButton>
+                    <uiButton type="primary" :hollow="true">主要按钮镂空</uiButton>
+                    <uiButton type="text">文字按钮</uiButton>
+                </div>
+            </div>
+        </div>
+
+        <div class="codebox">
+            <div class="codetitle">
+                <span>禁用状态</span>
+            </div>
+            <div class="codecontent">
+                <div class="codeabout">
+                    <span class="spa">按钮不可用状态。</span>
+                    <uiButton :disabled="true">默认按钮</uiButton>
+                    <uiButton type="primary" :disabled="true">主要按钮</uiButton>
+                    <uiButton type="primary" :hollow="true" :disabled="true">主要按钮镂空</uiButton>
+                    <uiButton type="text" :disabled="true">文字按钮</uiButton>
+                </div>
+            </div>
+        </div>
+
+        <div class="codebox">
+            <div class="codetitle">
+                <span>色彩</span>
+            </div>
+            <div class="codecontent">
+                <div class="codeabout">
+                    <p class="spa">不同的颜色代表不同的提示</p>
+                    <p class="spa">默认普通样式 type值：info、success、warning、danger</p>
+                    <uiButton type="info">信息按钮</uiButton>
+                    <uiButton type="success">成功按钮</uiButton>
+                    <uiButton type="warning">警告按钮</uiButton>
+                    <uiButton type="danger">危险按钮</uiButton>
+                    <uiButton type="info" :disabled="true">不可用按钮</uiButton>
+                    <p class="spa">镂空样式。</p>
+                    <uiButton type="info" :hollow="true">信息按钮</uiButton>
+                    <uiButton type="success" :hollow="true">成功按钮</uiButton>
+                    <uiButton type="warning" :hollow="true">警告按钮</uiButton>
+                    <uiButton type="danger" :hollow="true">危险按钮</uiButton>
                 </div>
             </div>
         </div>
@@ -20,7 +58,7 @@
         <p class="mark-p">组件实现的代码 （ 其中包括了 html、less、js ） </p>
         <div class="codebox">
             <div class="codetitle">
-               <span>Code</span>
+                <span>Code</span>
             </div>
             <div class="codecontent">
                 <div class="codeabout">
@@ -33,7 +71,7 @@
         <p class="mark-p">我们提供了基本的API ( 里面主要包括了 props、 slot、 event ) </p>
         <div class="codebox">
             <div class="codetitle">
-               <span>API</span>
+                <span>API</span>
             </div>
             <div class="codecontent">
                 <div class="codeabout">

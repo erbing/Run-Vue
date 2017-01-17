@@ -1,0 +1,136 @@
+/**
+ * 混合使用
+ */
+
+@import "variable";
+
+/**
+ * 像素转rem
+ */
+
+.px2rem(@prop, @num1) {
+    @{prop}: @num1 / @font-size-root * 1rem;
+}
+
+.px2rem(@prop, @num1, @num2) {
+    @{prop}: (@num1 / @font-size-root * 1rem) (@num2 / @font-size-root * 1rem);
+}
+
+.px2rem(@prop, @num1, @num2, @num3) {
+    @{prop}: (@num1 / @font-size-root * 1rem) (@num2 / @font-size-root * 1rem) (@num3 / @font-size-root * 1rem);
+}
+
+.px2rem(@prop, @num1, @num2, @num3, @num4) {
+    @{prop}: (@num1 / @font-size-root * 1rem) (@num2 / @font-size-root * 1rem) (@num3 / @font-size-root * 1rem) (@num4 / @font-size-root * 1rem);
+}
+
+
+/**
+ * 像素转像素
+ */
+
+@px2pxRatio: 0.5px; //转换率，根据实际情况修改
+.px2px(@prop, @num1) {
+    @{prop}: @num1 * @px2pxRatio;
+}
+
+.px2px(@prop, @num1, @num2) {
+    @{prop}: (@num1 * @px2pxRatio) (@num1 * @px2pxRatio);
+}
+
+.px2px(@prop, @num1, @num2, @num3) {
+    @{prop}: (@num1 * @px2pxRatio) (@num2 * @px2pxRatio) (@num3 * @px2pxRatio);
+}
+
+.px2px(@prop, @num1, @num2, @num3, @num4) {
+    @{prop}: (@num1 * @px2pxRatio) (@num2 * @px2pxRatio) (@num3 * @px2pxRatio) (@num4 * @px2pxRatio);
+}
+
+
+/**
+ * 禁止用户选择文本
+ */
+
+.usn() {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+
+/**
+ * 清除浮动
+ * http://nicolasgallagher.com/micro-clearfix-hack/
+ */
+
+.clearfix() {
+    &:before,
+    &:after {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+/**
+ * 文本隐藏
+ * https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+ */
+
+.text-hide() {
+    font: ~"0/0" a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+
+/**
+ * 文本截取
+ * 注意：设置成快状元素（inline-block / block）生效
+ */
+
+.text-overflow() {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+/**
+ * 多行文本截取
+ * http://dropshado.ws/post/1015351370/webkit-line-clamp
+ */
+
+.line-clamp(@lines, @line-height: 1.3em) {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @lines; // number of lines to show
+    overflow: hidden;
+    line-height: @line-height;
+    max-height: @line-height * @lines;
+}
+
+// Shadow
+.depth(@level: 1) {
+    & when (@level =1) {
+        box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+    }
+    & when (@level =2) {
+        box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 10px, rgba(0, 0, 0, 0.227451) 0px 3px 10px;
+    }
+    & when (@level =3) {
+        box-shadow: rgba(0, 0, 0, 0.188235) 0px 10px 30px, rgba(0, 0, 0, 0.227451) 0px 6px 10px;
+    }
+    & when (@level =4) {
+        box-shadow: rgba(0, 0, 0, 0.247059) 0px 14px 45px, rgba(0, 0, 0, 0.219608) 0px 10px 18px;
+    }
+    & when (@level =5) {
+        box-shadow: rgba(0, 0, 0, 0.298039) 0px 19px 60px, rgba(0, 0, 0, 0.219608) 0px 15px 20px;
+    }
+}

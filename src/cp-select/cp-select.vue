@@ -45,7 +45,6 @@
 </script>
 
 <style lang="less">
-    @import "../assets/less/import.less";
     .run-select{
         height: 48px;
         padding-left: 16px;

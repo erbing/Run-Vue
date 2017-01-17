@@ -156,11 +156,11 @@ export default {
 </script>
 
 <style lang="less">
-@import "../assets/less/import.less";
+@import "../assets/less/mixins.less";
 .paper {
-  transition: all .45s @easeOutFunction;
-  color: @textColor;
-  background-color: @dialogBackgroundColor;
+  /*transition: all .45s @easeOutFunction;*/
+  color: #666;
+  background-color: #fff;
   .depth(2);
 }
 
@@ -219,10 +219,11 @@ i{
   align-items: center;
   display: flex;
   width: 100%;
-  .slider-title{
+}
+
+.slider-content  .slider-title{
     font-size: 16px;
     margin-top: 8px;
-  }
 }
 
 .select-down{
@@ -276,7 +277,7 @@ i{
   border-radius: 50%;
 }
 
-.mu-paper-1 {
+/*.mu-paper-1 {
   .depth(1);
 }
 
@@ -294,5 +295,5 @@ i{
 
 .mu-paper-5 {
   .depth(5);
-}
+}*/
 </style>

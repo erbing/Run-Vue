@@ -1,39 +1,75 @@
-@import "./normalize.css";
-@import "./vars.less";
+/**
+ * 移动端WEB基础样式
+ */
+
+@import "variable";
+@import "mixin";
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
-}
-html{
-  font-size: 62.5%;
+    box-sizing: border-box;
 }
 
-body{
-  font-family: @fontFamily;
-  line-height: 1.5;
-  font-size: 14px;
-  font-weight: 400;
-  width: 100%;
-  -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
-  background-color: @backgroundColor;
-  color: @textColor;
+html {
+    height: 100%;
+    font-size: @font-size-root;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-body,html{
-  overflow-x:hidden;
-  overflow-y: auto;
+body {
+    // .px2rem(width, 640);
+    // min-width: 320px;
+    // margin-left: auto;
+    // margin-right: auto;
+    .px2px(font-size, @font-size-base);
+    font-family: @font-family;
+    line-height: @line-height-base;
+    color: @color-black-light;
+    background: @color-white-dark;
+    -webkit-overflow-scrolling: touch;
 }
 
-pre{
-  white-space: pre-wrap;
-  word-break: break-all;
-  margin: 0;
+input,
+textarea,
+select,
+button {
+    // padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
 }
 
-a{
-  text-decoration: none;
-  color: @accentColor;
-  user-select: none;
-  -webkit-user-select: none;
+iframe {
+    border: 0;
+}
+
+a,
+a:active,
+a:hover {
+    color: inherit;
+    outline: 0;
+    text-decoration: none
+}
+
+
+/* lists */
+
+ul,
+ol {
+    padding-left: 2em;
+}
+
+dt {
+    font-weight: bold;
+    &+dd {
+        margin-top: .5em;
+    }
+}
+
+dd {
+    margin-left: 0;
+    &+dt {
+        margin-top: 1em;
+    }
 }

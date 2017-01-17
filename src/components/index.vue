@@ -98,7 +98,8 @@
 </script>
 
 <style lang="less">
-    @import "../assets/less/import.less";
+    @import  '../assets/less/normalize.less';
+    @import  '../assets/less/base.less';
     h3{
         padding-bottom: .3em;
         font-size: 1.4em;
@@ -112,7 +113,7 @@
     }
     .banenr{
         color: #fff;
-        background-color: @primaryColor;
+        background-color: #58B7FF;
         margin-right: auto;
         margin-left: auto;
         padding-left: 24px;
@@ -159,7 +160,7 @@
             left: 50%;
             margin-left: -50px;
             background: #fff;
-            color: @primaryColor;
+            color: #6fb92c;
             overflow: hidden;
             span{
                 vertical-align: middle;
@@ -174,6 +175,7 @@
         padding: 24px 24px 48px;
         max-width: 1000px;
         margin: auto;
+        background-color: @color-white;
         .desc-items{
             display: flex;
             .desc-item{
@@ -195,7 +197,7 @@
         width: 100%;
     }
     .index-bottom{
-        background-color: #212121;
+        background-color: @color-gray;
         text-align: center;
         color: #fff;
         padding: 50px 40px;

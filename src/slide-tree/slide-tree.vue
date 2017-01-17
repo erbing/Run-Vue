@@ -31,8 +31,7 @@
         },
         data () {
             return {
-                open: true,
-                isFolder: true
+                open: true
             }
         },
         computed: {
@@ -60,12 +59,11 @@
 </script>
 
 <style lang="less">
-    @import "../assets/less/import.less";
     .bounce-enter-active {
-    animation: bounce-in .5s;
+    animation: bounce-in .35s;
     }
     .bounce-leave-active {
-    animation: bounce-out .5s;
+    animation: bounce-out .35s;
     }
     @keyframes bounce-in {
         0% {
@@ -100,7 +98,7 @@
         100% {
             transform: scale(0);
         }
-    }    
+    }
     .fade-enter-active, .fade-leave-active {
         transition: opacity .15s
     }
