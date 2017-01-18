@@ -32,12 +32,7 @@
             </div>
             <div class="codecontent">
                 <div class="codeabout">
-                   <codeBlock :code=" btnCode "></codeBlock>
-                   <!--<pre>
-                       <code class="lang-html">
-                           var a = 2;
-                       </code>
-                    </pre>-->
+                   <codeBlock :code="codeButton"></codeBlock>
                 </div>
             </div>
         </div>
@@ -59,8 +54,8 @@
 
 <script>
     import uiButton from '../components/base/button'
-    import btnCode from '!raw!../components/base/test'
     import codeBlock from '../components/codeBlock'
+    import codeButton from '!raw!../components/base/button'
     export default {
         name: 'start',
         components: {
@@ -69,7 +64,7 @@
         },
         data () {
             return {
-                btnCode
+                codeButton
             }
         }
     }

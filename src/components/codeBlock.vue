@@ -74,8 +74,6 @@ ${this.code.match(/<style lang="less">([\s\S]*?)<\/style>/)[1]}
         markdown
     },
     created () {
-        // console.log(this.code.match(/<template>([\s\S]*?)<\/template>/)[1])
-        // console.log(this.text)
     }
 }
 

@@ -85,7 +85,8 @@
     "webpack-hot-middleware": "^2.12.2",
     "webpack-merge": "^0.14.1",
     "highlight.js": "^9.7.0",
-    "raw-loader": "^0.5.1"
+    "raw-loader": "^0.5.1",
+    "font-spider": "^0.3.6"
   },
   "engines": {
     "node": ">= 4.0.0",
