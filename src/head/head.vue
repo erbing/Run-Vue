@@ -2,7 +2,7 @@
 <div class="mu-appbar example-appbar" :style=" showSlider ? '' : 'position: relative; left: 0' ">
     <div class="title-left">
       <button class="ui-btn btn" @click="hideSlider"> 
-        <i class="fa-reorder"></i>
+        <i class="iconfont icon-brandfill" style="color: #fff; font-size: 30px;"></i>
       </button>
     </div>
     <div class="mu-appbar-title">
@@ -12,7 +12,7 @@
     </div>
     <div class="title-right">
       <button class="ui-btn btn" @click="goGithub">
-       <i class="fa-github"></i>
+       <i class="icon iconfont icon-github" style="color: #fff; font-size: 30px;"></i>
        </button>
     </div>
 </div>
@@ -58,6 +58,8 @@ export default {
 <style lang="less">
 @import  '../assets/less/normalize.less';
 @import  '../assets/less/base.less';
+@import '../assets/fonts/iconfont.css';
+
 .hide-left-bar {
   position: relative
 }

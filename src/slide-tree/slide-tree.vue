@@ -5,7 +5,7 @@
                 <router-link exact :to="toRouter"  tag="div">
                     {{model.name}}
                     <div class="icon">
-                        <i class="fa-plus" :class="{ 'fa-minus': open }" v-if="isFolder"></i>
+                        <i class="iconfont icon-add1" :class="{ 'icon-move': open }" v-if="isFolder" style="font-size: 18px;"></i>
                     </div>
                 </router-link>
             </div>
@@ -59,6 +59,7 @@
 </script>
 
 <style lang="less">
+    @import '../assets/fonts/iconfont.css';
     .bounce-enter-active {
     animation: bounce-in .35s;
     }
