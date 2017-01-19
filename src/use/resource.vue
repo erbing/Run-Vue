@@ -32,7 +32,7 @@
         <p class="mark-p">我们提供了基本的API ( 里面主要包括了 props、 slot、 event ) </p>
         <div class="codebox">
             <div class="codetitle">
-               <span>ES6 相关文档</span>
+               <span>VueJs 相关文档</span>
             </div>
             <div class="codecontent">
                 <div class="codeabout">
