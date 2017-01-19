@@ -17,6 +17,9 @@ import UseStart from './use/start'
 import UseBase from './use/base'
 import UseDev from './use/dev'
 import UseResource from './use/resource'
+// 个性定制路由
+import CustomSkin from './customize/skin'
+import CustomTheme from './customize/theme'
 // 引入左边 基础组件
 import BaseLayout from './base/layout'
 import BaseColor from './base/color'
@@ -39,7 +42,7 @@ const routes = [{
     path: '/',
     component: Index
 }, {
-    path: '/use',
+    path: '/use',               // 如何使用
     component: Use,
     children: [{
         path: 'start',
@@ -53,6 +56,16 @@ const routes = [{
     }, {
         path: 'resource',
         component: UseResource
+    }]
+}, {
+    path: '/customize',               // 个性定制
+    component: Use,
+    children: [{
+        path: 'skin',
+        component: CustomSkin
+    }, {
+        path: 'theme',
+        component: CustomTheme
     }]
 }, {
     path: '/base',

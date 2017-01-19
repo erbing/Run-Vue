@@ -90,46 +90,46 @@ export default {
             },
             customizeData: {
                 name: '个性定制',
-                router: '/self',
+                router: '/customize',
                 children: [
-                    {name: '一键换肤', router: '/self/skin'},
-                    {name: '选择主题', router: '/self/theme'}
+                    {name: '一键换肤', router: '/customize/skin'},
+                    {name: '选择主题', router: '/customize/theme'}
                 ]
             },
             baseCptData: {
                 name: '基础组件',
                 router: '/base',
                 children: [
-                    {name: 'Layout 栅格 (娟姐)', router: '/base/layout'},
-                    {name: 'Color 色彩 (娟姐)', router: '/base/color'},
-                    {name: 'Typography 字体 (娟姐)', router: '/base/typography'},
-                    {name: 'Icon - loading (娟姐)', router: '/base/icon'},
-                    {name: 'Button (娟姐)', router: '/base/button'}
+                    {name: 'Layout 栅格', router: '/base/layout'},
+                    {name: 'Color 色彩', router: '/base/color'},
+                    {name: 'Typography 字体', router: '/base/typography'},
+                    {name: 'Icon - loading', router: '/base/icon'},
+                    {name: 'Button', router: '/base/button'}
                 ]
             },
             fromCptData: {
                 name: '表单组件',
                 router: '/from',
                 children: [
-                    {name: 'checkbox (刘刚)', router: '/from/checkbox'},
-                    {name: 'radio (刘刚)', router: '/from/radio'},
-                    {name: 'input (刘刚)', router: '/from/input'},
-                    {name: 'input-password (刘刚)', router: '/from/password'},
-                    {name: 'input-search (刘刚)', router: '/from/search'},
-                    {name: 'textarea (刘刚)', router: '/from/textarea'},
-                    {name: 'switch (刘刚)', router: '/from/switch'},
-                    {name: 'select (刘刚)', router: '/from/select'}
+                    {name: 'Checkbox ', router: '/from/checkbox'},
+                    {name: 'Radio ', router: '/from/radio'},
+                    {name: 'Input ', router: '/from/input'},
+                    {name: 'Input-password ', router: '/from/password'},
+                    {name: 'Input-search ', router: '/from/search'},
+                    {name: 'Textarea ', router: '/from/textarea'},
+                    {name: 'Switch ', router: '/from/switch'},
+                    {name: 'Select ', router: '/from/select'}
                 ]
             },
             funcCptData: {
                 name: '功能组件',
                 router: '/func',
                 children: [
-                    {name: 'talble', router: '/from/checkbox'},
+                    {name: 'Talble', router: '/from/checkbox'},
                     {name: 'Swipe', router: '/from/checkbox'},
                     {name: 'DatePicker', router: '/from/checkbox'},
-                    {name: 'toast', router: '/from/checkbox'},
-                    {name: 'modal', router: '/from/checkbox'},
+                    {name: 'Toast', router: '/from/checkbox'},
+                    {name: 'Modal', router: '/from/checkbox'},
                     {name: 'Progress', router: '/from/checkbox'},
                     {name: 'BackTop', router: '/from/checkbox'},
                     {name: 'Lazy load', router: '/from/checkbox'}
