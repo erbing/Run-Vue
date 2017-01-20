@@ -20,6 +20,8 @@
         <div class="banner-height"></div>
     </div>
 
+    <uiCanvas></uiCanvas>
+
     <div class="index-desc">
         <h3>新特性</h3>
         <div class="desc-items">
@@ -87,12 +89,16 @@
 </template>
 
 <script>
+    import uiCanvas from './canvas/banner'
     export default {
         name: 'index',
         methods: {
             start () {
                 this.$router.push('/use/start')
             }
+        },
+        components: {
+            uiCanvas
         }
     }
 </script>
