@@ -41,6 +41,8 @@ export default {
     methods: {
         hideSlider () {
             this.$store.state.showSlider = !this.$store.state.showSlider
+            this.$store.dispatch('changCanvas')
+            console.log(this.$store.state.canvasWidth)
         },
         goGithub () {
             window.location.href = '/'
