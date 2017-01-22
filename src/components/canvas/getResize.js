@@ -5,5 +5,6 @@ window.onresize = function () {
     return screenWidth
 }
 
-export default {window}
+const onresize = window.onresize()
 
+export default onresize
