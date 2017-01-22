@@ -10,12 +10,25 @@
     import Dot from '../../assets/dots/dot.js'
     // import resize from './getResize.js'
 
-    // console.log(resize.resizeFunc)
+    // var screenWidth = document.body.clientWidth - 256
+    // window.onresize = (function () {
+    //     screenWidth = document.body.clientWidth - 256
+    //     console.log(screenWidth)
+    //     // return screenWidth
+    // })()
+
+    // const timmer = null
+
+    // setTimeout(function () {
+    //     window.onresize()
+    // }, 500)
+
     export default {
         name: 'banner',
         data () {
             return {
-                screenWidth: document.body.clientWidth - 256
+                screenWidth: document.body.clientWidth - 256,
+                timer: false
             }
         },
         methods: {
@@ -31,26 +44,31 @@
                 })
             }
         },
-        updated () {
-            // const that = this
-            // screenWidth () {
-            //     window.onresize = (function () {
-            //         that.screenWidth = document.body.clientWidth - 256
-            //     })
-            // }
-            this.screenWidth = function (val) {
-                console.log(val)
-                window.onresize = (function () {
-                    this.screenWidth = document.body.clientWidth - 256
-                })()
+        watch: {
+            screenWidth (val) {
+                if (!this.timer) {
+                    this.screenWidth = val
+                    this.timer = true
+                    let that = this
+                    setTimeout(function () {
+                        that.init()
+                        that.timer = false
+                    }, 400)
+                }
             }
         },
         mounted () {
             const that = this
             that.init()
-            window.onresize = (function () {
-                that.screenWidth = document.body.clientWidth - 256
-            })()
+
+            this.screenWidth = document.body.clientWidth - 256
+            window.onresize = function () {
+                // let that = this
+                return (() => {
+                    window.screenWidth = document.body.clientWidth - 256
+                    that.screenWidth = window.screenWidth
+                })()
+            }
         }
     }
 </script>
