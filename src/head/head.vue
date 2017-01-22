@@ -19,7 +19,6 @@
 </template>
 
 <script>
-import { getShow } from '../vuex/actions'
 export default {
     name: 'mu-appbar',
     props: {
@@ -45,11 +44,6 @@ export default {
         },
         goGithub () {
             window.location.href = '/'
-        }
-    },
-    vuex: {
-        actions: {
-            getShows: getShow
         }
     }
 }

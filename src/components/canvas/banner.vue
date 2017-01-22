@@ -44,6 +44,17 @@
                 })
             }
         },
+        computed: {
+            // screenWidth () {
+            //     if (this.$store.state.showSlider) {
+            //         // window.alert(1)
+            //         return this.screenWidth - 256
+            //     } else {
+            //         // window.alert(2)
+            //         return this.screenWidth
+            //     }
+            // }
+        },
         watch: {
             screenWidth (val) {
                 if (!this.timer) {
@@ -63,10 +74,15 @@
 
             this.screenWidth = document.body.clientWidth - 256
             window.onresize = function () {
-                // let that = this
                 return (() => {
-                    window.screenWidth = document.body.clientWidth - 256
-                    that.screenWidth = window.screenWidth
+                    window.screenWidth = document.body.clientWidth
+                    // if (that.$store.state.showSlider) {
+                    //     window.screenWidth = document.body.clientWidth - 256
+                    // } else {
+                    //     window.screenWidth = document.body.clientWidth
+                    // }
+                    that.screenWidth = window.screenWidth - 256
+                    console.log(that.screenWidth)
                 })()
             }
         }
