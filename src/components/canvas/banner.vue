@@ -56,7 +56,8 @@
                     this.timer = true
                     let that = this
                     setTimeout(function () {
-                        // that.screenWidth = that.$store.state.canvasWidth
+                        // that.screenWidth = that.$store.state.
+                        
                         console.log(that.screenWidth)
                         that.init()
                         that.timer = false
@@ -69,7 +70,7 @@
             that.init()
 
             this.screenWidth = document.body.clientWidth - 256
-            window.onresize = function () {
+            window.onresize = () => {
                 return (() => {
                     window.screenWidth = document.body.clientWidth
                     // if (that.$store.state.showSlider) {
