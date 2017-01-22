@@ -20,7 +20,6 @@
         },
         methods: {
             init () {
-                this.show = false
                 Dot('dot', {
                     cW: this.screenWidth,
                     cH: 300,
@@ -61,7 +60,7 @@
                         console.log(that.screenWidth)
                         that.init()
                         that.timer = false
-                    }, 400)
+                    }, 100)
                 }
             }
         },
