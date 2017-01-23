@@ -57,7 +57,6 @@
                     let that = this
                     setTimeout(function () {
                         // that.screenWidth = that.$store.state.
-                        
                         console.log(that.screenWidth)
                         that.init()
                         that.timer = false
