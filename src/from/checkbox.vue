@@ -96,7 +96,7 @@
             return {
                 codeCheckbox,
                 checked: false,
-                checkValue: false
+                checkValue: '1'
             }
         }
     }

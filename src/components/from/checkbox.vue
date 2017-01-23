@@ -10,11 +10,20 @@
 <script>
 export default {
     props: {
-        model: {
-            default: Boolean
+        values: {
+            type: String
         },
-        value: {
-            default: String
+        value: {}
+    },
+    data () {
+        return {
+            model: this.value
+        }
+    },
+    watch: {
+        values (val) {
+            console.log(val)
+            this.values = val
         }
     },
     computed: {
