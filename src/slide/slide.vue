@@ -54,10 +54,22 @@
                 :model="funcCptData">
             </slide-tree>
         </ul>
-        
-        <cp-select :title=" '更多信息' " :plus="true"></cp-select>
-        <hr class="divider">
-        <cp-list :texts=" moreInfoText "></cp-list>
+
+        <!--关于我们-->
+        <ul class="useUl">
+            <slide-tree
+                class="item"
+                :model="abouUs">
+            </slide-tree>
+        </ul>
+
+        <!--更多信息-->
+        <ul class="useUl">
+            <slide-tree
+                class="item"
+                :model="moreInfo">
+            </slide-tree>
+        </ul>
 
         <cp-select :title=" '关于我们' " :to=" '/about' " :plus="true"></cp-select>
         <hr class="divider">
@@ -133,6 +145,20 @@ export default {
                     {name: 'Progress', router: '/from/checkbox'},
                     {name: 'BackTop', router: '/from/checkbox'},
                     {name: 'Lazy load', router: '/from/checkbox'}
+                ]
+            },
+            abouUs: {
+                name: '关于我们',
+                router: '/about',
+                children: [
+                    {name: '开发者', router: '/about/dev'}
+                ]
+            },
+            moreInfo: {
+                name: '项目进度以及版本',
+                router: '/pm',
+                children: [
+                    {name: '开发者', router: '/pm/version'}
                 ]
             }
         }
