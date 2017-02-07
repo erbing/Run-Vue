@@ -1,11 +1,11 @@
 <template>
     <div class="paper run-slider" :class="showSlider ? '' : 'hide-slider' ">
         <div class="mu-appbar leftbar">
-            <div class="left" @click="test">
+            <a class="left" href="/use/start">
               <img src="../assets/images/logo2.png" class="logo"/>
               <span class="logo-text">Run-Vue</span>
               <em class="beta">Beta</em>
-            </div>
+            </a>
             <div class="mu-appbar-title"></div>
             <div class="right"></div>
         </div>

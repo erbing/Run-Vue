@@ -11,9 +11,9 @@
       </slot>
     </div>
     <div class="title-right">
-      <button class="ui-btn btn" @click="goGithub">
+      <a class="ui-btn btn" target="_blank" href="https://github.com/erbing/Run-Vue">
        <i class="icon iconfont icon-github" style="color: #fff; font-size: 30px;"></i>
-       </button>
+       </a>
     </div>
 </div>
 </template>
@@ -45,7 +45,7 @@ export default {
             console.log(this.$store.state.canvasWidth)
         },
         goGithub () {
-            window.location.href = '/'
+            window.location.href = 'https://github.com/erbing/Run-Vue'
         }
     }
 }
