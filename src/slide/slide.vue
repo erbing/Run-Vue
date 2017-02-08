@@ -158,7 +158,8 @@ export default {
                 name: '关于我们',
                 router: '/about',
                 children: [
-                    {name: '开发者', router: '/about/dev'}
+                    {name: '开发者', router: '/about/dev'},
+                    {name: '意见反馈', router: '/about/feedback'}
                 ]
             },
             moreInfo: {
