@@ -39,7 +39,7 @@
 
 </script>
 <style lang="less">
-@import '../../assets/less/normalize.less';
+    @import '../../assets/less/normalize.less';
     @import '../../assets/less/base.less';
     .ui-radio {
         .px2rem(margin-right, 10);

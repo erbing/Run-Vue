@@ -59,7 +59,7 @@
 <style lang="less">
     @import '../../assets/less/normalize.less';
     @import '../../assets/less/base.less';
-    @import '../../assets/icons/icons.less';
+    // @import '../../assets/icons/icons.less';
     .btn {
         overflow: hidden;
         padding: 9px 15px;

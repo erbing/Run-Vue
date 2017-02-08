@@ -79,11 +79,12 @@
     </div>
 </template>
 
+
 <script>
     import uiButton from '../components/base/button'
-    import uiCheckbox from '../components/from/checkbox'
+    import uiCheckbox from '../components/form/checkbox'
     import codeBlock from '../components/codeBlock'
-    import codeCheckbox from '!raw!../components/from/checkbox'
+    import codeCheckbox from '!raw!../components/form/checkbox'
 
     export default {
         name: 'start',
