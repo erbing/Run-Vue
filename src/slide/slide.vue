@@ -17,6 +17,13 @@
           </div>
         </div>
 
+        <div class="version slider-content">
+          <span class="slider-title">Q Q 群 : </span>
+          <div class="select-down select-content">
+              <a class="text-color" href="https://jq.qq.com/?_wv=1027&k=44jw2MJ" target="_blank">  &nbsp;58365308 </a>
+          </div>
+        </div>
+
         <!--如何使用-->
         <ul class="useUl">
             <slide-tree
@@ -266,7 +273,7 @@ i{
     margin-right: 16px;
     line-height: 56px;
     font-size: 16px;
-    width: 100%;
+    // width: 100%;
     border-bottom: 1px solid rgba(0,0,0,.12);
     color: rgba(0,0,0,.87);
     padding-left: 8px;

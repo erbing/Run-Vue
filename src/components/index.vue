@@ -94,7 +94,7 @@
         name: 'index',
         methods: {
             start () {
-                this.$router.push('/use/start')
+                this.$router.push('/use/dev')
             }
         },
         components: {
