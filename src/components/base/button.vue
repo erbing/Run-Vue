@@ -1,5 +1,7 @@
 <template>
     <button class="btn" :class="className" :disabled="disabled">
+        <i v-if="icon" :class="iconName"></i>
+        <i v-if="loading"  class="icon-loading"></i>
         <slot></slot>
     </button>
 </template>
@@ -27,7 +29,9 @@
             native_type: {
                 type: String
             },
-            text: String
+            loading: {
+                type: Boolean
+            }
         },
         computed: {
             className: function () {
@@ -36,9 +40,14 @@
                 cn += this.type ? ' btn--' + this.type : ''
                 cn += this.hollow ? ' z-hollow' : ''
                 cn += this.disabled ? ' z-disabled' : ''
-                cn += this.icon ? ' icon-' + this.icon : ''
+                cn += this.loading ? ' z-loading' : ''
                 // cn += this.block ? ' btn--block' : '';
                 return cn
+            },
+            iconName: function () {
+                var icon = ''
+                icon = this.icon ? 'icon-' + this.icon : ''
+                return icon
             },
             style: function () {
                 // return this.width ? 'width:' + this.width : '';
@@ -50,10 +59,12 @@
 <style lang="less">
     @import '../../assets/less/normalize.less';
     @import '../../assets/less/base.less';
+    @import '../../assets/icons/icons.less';
     .btn {
         overflow: hidden;
         padding: 9px 15px;
         .px2px(font-size, @font-size-base);
+        line-height: 1;
         color: @color-black;
         text-align: center;
         text-decoration: none;
@@ -69,6 +80,21 @@
         transition: color .2s linear,background-color .2s linear,border .2s linear;
         &.z-disabled {
             cursor: not-allowed;
+        }
+        i[class^="icon-"] {
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+        i.icon-loading {
+            animation: circle 1.2s linear infinite;
+        }
+    }
+    @keyframes circle {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
         }
     }
     .btn--default {

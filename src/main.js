@@ -27,14 +27,14 @@ import BaseTypography from './base/typography'
 import BaseIcon from './base/icon'
 import BaseButton from './base/button'
 // 引入左边 表单组件
-import BaseCheckbox from './from/checkbox'
-import BaseRadio from './from/radio'
-import BaseInput from './from/input'
-import BasePassword from './from/password'
-import BaseSearch from './from/search'
-import BaseTextarea from './from/textarea'
-import BaseSwitch from './from/switch'
-import BaseSelect from './from/select'
+import BaseCheckbox from './form/checkbox'
+import BaseRadio from './form/radio'
+import BaseInput from './form/input'
+import BasePassword from './form/password'
+import BaseSearch from './form/search'
+import BaseTextarea from './form/textarea'
+import BaseSwitch from './form/switch'
+import BaseSelect from './form/select'
 
 Vue.use(VueRouter)
 

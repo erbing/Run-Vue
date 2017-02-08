@@ -50,6 +50,32 @@
                     <uiButton type="success" :hollow="true">成功按钮</uiButton>
                     <uiButton type="warning" :hollow="true">警告按钮</uiButton>
                     <uiButton type="danger" :hollow="true">危险按钮</uiButton>
+                    <uiButton type="info" :hollow="true" :disabled="true">不可用按钮</uiButton>
+                </div>
+            </div>
+        </div>
+        
+        <div class="codebox">
+            <div class="codetitle">
+                <span>图标按钮</span>
+            </div>
+            <div class="codecontent">
+                <div class="codeabout">
+                    <p class="spa">带图标的按钮可增强辨识度(有文字)或节省空间(无文字)。</p>
+                    <uiButton type="info" icon="search"></uiButton>
+                    <uiButton type="info" icon="wrong">关闭</uiButton>
+                    <uiButton type="primary" icon="wrong">关闭 <i class="icon-wrong"></i></uiButton>
+                </div>
+            </div>
+        </div>
+        <div class="codebox">
+            <div class="codetitle">
+                <span>加载中</span>
+            </div>
+            <div class="codecontent">
+                <div class="codeabout">
+                    <p class="spa">点击按钮后进行数据加载操作，在按钮上显示加载状态。</p>
+                    <uiButton type="info" :loading="true">加载中</uiButton>
                 </div>
             </div>
         </div>
