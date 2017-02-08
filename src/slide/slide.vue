@@ -1,7 +1,7 @@
 <template>
     <div class="paper run-slider" :class="showSlider ? '' : 'hide-slider' ">
         <div class="mu-appbar leftbar">
-            <a class="left" href="/use/start">
+            <a class="left" href="/">
               <img src="../assets/images/logo2.png" class="logo"/>
               <span class="logo-text">Run-Vue</span>
               <em class="beta">Beta</em>

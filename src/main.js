@@ -132,8 +132,8 @@ const routes = [{
 }]
 
 const router = new VueRouter({
-    mode: 'history',
-    base: __dirname,
+    // mode: 'history',
+    // base: __dirname,
     routes
 })
 
