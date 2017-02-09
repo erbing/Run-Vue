@@ -28,10 +28,8 @@
      *         this.$refs.ticker.調用stop()
      *
      * **/
-
     export default{
         name: 'ticker',
-        template: '<span>{{labelText}}</span>',
         props: {
             label: { //計時標簽
                 type: String,
