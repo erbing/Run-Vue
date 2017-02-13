@@ -84,8 +84,7 @@
 
 <script>
 import SlideTree from '../slide-tree/slide-tree'
-import cpSelect from '../cp-select/cp-select'
-import cpList from '../cp-list/cp-list'
+
 export default {
     name: 'slide',
     data: function () {
@@ -140,14 +139,14 @@ export default {
                 name: '功能组件',
                 router: '/func',
                 children: [
-                    {name: 'Talble', router: '/from/checkbox'},
-                    {name: 'Swipe', router: '/from/checkbox'},
-                    {name: 'DatePicker', router: '/from/checkbox'},
-                    {name: 'Toast', router: '/from/checkbox'},
-                    {name: 'Modal', router: '/from/checkbox'},
-                    {name: 'Progress', router: '/from/checkbox'},
-                    {name: 'BackTop', router: '/from/checkbox'},
-                    {name: 'Lazy load', router: '/from/checkbox'}
+                    {name: 'Table', router: '/func/table'},
+                    {name: 'Swipe', router: '/func/swipe'},
+                    {name: 'DatePicker', router: '/func/datePicker'},
+                    {name: 'Toast', router: '/func/toast'},
+                    {name: 'Modal', router: '/func/modal'},
+                    {name: 'Progress', router: '/func/progress'},
+                    {name: 'BackTop', router: '/func/backTop'},
+                    {name: 'Lazy load', router: '/func/lazyLoad'}
                 ]
             },
             abouUs: {
@@ -168,8 +167,6 @@ export default {
         }
     },
     components: {
-        'cp-select': cpSelect,
-        'cp-list': cpList,
         'slide-tree': SlideTree
     },
     computed: {

@@ -60,6 +60,11 @@
 
 <style lang="less">
     @import '../assets/fonts/iconfont.css';
+    .useUl {
+        list-style: none;
+        padding: 0px;
+        margin: 0;
+    }
     .bounce-enter-active {
     animation: bounce-in .35s;
     }

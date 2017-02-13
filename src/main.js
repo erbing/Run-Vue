@@ -6,11 +6,10 @@ import './assets/less/base.less'
 import store from './vuex/store'
 import VueRouter from 'vue-router'
 import Mains from './mains/mains'
-import Start from './components/start'
-import Tree from './tree/tree'
+
 import Index from './components/index'
 import About from './components/about'
-import ShowSlide from './showSlide/showSlide'
+
 // 引入左边 如何使用 相关组件
 import Use from './use/use'
 import UseStart from './use/start'
@@ -35,6 +34,10 @@ import BaseSearch from './form/search'
 import BaseTextarea from './form/textarea'
 import BaseSwitch from './form/switch'
 import BaseSelect from './form/select'
+// 引入左边 功能组件
+import FuncModal from './func/modal'
+import FuncToast from './func/toast'
+import FuncSwipe from './func/swipe'
 
 Vue.use(VueRouter)
 
@@ -115,17 +118,43 @@ const routes = [{
         component: BaseSelect
     }]
 }, {
-    path: '/tree',
-    component: Tree
-}, {
-    path: '/showSlide',
-    component: ShowSlide
-}, {
-    path: '/start',
-    component: Start
+    path: '/func',
+    component: Use,
+    children: [{
+        path: 'table',
+        component: BaseCheckbox
+    }, {
+        path: 'swipe',
+        component: FuncSwipe
+    }, {
+        path: 'datePicker',
+        component: BaseInput
+    }, {
+        path: 'toast',
+        component: FuncToast
+    }, {
+        path: 'modal',
+        component: FuncModal
+    }, {
+        path: 'progress',
+        component: BaseTextarea
+    }, {
+        path: 'backTop',
+        component: BaseSwitch
+    }, {
+        path: 'lazyLoad',
+        component: BaseSelect
+    }]
 }, {
     path: '/about',
-    component: About
+    component: Use,
+    children: [{
+        path: 'dev',
+        component: About
+    }, {
+        path: 'feedback',
+        component: About
+    }]
 }, {
     path: '/useStart',
     component: UseStart
