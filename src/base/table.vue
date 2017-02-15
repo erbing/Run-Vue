@@ -1,0 +1,151 @@
+<template>
+    <div class="main-info" id="start">
+
+        
+
+        <h2>table 表格</h2>
+        <p class="mark-p">功能组件，固定宽高，显示多张图片时使用。</p>
+        
+        <div class="codebox">
+            <div class="codetitle">
+                <span>基础用法</span>
+            </div>
+            <div class="codecontent">
+                <div class="codeabout">
+                    <span class="spa">基础的 Swipe 用法。</span>
+                    <swipe :items="items" :content="content" @hideToast="hide"></swipe>
+                    <p></p>
+                    <uiButton >点我触发</uiButton>
+                    <uiButton type="primary" :hollow="false">主要按钮</uiButton>
+                    <uiButton type="primary" :hollow="true">主要按钮镂空</uiButton>
+                    <uiButton type="text">文字按钮</uiButton>
+                </div>
+            </div>
+        </div>
+
+        <h2>Code</h2>
+        <p class="mark-p">组件实现的代码 （ 其中包括了 html、less、js ） </p>
+        <div class="codebox">
+            <div class="codetitle">
+                <span>Code</span>
+            </div>
+            <div class="codecontent">
+                <div class="codeabout">
+                    <codeBlock :code="codeButton"></codeBlock>
+                </div>
+            </div>
+        </div>
+
+        <h2>API</h2>
+        <p class="mark-p">我们提供了基本的API ( 里面主要包括了 props、 slot、 event ) </p>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <td>属性</td>
+                    <td>说明</td>
+                    <td>类型</td>
+                    <td>可选值</td>
+                    <td>默认值</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>size</td>
+                    <td>按钮尺寸：大、正常、小</td>
+                    <td>String</td>
+                    <td>large、small</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>按钮类型</td>
+                    <td>String</td>
+                    <td>default、primary、info、success、warning、danger、text</td>
+                    <td>default</td>
+                </tr>
+                <tr>
+                    <td>hollow</td>
+                    <td>是否为镂空样式</td>
+                    <td>Boolean</td>
+                    <td>——</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>loading</td>
+                    <td>是否加载中</td>
+                    <td>Boolean</td>
+                    <td>——</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>disabled</td>
+                    <td>是否禁用</td>
+                    <td>Boolean</td>
+                    <td>——</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>icon</td>
+                    <td>图标，请查看icon组件里面已有图标名，图标默认在文字左边</td>
+                    <td>String</td>
+                    <td>......</td>
+                    <td>——</td>
+                </tr>
+                <tr>
+                    <td>nativeType</td>
+                    <td>原生 type 属性</td>
+                    <td>String</td>
+                    <td>button,submit,reset</td>
+                    <td>button</td>
+                </tr>
+            </tbody>
+        </table> 
+    </div>
+</template>
+
+<script>
+    import uiButton from '../components/base/button'
+    import codeBlock from '../components/codeBlock'
+    import codeButton from '!raw!../components/func/swipe'
+
+    import swipe from '../components/func/swipe'
+    export default {
+        name: 'start',
+        components: {
+            uiButton,
+            codeBlock,
+            swipe
+        },
+        data () {
+            return {
+                codeButton,
+                items: [
+                    {
+                        imgUrl: 'http://odqp9ta7o.qnssl.com/5468624585869742080',
+                        title: '专题跳转至机构列表'
+                    }, {
+                        imgUrl: 'http://odqp9ta7o.qnssl.com/5461587262921244672',
+                        title: 'zzzzzzz'
+                    }, {
+                        imgUrl: 'http://odqp9ta7o.qnssl.com/5468624585869742080',
+                        title: '专题跳转至机构列表'
+                    }
+                ],
+                content: '正在加载中...'
+            }
+        },
+        methods: {
+            showToast () {
+                console.log(12)
+                this.visible = true
+            },
+            hide () {
+                this.visible = !this.visible
+            }
+        }
+    }
+</script>
+
+<style lang="less">
+    // @import 'style.less';
+</style>

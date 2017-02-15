@@ -1,11 +1,10 @@
 <template>
-    <button class="btn" :class="className" :disabled="disabled">
+    <button class="btn" :class="className" :disabled="disabled" :type="nativeType">
         <i v-if="icon" :class="iconName"></i>
         <i v-if="loading"  class="icon-loading"></i>
         <slot></slot>
     </button>
 </template>
-
 <script>
     export default {
         name: 'button',
@@ -26,8 +25,9 @@
             icon: {
                 type: String
             },
-            native_type: {
-                type: String
+            nativeType: {
+                type: String,
+                default: 'button'
             },
             loading: {
                 type: Boolean
@@ -41,43 +41,38 @@
                 cn += this.hollow ? ' z-hollow' : ''
                 cn += this.disabled ? ' z-disabled' : ''
                 cn += this.loading ? ' z-loading' : ''
-                // cn += this.block ? ' btn--block' : '';
+                    // cn += this.block ? ' btn--block' : '';
                 return cn
             },
             iconName: function () {
                 var icon = ''
                 icon = this.icon ? 'icon-' + this.icon : ''
                 return icon
-            },
-            style: function () {
-                // return this.width ? 'width:' + this.width : '';
             }
         }
     }
-</script>
 
+</script>
 <style lang="less">
     @import '../../assets/less/normalize.less';
     @import '../../assets/less/base.less';
-    // @import '../../assets/icons/icons.less';
+    @import '../../assets/icons/icons.less';
     .btn {
-        overflow: hidden;
         padding: 9px 15px;
         .px2px(font-size, @font-size-base);
         line-height: 1;
         color: @color-black;
         text-align: center;
         text-decoration: none;
-        text-overflow: ellipsis;
-        word-wrap: normal;
-        white-space: nowrap;        
+        white-space: nowrap;
         border: 1px solid @color-gray;
         border-radius: 5px;
         outline: none;
         background-color: @color-white;
         cursor: pointer;
+        touch-action: manipulation;
         .usn();
-        transition: color .2s linear,background-color .2s linear,border .2s linear;
+        transition: color .2s linear, background-color .2s linear, border .2s linear;
         &.z-disabled {
             cursor: not-allowed;
         }
@@ -85,18 +80,24 @@
             margin-left: 3px;
             margin-right: 3px;
         }
-        i.icon-loading {
-            animation: circle 1.2s linear infinite;
+        &.z-loading {
+            position: relative;
+            pointer-events: none;
+            cursor: default;
+            &:before {
+                position: absolute;
+                top: -1px;
+                bottom: -1px;
+                left: -1px;
+                right: -1px;
+                content: '';
+                border-radius: inherit;
+                pointer-events: none;
+                background-color: rgba(255, 255, 255, 0.35);
+            }
         }
     }
-    @keyframes circle {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    }
+    
     .btn--default {
         &:hover {
             color: @color-primary;
@@ -108,6 +109,7 @@
             background-color: @color-white;
         }
     }
+    
     // 文字按钮
     .btn--text {
         padding-left: 0;
@@ -120,13 +122,13 @@
         &:hover {
             color: lighten(@color-info, 10%);
         }
-
         &.z-disabled {
             color: @color-gray;
             border-color: transparent;
             background-color: transparent;
         }
     }
+    
     // 主要按钮
     .btn--primary {
         color: @color-white;
@@ -146,12 +148,13 @@
             &:active,
             &:focus,
             &:hover {
-                border-color: lighten(@color-primary, 10%);
+                order-color: lighten(@color-primary, 10%);
                 color: lighten(@color-primary, 10%);
             }
         }
     }
     /*各种颜色*/
+    
     .btn--info {
         color: @color-white;
         border-color: @color-info;
@@ -175,6 +178,7 @@
             }
         }
     }
+    
     .btn--success {
         color: @color-white;
         border-color: @color-success;
@@ -198,6 +202,7 @@
             }
         }
     }
+    
     .btn--warning {
         color: @color-white;
         border-color: @color-warning;
@@ -221,6 +226,7 @@
             }
         }
     }
+    
     .btn--danger {
         color: @color-white;
         border-color: @color-danger;
@@ -244,7 +250,7 @@
             }
         }
     }
-     
+    
     .btn--primary,
     .btn--info,
     .btn--success,
@@ -258,11 +264,54 @@
         }
         // 镂空状态不可用
         &.z-hollow {
-             &.z-disabled {
+            &.z-disabled {
                 color: @color-gray;
                 border-color: lighten(@color-gray, 10%);
                 background-color: @color-white;
-             }
+            }
         }
     }
+    /*不同大小*/
+    
+    .btn--large {
+        padding: 12px 15px;
+        .px2px(font-size, @font-size-large);
+    }
+    
+    .btn--small {
+        padding: 7px 10px;
+        .px2px(font-size, @font-size-smaller);
+    }
+    /*不同大小*/
+    
+    .btn-group {
+        &:before,
+        &:after {
+            content: " ";
+            display: table;
+        }
+        &:after {
+            clear: both;
+        }
+        
+        .btn + .btn {
+            border-left-color: rgba(255, 255, 255, 0.5);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .btn {
+            float: left;
+            &:first-child {
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+            &:last-child {
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        }
+    }
+
 </style>

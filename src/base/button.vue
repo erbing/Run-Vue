@@ -75,7 +75,35 @@
             <div class="codecontent">
                 <div class="codeabout">
                     <p class="spa">点击按钮后进行数据加载操作，在按钮上显示加载状态。</p>
-                    <uiButton type="info" :loading="true">加载中</uiButton>
+                    <uiButton type="info" :loading="true" icon="search">加载中</uiButton>
+                </div>
+            </div>
+        </div>
+        <div class="codebox">
+            <div class="codetitle">
+                <span>不同尺寸</span>
+            </div>
+            <div class="codecontent">
+                <div class="codeabout">
+                    <p class="spa">Button 组件提供除了三种尺寸的按钮，可以在不同场景下选择合适的按钮尺寸。</p>
+                    <uiButton type="info" size="large">大按钮</uiButton>
+                    <uiButton type="info">正常按钮</uiButton>
+                    <uiButton type="info" size="small">小按钮</uiButton>
+                </div>
+            </div>
+        </div>
+        <div class="codebox">
+            <div class="codetitle">
+                <span>按钮组</span>
+            </div>
+            <div class="codecontent">
+                <div class="codeabout">
+                    <p class="spa">以按钮组的方式出现，常用于多项类似操作。</p>
+                    <div class="btn-group">
+                        <uiButton type="info" native-type="submit">正常按钮</uiButton>
+                        <uiButton type="info">正常按钮</uiButton>
+                        <uiButton type="info">正常按钮</uiButton>
+                    </div>                        
                 </div>
             </div>
         </div>
@@ -95,16 +123,68 @@
 
         <h2>API</h2>
         <p class="mark-p">我们提供了基本的API ( 里面主要包括了 props、 slot、 event ) </p>
-        <div class="codebox">
-            <div class="codetitle">
-                <span>API</span>
-            </div>
-            <div class="codecontent">
-                <div class="codeabout">
-                    默认、主色、强调色, 不可用、全宽五种不同状态的按钮示例
-                </div>
-            </div>
-        </div>        
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <td>属性</td>
+                    <td>说明</td>
+                    <td>类型</td>
+                    <td>可选值</td>
+                    <td>默认值</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>size</td>
+                    <td>按钮尺寸：大、正常、小</td>
+                    <td>String</td>
+                    <td>large、small</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>按钮类型</td>
+                    <td>String</td>
+                    <td>default、primary、info、success、warning、danger、text</td>
+                    <td>default</td>
+                </tr>
+                <tr>
+                    <td>hollow</td>
+                    <td>是否为镂空样式</td>
+                    <td>Boolean</td>
+                    <td>——</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>loading</td>
+                    <td>是否加载中</td>
+                    <td>Boolean</td>
+                    <td>——</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>disabled</td>
+                    <td>是否禁用</td>
+                    <td>Boolean</td>
+                    <td>——</td>
+                    <td>false</td>
+                </tr>
+                <tr>
+                    <td>icon</td>
+                    <td>图标，请查看icon组件里面已有图标名，图标默认在文字左边</td>
+                    <td>String</td>
+                    <td>......</td>
+                    <td>——</td>
+                </tr>
+                <tr>
+                    <td>native-type</td>
+                    <td>原生 type 属性</td>
+                    <td>String</td>
+                    <td>button,submit,reset</td>
+                    <td>button</td>
+                </tr>
+            </tbody>
+        </table> 
     </div>
 </template>
 
@@ -128,58 +208,5 @@
 </script>
 
 <style lang="less">
-    h2{
-        margin: 0;
-        padding-bottom: .3em;
-        font-size: 1.7em;
-        line-height: 1.334;
-        border-bottom: 1px solid #eee;
-    }
-    .mark-p{
-        font-size: 1.2em;
-        border-left: 6px solid #eee;
-        padding-left: 10px;
-        margin: 30px auto;
-    }
-    .codebox{
-        margin-top: 12px;
-        margin-bottom: 40px;
-        box-shadow: 0 1px 6px rgba(0,0,0,.117647),0 1px 4px rgba(0,0,0,.117647);
-        .codetitle{
-            display: flex;
-            -webkit-box-pack: justify;
-            -ms-flex-pack: justify;
-            justify-content: space-between;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            height: 56px;
-            padding: 0 24px;
-            background-color: #e8e8e8;
-            cursor: pointer;
-            span{
-                padding-right: 16px;
-                line-height: 56px;
-                font-size: 20px;
-                position: relative;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-                color: rgba(0,0,0,.54);
-            }
-        }
-        .codecontent {
-            font-size: 1.2em;
-        }
-        .codeabout {
-            overflow: auto;
-            padding: 10px 20px 0;
-            margin: 0;
-            padding-bottom: 20px;
-            .spa{
-                display: block;
-                margin-bottom: 20px;
-            }
-        }
-    }
+    @import 'style.less';
 </style>
