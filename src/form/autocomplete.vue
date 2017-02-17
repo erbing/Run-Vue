@@ -1,31 +1,23 @@
 <template>
     <div class="main-info" id="start">
-        <h2>search 搜索</h2>
-        <p class="mark-p">基本组件-搜索，一般用于表单搜索。</p>
+        <h2>autocomplete 自动补全</h2>
+        <p class="mark-p">基本组件-自动补全，一般用于表单自动搜索。</p>
         <div class="codebox">
             <div class="codetitle">
                 <span>基础用法</span>
             </div>
             <div class="codecontent">
                 <div class="codeabout">
-                    <span class="spa">基本使用, 搜索按钮为图标，颜色，大小可自定义</span>
-                    <ui-search v-model="value1" placeholder="请输入您要搜索的内容" @search="search1" icon="search">
-                    </ui-search>
+                    <span class="spa">默认如果输入间隔超过300ms，则会请求一次 （这里模拟搜索的值为1和2）</span>
+                    <ui-autocomplete v-model="value1" placeholder="请输入您要搜索的内容" :fetch-push="push" >
+                    </ui-autocomplete>
                     <p>您输入了：{{value1}}</p>
-                    <p v-show="searchStatus1">您点击了搜索1</p>
-                </div>
-                <div class="codeabout">
-                    <span class="spa">基本使用，搜索按钮为文字，默认2个字，如果超过2个字，需自定义样式</span>
-                    <ui-search v-model="value2" placeholder="请输入您要搜索的内容" @search="search2" searchText="搜索">
-                    </ui-search>
-                    <p>您输入了：{{value2}}</p>
-                    <p v-show="searchStatus2">您点击了搜索2</p>
                 </div>
                 <div class="codeabout">
                     <span class="spa">自定义样式，可以用style或者class定义</span>
-                    <ui-search v-model="value3" placeholder="请输入您要搜索的内容" searchText="搜索" style="width:300px;">
-                    </ui-search>
-                    <p>您输入了：{{value3}}</p>
+                    <ui-autocomplete v-model="value2" placeholder="请输入您要搜索的内容" :fetch-push="push" style="width:300px;">
+                    </ui-autocomplete>
+                    <p>您输入了：{{value2}}</p>
                 </div>
             </div>
         </div>
@@ -35,11 +27,18 @@
             </div>
             <div class="codecontent">
                 <div class="codeabout">
-                    <span class="spa">获取焦点时，按下键盘enter键触发事件</span>
-                    <ui-search v-model="value4" placeholder="请输入您要搜索的内容" @on-enter="inputEnter" icon="search">
-                    </ui-search>
+                    <span class="spa">当下拉框有值时，选中某个后触发事件</span>
+                    <ui-autocomplete v-model="value3" placeholder="请输入您要搜索的内容" :fetch-push="push" @select="select" style="width:300px;">
+                    </ui-autocomplete>
+                    <p>您输入了：{{value3}}</p>
+                    <p v-show="selectStatus" style="color:red">您已经选择啦！选择的值为“ {{selectStatus}} ”</p>
+                </div>
+                <div class="codeabout">
+                    <span class="spa">点击输入框内的删除图标是触发事件</span>
+                    <ui-autocomplete v-model="value4" placeholder="请输入您要搜索的内容" :fetch-push="push" @clear="clear" style="width:300px;">
+                    </ui-autocomplete>
                     <p>您输入了：{{value4}}</p>
-                    <p v-show="enterStatus">您搜索时按下了enter键，返回值为“ {{enterStatus}} ”</p>
+                    <p v-show="clearStatus" style="color:red">您点击了删除图标~~~</p>
                 </div>
             </div>
         </div>
@@ -53,7 +52,7 @@
             </div>
             <div class="codecontent">
                 <div class="codeabout">
-                    <codeBlock :code="codeSearch"></codeBlock>
+                    <codeBlock :code="codeAutocomplete"></codeBlock>
                 </div>
             </div>
         </div>
@@ -72,24 +71,31 @@
             <tbody>
                 <tr>
                     <td>value</td>
-                    <td>搜索框的值</td>
+                    <td>选择框的值</td>
                     <td>String || Number</td>
                     <td>——</td>
-                    <td>none</td>
+                    <td>null</td>
                 </tr>
                 <tr>
                     <td>placeholder</td>
-                    <td>搜索框占位文字</td>
+                    <td>选择框占位文字</td>
                     <td>String</td>
                     <td>——</td>
                     <td>String</td>
                 </tr>
                 <tr>
                     <td>icon</td>
-                    <td>输入框搜索按钮图标</td>
+                    <td>选择框中的删除按钮图标</td>
                     <td>String</td>
                     <td>none</td>
                     <td>search</td>
+                </tr>
+                <tr>
+                    <td>fetchPush</td>
+                    <td>外部提供下拉数据的函数</td>
+                    <td>Function</td>
+                    <td>none</td>
+                    <td>null</td>
                 </tr>
             </tbody>
         </table> 
@@ -103,52 +109,74 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>search</td>
-                    <td>搜索按钮点击时触发事件</td>
+                    <td>select</td>
+                    <td>选择框的下拉列表被选中后触发</td>
                     <td>value</td>
                 </tr>
                 <tr>
-                    <td>on-enter</td>
-                    <td>搜索框获得焦点，键盘按下enter键时触发</td>
-                    <td>value</td>
+                    <td>clear</td>
+                    <td>选择框中的删除图标点击后触发</td>
+                    <td>null</td>
                 </tr>
             </tbody>
         </table> 
     </div>
 </template>
 <script>
-    import uiSearch from '../components/form/search'
+    import uiAutocomplete from '../components/form/autocomplete'
     import codeBlock from '../components/codeBlock'
-    import codeSearch from '!raw!../components/form/search'
+    import codeAutocomplete from '!raw!../components/form/autocomplete'
 
     export default {
         name: 'start',
         components: {
-            uiSearch,
+            uiAutocomplete,
             codeBlock
         },
         data () {
             return {
-                codeSearch,
+                codeAutocomplete,
                 value1: '',
                 value2: '',
                 value3: '',
                 value4: '',
 
-                searchStatus1: false,
-                searchStatus2: false,
-                enterStatus: ''
+                list1: [
+                    {value: '111111111111'},
+                    {value: '111111111'},
+                    {value: '1111111111'},
+                    {value: '1111'},
+                    {value: '111111'}
+                ],
+                list2: [
+                    {value: '222222'},
+                    {value: '222'},
+                    {value: '2222222'},
+                    {value: '222222'},
+                    {value: '2222222'}
+                ],
+
+                selectStatus: '',
+                clearStatus: false
             }
         },
         methods: {
-            search1 () {
-                this.searchStatus1 = true
+            push (value) {
+                // 模拟搜索
+                if (value === '1') {
+                    return this.list1
+                } else if (value === '2') {
+                    return this.list2
+                } else {
+                    return []
+                }
             },
-            search2 () {
-                this.searchStatus2 = true
+            select (value) {
+                this.selectStatus = value
+                console.log(value)
             },
-            inputEnter (value) {
-                this.enterStatus = value
+            clear () {
+                this.clearStatus = true
             }
         }
     }

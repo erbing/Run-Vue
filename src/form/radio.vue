@@ -1,7 +1,7 @@
 <template>
     <div class="main-info" id="start">
         <h2>Radio 单选框</h2>
-        <p class="mark-p">基础组件，触发业务逻辑时使用。</p>
+        <p class="mark-p">基本组件-单选框。主要用于一组可选项单项选择，或者单独用于切换到选中状态。</p>
         <div class="codebox">
             <div class="codetitle">
                 <span>基础用法</span>
@@ -9,7 +9,7 @@
             <div class="codecontent">
                 <div class="codeabout">
                     <span class="spa">单独使用</span>
-                    <uiRadio v-model="radio" :label="0">单独使用</uiRadio>
+                    <ui-radio v-model="radio" :label="0">单独使用</ui-radio>
                     <p>已选择：{{radio}}</p>
                 </div>
             </div>
@@ -21,10 +21,10 @@
             <div class="codecontent">
                 <div class="codeabout">
                     <span class="spa">单选按钮组合使用。</span>
-                    <uiRadio v-model="radio1" :label="0">北京</uiRadio>
-                    <uiRadio v-model="radio1" :label="1">上海</uiRadio>
-                    <uiRadio v-model="radio1" :label="2">广州</uiRadio>
-                    <uiRadio v-model="radio1" :label="3">深圳</uiRadio>
+                    <ui-radio v-model="radio1" :label="'北京'">北京</ui-radio>
+                    <ui-radio v-model="radio1" :label="'上海'">上海</ui-radio>
+                    <ui-radio v-model="radio1" :label="'广州'">广州</ui-radio>
+                    <ui-radio v-model="radio1" :label="'深圳'">深圳</ui-radio>
                     <p>已选择：{{radio1}}</p>
                 </div>
             </div>
@@ -36,8 +36,8 @@
             <div class="codecontent">
                 <div class="codeabout">
                     <span class="spa">单选按钮不可用状态。</span>
-                    <uiRadio v-model="radio2" :label="0" :disabled="true">未选择禁用</uiRadio>
-                    <uiRadio v-model="radio3" :label="0" :disabled="true">已选择禁用</uiRadio>
+                    <ui-radio v-model="radio2" :label="0" :disabled="true">未选择禁用</ui-radio>
+                    <ui-radio v-model="radio3" :label="0" :disabled="true">已选择禁用</ui-radio>
                 </div>
             </div>
         </div>
@@ -55,45 +55,40 @@
         </div>
         <h2>API</h2>
         <p class="mark-p">我们提供了基本的API ( 里面主要包括了 props、 slot、 event ) </p>
-        <div class="codebox">
-            <div class="codetitle">
-                <span>API</span>
-            </div>
-            <div class="codecontent">
-                <div class="codetable">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th width="20%">Property</th>
-                                <th width="10%">Type</th>
-                                <th width="10%">Default</th>
-                                <th width="60%">Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>value</td>
-                                <td>String || Number</td>
-                                <td>none</td>
-                                <td>被选中的值</td>
-                            </tr>
-                            <tr>
-                                <td>label</td>
-                                <td>String || Number</td>
-                                <td>String || Number</td>
-                                <td>当前单选的值，必填</td>
-                            </tr>
-                            <tr>
-                                <td>disabled</td>
-                                <td>Boolean</td>
-                                <td>false</td>
-                                <td>禁用单选状态，true表示禁用，false表示可用</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+        <table class="api-table">
+            <thead>
+                <tr>
+                    <td>属性</td>
+                    <td>说明</td>
+                    <td>类型</td>
+                    <td>可选值</td>
+                    <td>默认值</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>value</td>
+                    <td>被选中的值</td>
+                    <td>String || Number</td>
+                    <td>——</td>
+                    <td>none</td>
+                </tr>
+                <tr>
+                    <td>label</td>
+                    <td>当前单选的值，必填</td>
+                    <td>String || Number</td>
+                    <td>none</td>
+                    <td>String || Number</td>
+                </tr>
+                <tr>
+                    <td>disabled</td>
+                    <td>禁用单选状态，true表示禁用，false表示可用</td>
+                    <td>Boolean</td>
+                    <td>——</td>
+                    <td>false</td>
+                </tr>
+            </tbody>
+        </table> 
     </div>
 </template>
 <script>
