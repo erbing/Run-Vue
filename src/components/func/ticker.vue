@@ -1,80 +1,110 @@
-<template>
-    <span>{{labelText}}</span>
-</template>
 <script>
     /**
      *  author : fitz/秋水
      *  email  : wenjingbiao@outlook.com
-     *
-     * @props l   abel              初始化計時標簽，如：發送驗證碼
-     * @props     'ticking-label'   倒計時標簽，    如：重新發送驗證碼(2)
-     * @props     ticks             倒計時秒數      如：60
-     * @methods   ticking()         啓動倒計時
-     * @methods   stop()            清除倒計時
-     * @v-model                     在組件使用時綁定一個v-model 可以獲取倒計時的秒數，觀察這個v-model 可以做其他事情
+     * @props     label               String            初始化計時標簽，如：發送驗證碼
+     * @props     ticks               Number            倒計時秒數      如：60
+     * @props     auto                Boolean            自动倒计时，    默认为true,
+     * @methods   tick()                                啓動倒計時
+     * @methods   stop()                                清除倒計時
+     * @v-model                                         在組件使用時綁定一個v-model 可以獲取倒計時的秒數，觀察這個v-model 可以做其他事情
      *
      * 例子
      *     1、注冊 ticker 組件
      *     2、輸出標簽
-     *          <ticker ref='ticker' label="發送驗證碼" ticking-label="重新發送驗證碼' :ticks="60" v-model="ticker'>
-     *     3、調用 ticking()
-     *         this.$refs.ticker.ticking()
+     *          <ticker ref='ticker' :label="tickLabel" :ticks="60" v-model="ticker'/>
+     *
+     *          data(){
+     *              return {
+     *              tickLabel:'倒计时',
+     *              ticker:0
+     *              }
+     *          },
+     *          watch:{
+     *
+     *                  ticker(value){
+     *                           if (value < this.ticks && value > 1) {
+     *                              this.tickerLabel = '剩余'
+     *                             }
+     *                            if (value <= 1) {
+     *                                  this.tickerLabel = '倒计时'
+     *                              }
+     *                  }
+     *
+     *
+     *          }
+     *
+     *
+     *
+     *     3、調用 tick()
+     *         this.$refs.ticker.tick()
      *     4、調用stop()
-     *         this.$refs.ticker.調用stop()
+     *         this.$refs.ticker.stop()
+
      * **/
     export default{
-        name: 'ticker',
+        name: 'tick',
+        render(createElement) {
+            return createElement('span', {
+                domProps: {
+                    innerHTML: this.text
+                }
+            })
+        },
         props: {
-            label: { //計時標簽
+            label: {
                 type: String,
                 default: '開始計時'
             },
-            'ticking-label': {
-                //倒計時標簽
-                type: String,
-                default: '剩餘'
-            },
-            //倒計時事件
             ticks: {
-
                 type: Number,
                 default: 10
+            },
+            auto: {
+                type: Boolean,
+                default: true
             }
         },
         data(){
             return {
-                value: 0,
-                labelText: this.label,
+                currentValue: 0,
+                text: this.label
             }
         },
         watch: {
-            value(val){
+            currentValue(val){
                 if (val > 0) {
-                    this.labelText = this.tickingLabel + '(' + val + ')'
+                    this.text = this.label + '(' + val + ')'
                 } else {
-                    this.labelText = this.label
+                    this.text = this.label
                 }
-                this.$emit('input', val);
             },
+        },
+        mounted(){
+            this.$nextTick(()=> {
+                if (this.auto === true) {
+                    this.tick()
+                }
+            })
         },
         methods: {
             stop(){
                 clearInterval(this.ticker);
-                this.$emit('input', this.value = 0)
+                this.$emit('input', this.currentValue = 0)
             },
-            ticking(){
-                let val = this.ticks
+            tick(){
+                let val = this.ticks;
                 this.ticker = setInterval(()=> {
                     if (val <= 0) {
                         clearInterval(this.ticker);
                         val = 0
                     } else {
-                        --val;
+                        val--;
                     }
-                    this.value = val
+                    this.currentValue = val;
+                    this.$emit('input', val);
                 }, 1000);
             }
-        }``
+        }
     }
-</script>
-
+    </script>
