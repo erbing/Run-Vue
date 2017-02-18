@@ -106,8 +106,10 @@ export default {
                 name: '个性定制',
                 router: '/customize',
                 children: [
-                    {name: '一键换肤', router: '/customize/skin'},
-                    {name: '选择主题', router: '/customize/theme'}
+                    // {name: '一键换肤', router: '/customize/skin'},
+                    // {name: '选择主题', router: '/customize/theme'}
+                    {name: '一键换肤', router: '/base/color'},
+                    {name: '选择主题', router: '/base/typography'}
                 ]
             },
             baseCptData: {

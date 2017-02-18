@@ -1,38 +1,11 @@
 <template>
     <div class="main-info" id="start">
-        <h2>VueJS</h2>
-        <p class="mark-p">主要以 vuejs 官方文档 （中文、英文 为主）</p>
+
+        <h2>JavaScript VueJs ES6 Webpack MVVM 等资源</h2>
+        <p class="mark-p">我们提供了大量的资源，希望有时间都可以看看吧</p>
         <div class="codebox">
             <div class="codetitle">
-               <span>Vue</span>
-            </div>
-            <div class="codecontent">
-                <div class="codeabout">
-                   
-                </div>
-            </div>
-        </div>
-
-        <h2>webpack</h2>
-        <p class="mark-p">组件实现的代码 （ 其中包括了 html、less、js ） </p>
-        <div class="codebox">
-            <div class="codetitle">
-               <span>Code</span>
-            </div>
-            <div class="codecontent">
-                <div class="codeabout">
-
-                   <codeBlock :code="codeButton"></codeBlock>
-
-                </div>
-            </div>
-        </div>
-
-        <h2>ES6</h2>
-        <p class="mark-p">我们提供了基本的API ( 里面主要包括了 props、 slot、 event ) </p>
-        <div class="codebox">
-            <div class="codetitle">
-               <span>VueJs 相关文档</span>
+               <span>前端相关文档</span>
             </div>
             <div class="codecontent">
                 <div class="codeabout">
@@ -40,19 +13,7 @@
                 </div>
             </div>
         </div> 
-
-        <h2>less</h2>
-        <p class="mark-p">我们提供了基本的API ( 里面主要包括了 props、 slot、 event ) </p>
-        <div class="codebox">
-            <div class="codetitle">
-               <span>API</span>
-            </div>
-            <div class="codecontent">
-                <div class="codeabout">
-                    默认、主色、强调色, 不可用、全宽五种不同状态的按钮示例
-                </div>
-            </div>
-        </div>       
+      
     </div>
 </template>
 

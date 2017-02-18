@@ -8,97 +8,24 @@
 
         <div class="codebox">
             <div class="codetitle">
-                <span>吐槽</span>
+                <span>吐槽  &nbsp;&nbsp;&nbsp;&nbsp;<i class="icon-good" :class=" isGood ? 'good' : '' " @click=" isGood = !isGood; isBad = false"></i>&nbsp;&nbsp; or &nbsp;&nbsp;<i class="icon-bad":class=" isBad ? 'bad' : '' " @click=" isBad = !isBad; isGood = false"></i></span>
             </div>
-            
             <div class="codecontent">
                 <div class="codeabout">
-                    <iframe src="../../feedback.html"></iframe>
+                    <iframe src="./feedback.html" style="width: 100%;min-height: 260px;" ref="myiframe" frameborder=0 scrolling=auto></iframe>
                 </div>
             </div>
         </div>
 
-        <h2>Code</h2>
-        <p class="mark-p">组件实现的代码 （ 其中包括了 html、less、js ） </p>
-        <div class="codebox">
-            <div class="codetitle">
-                <span>Code</span>
-            </div>
-            <div class="codecontent">
-                <div class="codeabout">
-                    <codeBlock :code="codeButton"></codeBlock>
-                </div>
-            </div>
-        </div>
-
-        <h2>API</h2>
-        <p class="mark-p">我们提供了基本的API ( 里面主要包括了 props、 slot、 event ) </p>
-        <table class="api-table">
-            <thead>
-                <tr>
-                    <td>属性</td>
-                    <td>说明</td>
-                    <td>类型</td>
-                    <td>可选值</td>
-                    <td>默认值</td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>size</td>
-                    <td>按钮尺寸：大、正常、小</td>
-                    <td>String</td>
-                    <td>large、small</td>
-                    <td>—</td>
-                </tr>
-                <tr>
-                    <td>type</td>
-                    <td>按钮类型</td>
-                    <td>String</td>
-                    <td>default、primary、info、success、warning、danger、text</td>
-                    <td>default</td>
-                </tr>
-                <tr>
-                    <td>hollow</td>
-                    <td>是否为镂空样式</td>
-                    <td>Boolean</td>
-                    <td>——</td>
-                    <td>false</td>
-                </tr>
-                <tr>
-                    <td>loading</td>
-                    <td>是否加载中</td>
-                    <td>Boolean</td>
-                    <td>——</td>
-                    <td>false</td>
-                </tr>
-                <tr>
-                    <td>disabled</td>
-                    <td>是否禁用</td>
-                    <td>Boolean</td>
-                    <td>——</td>
-                    <td>false</td>
-                </tr>
-                <tr>
-                    <td>icon</td>
-                    <td>图标，请查看icon组件里面已有图标名，图标默认在文字左边</td>
-                    <td>String</td>
-                    <td>......</td>
-                    <td>——</td>
-                </tr>
-                <tr>
-                    <td>nativeType</td>
-                    <td>原生 type 属性</td>
-                    <td>String</td>
-                    <td>button,submit,reset</td>
-                    <td>button</td>
-                </tr>
-            </tbody>
-        </table> 
     </div>
 </template>
 
 <script>
+    // changeFrameHeight()
+
+    // window.onresize = function () {
+    //     changeFrameHeight()
+    // }
     import uiButton from '../components/base/button'
     import codeBlock from '../components/codeBlock'
     import markDown from '../components/markdown'
@@ -116,6 +43,8 @@
         },
         data () {
             return {
+                isGood: false,
+                isBad: false,
                 codeButton,
                 result: {
                     province: '',
@@ -145,6 +74,11 @@
                 this.show = false
                 this.result = result
             }
+        },
+        mounted () {
+            const el = this.$refs.myiframe
+            console.log(el)
+            el.height = document.documentElement.clientHeight
         }
     }
 </script>
@@ -152,5 +86,11 @@
 <style lang="less">
     .wrap{text-align: center;
         img{width: 100px;margin-top: 50px;}
+    }
+    .good {
+        color: #FF5566;
+    }
+    .bad {
+        color: #44bb22;
     }
 </style>
