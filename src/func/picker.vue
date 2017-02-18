@@ -1,26 +1,35 @@
 <template>
     <div class="main-info" id="start">
-
-        <toast :visible="visible" :content="content" @hideToast="hide"></toast>
-
-        <h2>Toast 提示框</h2>
-        <p class="mark-p">功能组件，触发业务逻辑时使用。</p>
+    
         
+
+        <h2>picker 选择器</h2>
+        <p class="mark-p">功能组件，在选择日期、时间、省市区等选项时使用。</p>
+        
+            <div class="wrap" id="SelectArea">
+                <!--<img src="../assets/logo.png">-->
+                <a href="javascript:;" @click="show = true">选择地址</a>
+                <p v-cloak>省：{{result.province.name}} {{result.province.code}}</p>
+                <p v-cloak>市：{{result.city.name}} {{result.city.code}}</p>
+                <p v-cloak>区：{{result.area.name}} {{result.area.code}}</p>
+            </div>
+            <picker :show="show" @select-submit="handleAreaSelect"></picker>
+
         <div class="codebox">
             <div class="codetitle">
                 <span>基础用法</span>
             </div>
+
             <div class="codecontent">
                 <div class="codeabout">
-                    <span class="spa">基础的按钮用法。</span>
-                    <uiButton @click.native="showToast">点我触发</uiButton>
-                    <uiButton type="primary" :hollow="false">主要按钮</uiButton>
-                    <uiButton type="primary" :hollow="true">主要按钮镂空</uiButton>
-                    <uiButton type="text">文字按钮</uiButton>
+                    <span class="spa">基础的 Picker 用法。</span>
+                    <p></p>
+                    <uiButton @click.native="show = true">选择时间</uiButton>
+                    <uiButton type="primary" :hollow="false" @click.native="show = true">选择日期</uiButton>
+                    <uiButton type="primary" :hollow="true" @click.native="show = true">选择省市区</uiButton>
                 </div>
             </div>
         </div>
-
 
         <h2>Code</h2>
         <p class="mark-p">组件实现的代码 （ 其中包括了 html、less、js ） </p>
@@ -105,20 +114,25 @@
 <script>
     import uiButton from '../components/base/button'
     import codeBlock from '../components/codeBlock'
-    import codeButton from '!raw!../components/func/toast'
+    import codeButton from '!raw!../components/func/picker'
 
-    import toast from '../components/func/toast'
+    import picker from '../components/func/picker'
     export default {
         name: 'start',
         components: {
             uiButton,
             codeBlock,
-            toast
+            picker
         },
         data () {
             return {
                 codeButton,
-                visible: false,
+                result: {
+                    province: '',
+                    city: '',
+                    area: ''
+                },
+                show: false,
                 content: '正在加载中...'
             }
         },
@@ -129,11 +143,18 @@
             },
             hide () {
                 this.visible = !this.visible
+            },
+            handleAreaSelect (result) {
+                console.log(result)
+                this.show = false
+                this.result = result
             }
         }
     }
 </script>
 
 <style lang="less">
-    // @import 'style.less';
+    .wrap{text-align: center;
+        img{width: 100px;margin-top: 50px;}
+    }
 </style>

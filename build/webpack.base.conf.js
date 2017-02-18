@@ -21,7 +21,7 @@ module.exports = {
   },
   output: {
     path: config.build.assetsRoot,
-    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
+    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,  // 指定了一个在浏览器中被引用的URL地址
     filename: '[name].js'
   },
   resolve: {
@@ -49,7 +49,7 @@ module.exports = {
         test: /\.js$/,
         loader: 'eslint',
         include: projectRoot,
-        exclude: [/node_modules/,/static/,/dots/]
+        exclude: [/node_modules/,/static/,/assets/]
       }
     ],
     loaders: [
@@ -80,11 +80,11 @@ module.exports = {
         }
       },
       {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        test: /\.(woff|eot|ttf|svg)(\?.*)?$/,
         loader: 'url',
         query: {
           limit: 10000,
-          name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+          name: utils.assetsPath('../fonts/[name].[hash:7].[ext]')
         }
       },
       //在原有基础上加上一个postcss的loader就可以了

@@ -123,23 +123,23 @@ export default {
             },
             fromCptData: {
                 name: '表单组件',
-                router: '/from',
+                router: '/form',
                 children: [
-                    {name: 'Checkbox ', router: '/from/checkbox'},
-                    {name: 'Radio ', router: '/from/radio'},
-                    {name: 'Input ', router: '/from/input'},
-                    {name: 'Input-password ', router: '/from/password'},
-                    {name: 'Input-search ', router: '/from/search'},
-                    {name: 'Textarea ', router: '/from/textarea'},
-                    {name: 'Switch ', router: '/from/switch'},
-                    {name: 'Select ', router: '/from/select'}
+                    {name: 'Checkbox ', router: '/form/checkbox'},
+                    {name: 'Radio ', router: '/form/radio'},
+                    {name: 'Input ', router: '/form/input'},
+                    // {name: 'Input-password ', router: '/form/password'},
+                    {name: 'InputSearch ', router: '/form/search'},
+                    {name: 'Textarea ', router: '/form/textarea'},
+                    {name: 'Switch ', router: '/form/switch'},
+                    {name: 'Select ', router: '/form/select'}
                 ]
             },
             funcCptData: {
                 name: '功能组件',
                 router: '/func',
                 children: [
-                    {name: 'Table', router: '/func/table'},
+                    // {name: 'Table', router: '/func/table'},
                     {name: 'Swipe', router: '/func/swipe'},
                     {name: 'DatePicker', router: '/func/datePicker'},
                     {name: 'Toast', router: '/func/toast'},
@@ -161,7 +161,8 @@ export default {
                 name: '项目进度以及版本',
                 router: '/pm',
                 children: [
-                    {name: '开发者', router: '/pm/version'}
+                    {name: '项目版本', router: '/pm/version'},
+                    {name: '项目进度', router: '/pm/percent'}
                 ]
             }
         }

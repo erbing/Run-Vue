@@ -1,26 +1,24 @@
 <template>
     <div class="main-info" id="start">
-
-        <toast :visible="visible" :content="content" @hideToast="hide"></toast>
-
-        <h2>Toast 提示框</h2>
-        <p class="mark-p">功能组件，触发业务逻辑时使用。</p>
+    
         
+
+        <h2>backTop 回到顶部</h2>
+        <p class="mark-p">功能组件，在 页面长度过长时候 使用。</p>
+
         <div class="codebox">
             <div class="codetitle">
                 <span>基础用法</span>
             </div>
+
             <div class="codecontent">
                 <div class="codeabout">
-                    <span class="spa">基础的按钮用法。</span>
-                    <uiButton @click.native="showToast">点我触发</uiButton>
-                    <uiButton type="primary" :hollow="false">主要按钮</uiButton>
-                    <uiButton type="primary" :hollow="true">主要按钮镂空</uiButton>
-                    <uiButton type="text">文字按钮</uiButton>
+                    <span class="spa">基础的 backTop 用法。</span>
+                        <uiBackTop></uiBackTop>
+                    <span class="spa">滑动鼠标，注意右下角</span>    
                 </div>
             </div>
         </div>
-
 
         <h2>Code</h2>
         <p class="mark-p">组件实现的代码 （ 其中包括了 html、less、js ） </p>
@@ -105,20 +103,25 @@
 <script>
     import uiButton from '../components/base/button'
     import codeBlock from '../components/codeBlock'
-    import codeButton from '!raw!../components/func/toast'
+    import codeButton from '!raw!../components/func/backTop'
 
-    import toast from '../components/func/toast'
+    import backTop from '../components/func/backTop'
     export default {
         name: 'start',
         components: {
             uiButton,
             codeBlock,
-            toast
+            uiBackTop: backTop
         },
         data () {
             return {
                 codeButton,
-                visible: false,
+                result: {
+                    province: '',
+                    city: '',
+                    area: ''
+                },
+                show: false,
                 content: '正在加载中...'
             }
         },
@@ -129,11 +132,18 @@
             },
             hide () {
                 this.visible = !this.visible
+            },
+            handleAreaSelect (result) {
+                console.log(result)
+                this.show = false
+                this.result = result
             }
         }
     }
 </script>
 
 <style lang="less">
-    // @import 'style.less';
+    .wrap{text-align: center;
+        img{width: 100px;margin-top: 50px;}
+    }
 </style>

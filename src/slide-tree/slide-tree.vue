@@ -3,10 +3,10 @@
         <li class="item">
             <div class="treeTitle" :class="{ bolds: isFolder }" @click="toggle(model.name)">
                 <router-link exact :to="toRouter"  tag="div">
-                    {{model.name}}
-                    <div class="icon">
-                        <i class="iconfont icon-add1" :class="{ 'icon-move': open }" v-if="isFolder" style="font-size: 18px;"></i>
+                    <div class="ico-con">
+                        <i :class="[ open ? 'icon-arr-up': 'icon-arr-down' ]" v-if="isFolder" style="font-size: 18px;"></i>
                     </div>
+                    {{model.name}}
                 </router-link>
             </div>
             <transition name="slide-fade">
@@ -59,17 +59,17 @@
 </script>
 
 <style lang="less">
-    @import '../assets/fonts/iconfont.css';
+    @import '../assets/icons/icons.less';
     .useUl {
         list-style: none;
         padding: 0px;
         margin: 0;
     }
     .bounce-enter-active {
-    animation: bounce-in .35s;
+        animation: bounce-in .35s;
     }
     .bounce-leave-active {
-    animation: bounce-out .35s;
+        animation: bounce-out .35s;
     }
     @keyframes bounce-in {
         0% {
@@ -112,14 +112,14 @@
         opacity: 0
     }
     .slide-fade-enter-active {
-    transition: all .3s ease;
+        transition: all .3s ease;
     }
     .slide-fade-leave-active {
-    transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+        transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
     }
     .slide-fade-enter, .slide-fade-leave-active {
-    transform: translateX(50px);
-    opacity: 0;
+        transform: translateX(50px);
+        opacity: 0;
     }    
     .hide{
         opacity: 0;
@@ -136,7 +136,7 @@
         cursor: pointer;
         padding-left: 16px;
         font-size: 16px;
-        background: rgba(0, 0, 0, .12);
+        background: rgba(0, 0, 0, .05);
         line-height: 48px;
         color: #888;
         margin-bottom: 1px;
@@ -146,24 +146,16 @@
             background-color: rgba(0,0,0,0);
         }
     }
-    .icon{
-            line-height:48px;
-            font-size: 5px;
-            display: flex;
-            flex: 1;
-            text-align: center;
-            align-items: center;
-            flex-pack: start;
-            justify-content: flex-start;
-            width: 40px;
-            height: 100%;
-            position: absolute;
-            color: #757575;
-            top: 0;
-            right: 12px;
-            max-height: 72px;
-        }
+    .ico-con{
+        position: absolute;
+        top: 0;
+        right: 10px;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+    }
     .treeTitle{
+        position: relative;
         height: 48px;
         line-height: 48px;
         padding-left: 16px;
@@ -171,11 +163,13 @@
         cursor: pointer;
         &:hover{
             transition: all 0.25s;
-            background-color: rgba(0,0,0,.2);
+            background-color: lighten(#58B7FF, 12%);
         }
     }
     .bolds{
         font-size: 16px;
         font-weight: bold;
+        color: #fff;
+        background-color: lighten(#58B7FF, 10%);
     }
 </style>

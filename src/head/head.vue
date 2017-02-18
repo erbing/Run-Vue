@@ -2,7 +2,7 @@
 <div class="mu-appbar example-appbar" :style=" showSlider ? '' : 'position: relative; left: 0' ">
     <div class="title-left">
       <button class="ui-btn btn" @click="hideSlider"> 
-        <i class="iconfont icon-brandfill" style="color: #fff; font-size: 30px;"></i>
+        <i class="icon-toggle" style="color: #fff; font-size: 30px;"></i>
       </button>
     </div>
     <div class="mu-appbar-title">
@@ -12,7 +12,7 @@
     </div>
     <div class="title-right">
       <a class="ui-btn btn" target="_blank" href="https://github.com/erbing/Run-Vue">
-       <i class="icon iconfont icon-github" style="color: #fff; font-size: 30px;"></i>
+      <i class="icon-hearted"></i>
        </a>
     </div>
 </div>
@@ -54,7 +54,7 @@ export default {
 <style lang="less">
 @import  '../assets/less/normalize.less';
 @import  '../assets/less/base.less';
-@import '../assets/fonts/iconfont.css';
+@import '../assets/icons/icons.less';
 
 .hide-left-bar {
   position: relative
@@ -104,7 +104,7 @@ export default {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 100%;
+    // height: 100%;
     box-flex: 0;
     width:46px;
     float: right;
@@ -123,10 +123,8 @@ export default {
     display: inline-block;
     overflow: visible;
     line-height: 1;
-    width: 48px;
-    height: 48px;
     border-radius: 50%;
-    font-size: 24px;
+    font-size: 28px;
     padding: 12px;
     border: none;
     appearance: none;

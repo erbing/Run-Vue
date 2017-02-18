@@ -8,8 +8,9 @@ import VueRouter from 'vue-router'
 import Mains from './mains/mains'
 
 import Index from './components/index'
-import About from './components/about'
-
+// 引入 关于开发者
+import AboutDev from './about/dev'
+import AboutFeedback from './about/feedback'
 // 引入左边 如何使用 相关组件
 import Use from './use/use'
 import UseStart from './use/start'
@@ -25,11 +26,12 @@ import BaseColor from './base/color'
 import BaseTypography from './base/typography'
 import BaseIcon from './base/icon'
 import BaseButton from './base/button'
+import BaseTable from './base/table'
 // 引入左边 表单组件
 import BaseCheckbox from './form/checkbox'
 import BaseRadio from './form/radio'
 import BaseInput from './form/input'
-import BasePassword from './form/password'
+import BaseAutocomplete from './form/autocomplete'
 import BaseSearch from './form/search'
 import BaseTextarea from './form/textarea'
 import BaseSwitch from './form/switch'
@@ -38,6 +40,10 @@ import BaseSelect from './form/select'
 import FuncModal from './func/modal'
 import FuncToast from './func/toast'
 import FuncSwipe from './func/swipe'
+import FuncPicker from './func/picker'
+import FuncProgress from './func/progress'
+import FuncBackTop from './func/backTop'
+import FuncLazyLoad from './func/lazyLoad'
 
 Vue.use(VueRouter)
 
@@ -88,9 +94,12 @@ const routes = [{
     }, {
         path: 'button',
         component: BaseButton
+    }, {
+        path: 'table',
+        component: BaseTable
     }]
 }, {
-    path: '/from',
+    path: '/form',
     component: Use,
     children: [{
         path: 'checkbox',
@@ -102,8 +111,8 @@ const routes = [{
         path: 'input',
         component: BaseInput
     }, {
-        path: 'password',
-        component: BasePassword
+        path: 'autocomplete',
+        component: BaseAutocomplete
     }, {
         path: 'search',
         component: BaseSearch
@@ -121,14 +130,14 @@ const routes = [{
     path: '/func',
     component: Use,
     children: [{
-        path: 'table',
-        component: BaseCheckbox
-    }, {
         path: 'swipe',
         component: FuncSwipe
     }, {
+        path: 'picker',
+        component: FuncPicker
+    }, {
         path: 'datePicker',
-        component: BaseInput
+        component: FuncPicker
     }, {
         path: 'toast',
         component: FuncToast
@@ -137,27 +146,34 @@ const routes = [{
         component: FuncModal
     }, {
         path: 'progress',
-        component: BaseTextarea
+        component: FuncProgress
     }, {
         path: 'backTop',
-        component: BaseSwitch
+        component: FuncBackTop
     }, {
         path: 'lazyLoad',
-        component: BaseSelect
+        component: FuncLazyLoad
     }]
 }, {
     path: '/about',
     component: Use,
     children: [{
         path: 'dev',
-        component: About
+        component: AboutDev
     }, {
         path: 'feedback',
-        component: About
+        component: AboutFeedback
     }]
 }, {
-    path: '/useStart',
-    component: UseStart
+    path: '/pm',
+    component: Use,
+    children: [{
+        path: 'version',
+        component: UseStart
+    }, {
+        path: 'percent',
+        component: AboutDev
+    }]
 }]
 
 const router = new VueRouter({
