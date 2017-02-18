@@ -14,8 +14,6 @@
             <div class="codecontent">
                 <div class="codeabout">
                     <iframe src="../../feedback.html"></iframe>
-                    {{markCode}}
-                    <markDown :text="markCode"></markDown>
                 </div>
             </div>
         </div>
