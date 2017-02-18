@@ -11,9 +11,12 @@ import Index from './components/index'
 // 引入 关于开发者
 import AboutDev from './about/dev'
 import AboutFeedback from './about/feedback'
+// 引入 关于项目版本以及进度
+import PmVersion from './pm/version'
+import PmPercent from './pm/percent'
 // 引入左边 如何使用 相关组件
 import Use from './use/use'
-import UseStart from './use/start'
+// import UseStart from './use/start'
 import UseBase from './use/base'
 import UseDev from './use/dev'
 import UseResource from './use/resource'
@@ -169,10 +172,10 @@ const routes = [{
     component: Use,
     children: [{
         path: 'version',
-        component: UseStart
+        component: PmVersion
     }, {
         path: 'percent',
-        component: AboutDev
+        component: PmPercent
     }]
 }]
 
