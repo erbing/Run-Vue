@@ -184,7 +184,7 @@ export default {
         tests (e) {
             const mq = window.document.body.clientWidth
             if (mq < 560) {
-                if (e.path.length < 13) {
+                if (e.target.parentElement.className === 'treeTitle bolds') {
                     this.$store.state.showSlider = true
                 } else {
                     this.$store.state.showSlider = false
