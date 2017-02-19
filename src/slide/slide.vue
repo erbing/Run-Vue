@@ -1,5 +1,5 @@
 <template>
-    <div class="paper run-slider" :class="showSlider ? '' : 'hide-slider' ">
+    <div class="paper run-slider" :class="showSlider ? '' : 'hide-slider' " @click="tests($event)">
         <div class="mu-appbar leftbar">
             <a class="left" href="/">
               <img src="../assets/images/logo2.png" class="logo"/>
@@ -180,6 +180,22 @@ export default {
     methods: {
         test () {
             this.$store.dispatch('getShow')
+        },
+        tests (e) {
+            const mq = window.document.body.clientWidth
+            if (mq < 560) {
+                if (e.path.length < 13) {
+                    this.$store.state.showSlider = true
+                } else {
+                    this.$store.state.showSlider = false
+                }
+            }
+        }
+    },
+    mounted () {
+        const mq = window.document.body.clientWidth
+        if (mq < 560) {
+            this.$store.state.showSlider = false
         }
     }
 }
@@ -307,6 +323,11 @@ i{
   border-radius: 50%;
 }
 
+// @media screen and (max-width: 500px) {
+//     .run-slider{
+//         display: none;
+//     }
+// }
 /*.mu-paper-1 {
   .depth(1);
 }
