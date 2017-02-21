@@ -2,7 +2,7 @@
   "name": "runvue",
   "version": "1.0.0",
   "description": "runvue ui for vue2",
-  "main": "dist/muse-ui.js",
+  "main": "dist/main.js",
   "keywords": [
     "vue2",
     "vue",
