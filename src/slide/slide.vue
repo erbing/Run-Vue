@@ -130,7 +130,7 @@ export default {
                     {name: 'Checkbox ', router: '/form/checkbox'},
                     {name: 'Radio ', router: '/form/radio'},
                     {name: 'Input ', router: '/form/input'},
-                    // {name: 'Input-password ', router: '/form/password'},
+                    {name: 'InputNumber', router: '/form/inputnumber'},
                     {name: 'InputSearch ', router: '/form/search'},
                     {name: 'Textarea ', router: '/form/textarea'},
                     {name: 'Switch ', router: '/form/switch'},

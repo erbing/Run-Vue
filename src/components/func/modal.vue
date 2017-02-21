@@ -9,21 +9,23 @@
             <input type="text" class="input" v-model="inputMsg" placeholder="请输入剩余课时提醒" />
         </section>
         <footer class="m-modal__ft">
-            <button class="btn m-modal__btn" @click="ok">
-                {{okText}}
-            </button><button 
-                class="btn m-modal__btn"
-                @click="cancel"
-                v-if="type ==='confirm'">
-                {{cancelText}}
-            </button>
+            <uiButton type="text" size="large" @click.native="ok" :class=" type ==='confirm' ? 'comright' : '' ">{{okText}}</uiButton>
+            <uiButton size="large" @click.native="cancel" 
+            :class=" type ==='confirm' ? 'comleft' : '' "
+            v-if="type ==='confirm'" 
+            class="btn m-modal__btn"
+            >{{cancelText}}</uiButton>
         </footer>
     </div>
 </div>
 </template>
 
 <script>
+import uiButton from '../base/button'
 export default {
+    components: {
+        uiButton
+    },
     props: {
         visible: {
             type: Boolean,
@@ -78,6 +80,7 @@ export default {
 <style lang="less">
 @import "../../assets/less/variable";
 @import "../../assets/less/mixin";
+
 .m-modal {
     position: fixed;
     top: 0;
@@ -90,6 +93,7 @@ export default {
 }
 
 .m-modal__inner {
+    border-radius: 5px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -108,7 +112,7 @@ export default {
 }
 
 .m-modal__bd {
-    padding: 30px @spacing-large;
+    padding: 30px 60px;
     font-size: 14px;
     word-wrap: break-word;
     word-break: break-all;
@@ -134,11 +138,23 @@ export default {
         width: 50%;
     }
     &:last-child {
-        width: 100%;
+        // width: 100%;
     }
     &+& {
         width: 50%;
         border-left: 1px solid @color-gray-light;
     }
 }
+
+.comleft {
+    float: left;
+    width: 50%;
+    color: #666;
+}
+
+.comright {
+    float: right;
+    width: 50%;
+}
+
 </style>

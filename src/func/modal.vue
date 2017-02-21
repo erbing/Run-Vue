@@ -14,8 +14,6 @@
                     <span class="spa">基础的modal - alert 用法。</span>
                     <uiButton @click.native="showModal">点我触发 alert</uiButton>
                     <uiButton type="primary" :hollow="false" @click.native="showModalCon">点我触发 confirm</uiButton>
-                    <uiButton type="primary" :hollow="true">主要按钮镂空</uiButton>
-                    <uiButton type="text">文字按钮</uiButton>
                 </div>
             </div>
         </div>
@@ -103,7 +101,7 @@
 <script>
     import uiButton from '../components/base/button'
     import codeBlock from '../components/codeBlock'
-    import codeButton from '!raw!../components/base/button'
+    import codeButton from '!raw!../components/func/modal'
 
     import funcModal from '../components/func/modal'
 

@@ -61,6 +61,14 @@
             readonly: Boolean,
             icon: String
         },
+        data () {
+            return {
+                iconNames: this.icon
+            }
+        },
+        mounted () {
+            console.log(this.iconNames, 110)
+        },
         computed: {
             model: {
                 get: function () {

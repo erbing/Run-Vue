@@ -1,13 +1,12 @@
 <template>
     <div class="m-toast" v-show="visible">
-        <img class="loading" src="../../assets/images/loading.gif">
-        <uiIcon :name="iconName" v-if="type!=='loading' && iconName"></uiIcon>
+        <uiIcon :name="iconName"></uiIcon>
         <div class="m-toast__text">{{content}}</div>
     </div>
 </template>
 
 <script>
-    import uiIcon from '../../assets/icons/icons'
+    import uiIcon from '../../components/base/icon'
     export default {
         name: 'toast',
         components: {
@@ -58,8 +57,11 @@
 @import "../../assets/less/variable";
 @import "../../assets/less/mixin";
 .m-toast {
-    width: 48px;
-    height: 48px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px; 
+    padding: 20px 0;
+    opacity: 0.8;
     z-index: @z-index-modal;
     position: fixed;
     top: 50%;
@@ -88,6 +90,9 @@
     .loading {
         margin-top: @spacing-small;
         margin-bottom: @spacing-small;
+    }
+    .m-toast__text {
+        padding: 5px 0;
     }
 }
 </style>

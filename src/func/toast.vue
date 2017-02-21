@@ -1,7 +1,7 @@
 <template>
     <div class="main-info" id="start">
 
-        <toast :visible="visible" :content="content" @hideToast="hide"></toast>
+        <toast :visible="visible" :content="content" :type="type" @hideToast=" visible = false "></toast>
 
         <h2>Toast 提示框</h2>
         <p class="mark-p">功能组件，触发业务逻辑时使用。</p>
@@ -14,13 +14,11 @@
                 <div class="codeabout">
                     <span class="spa">基础的按钮用法。</span>
                     <uiButton @click.native="showToast">点我触发</uiButton>
-                    <uiButton type="primary" :hollow="false">主要按钮</uiButton>
-                    <uiButton type="primary" :hollow="true">主要按钮镂空</uiButton>
-                    <uiButton type="text">文字按钮</uiButton>
+                    <uiButton type="primary" :hollow="false"  @click.native="showToast2">成功提示</uiButton>
+                    <uiButton type="warning" :hollow="false" @click.native="showToast3">警告提示</uiButton>
                 </div>
             </div>
         </div>
-
 
         <h2>Code</h2>
         <p class="mark-p">组件实现的代码 （ 其中包括了 html、less、js ） </p>
@@ -98,7 +96,7 @@
                     <td>button</td>
                 </tr>
             </tbody>
-        </table> 
+        </table>
     </div>
 </template>
 
@@ -119,16 +117,25 @@
             return {
                 codeButton,
                 visible: false,
-                content: '正在加载中...'
+                type: '',
+                content: ''
             }
         },
         methods: {
             showToast () {
-                console.log(12)
                 this.visible = true
+                this.type = 'loading'
+                this.content = '正在加载中...'
             },
-            hide () {
-                this.visible = !this.visible
+            showToast2 () {
+                this.visible = true
+                this.type = 'success'
+                this.content = '操作成功！'
+            },
+            showToast3 () {
+                this.visible = true
+                this.type = 'warn'
+                this.content = '操作失败'
             }
         }
     }

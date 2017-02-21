@@ -108,20 +108,15 @@
     content: "\e915";
 }
 
-.icon-collected:before,
-.icon-collected2:before,
-.icon-collected3:before {
+.icon-collected:before {
     content: "\e935";
 }
 
-.icon-collect:before,
-.icon-collect2:before,
-.icon-collect3:before {
+.icon-collect:before {
     content: "\e934";
 }
 
-.icon-share:before,
-.icon-share2:before {
+.icon-share:before {
     content: "\e90e";
 }
 
@@ -193,6 +188,14 @@
     content: "\e90d";
 }
 
+.icon-add2:before {
+  content: "\e922";
+}
+
+.icon-sub:before {
+  content: "\e947";
+}
+
 .icon-news:before {
     content: "\e912";
 }
@@ -217,7 +220,7 @@
     content: "\e944";
 }
 
-.icon-triangle_r:before {
+.icon-triangle-right:before {
     content: "\e90f";
 }
 
@@ -269,7 +272,7 @@
     content: "\e916";
 }
 
-.icon-triangle_d:before {
+.icon-triangle-down:before {
     content: "\e917";
 }
 
@@ -303,10 +306,6 @@
 
 .icon-question:before {
     content: "\e92a";
-}
-
-.icon-loading2:before {
-    content: "\e922";
 }
 
 .icon-loading:before {
@@ -351,4 +350,19 @@
 
 .icon-back:before {
     content: "\e939";
+}
+
+// 加载动画
+.icon-loading {
+    transform-origin: center center;
+    animation: circle 1.6s linear infinite;
+}
+
+@keyframes circle {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }

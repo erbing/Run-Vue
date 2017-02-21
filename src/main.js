@@ -34,6 +34,7 @@ import BaseTable from './base/table'
 import BaseCheckbox from './form/checkbox'
 import BaseRadio from './form/radio'
 import BaseInput from './form/input'
+import BaseInputNumber from './form/inputnumber'
 import BaseAutocomplete from './form/autocomplete'
 import BaseSearch from './form/search'
 import BaseTextarea from './form/textarea'
@@ -113,6 +114,9 @@ const routes = [{
     }, {
         path: 'input',
         component: BaseInput
+    }, {
+        path: 'inputNumber',
+        component: BaseInputNumber
     }, {
         path: 'autocomplete',
         component: BaseAutocomplete
