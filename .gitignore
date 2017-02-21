@@ -2,6 +2,7 @@
 .vscode
 node_modules/
 dist/
+example/
 npm-debug.log
 test/unit/coverage
 test/e2e/reports

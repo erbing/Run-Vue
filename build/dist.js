@@ -1,17 +1,13 @@
-/*
-* 专门用来作为包管理 进行打包处理
-*/
-// https://github.com/shelljs/shelljs   //用来处理 shell 相关命令
-
+// https://github.com/shelljs/shelljs
 require('./check-versions')()
 require('shelljs/global')
-env.NODE_ENV = 'production'
+env.NODE_ENV = 'dist'
 
 var path = require('path')
-var config = require('../config/pkg.js')
+var config = require('../config')
 var ora = require('ora')
 var webpack = require('webpack')
-var webpackConfig = require('./webpack.pkg.conf')
+var webpackConfig = require('./webpack.dist.conf')
 
 console.log(
   '  Tip:\n' +
@@ -19,13 +15,13 @@ console.log(
   '  Opening index.html over file:// won\'t work.\n'
 )
 
-var spinner = ora('building for production...')
+var spinner = ora('building for dist...')
 spinner.start()
 
-var assetsPath = path.join(config.build.assetsRoot, config.build.assetsSubDirectory)
+var assetsPath = path.join(config.dist.assetsRoot, config.dist.assetsSubDirectory)
 rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
-// cp('-R', 'static/*', assetsPath)
+cp('-R', 'static/*', assetsPath)
 
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()
