@@ -18,10 +18,10 @@ console.log(
 var spinner = ora('building for dist...')
 spinner.start()
 
-var assetsPath = path.join(config.dist.assetsRoot, config.dist.assetsSubDirectory)
+var assetsPath = config.dist.assetsRoot
 rm('-rf', assetsPath)
 mkdir('-p', assetsPath)
-cp('-R', 'static/*', assetsPath)
+// cp('-R', 'static/*', assetsPath)     // 复制 static 里面的目录
 
 webpack(webpackConfig, function (err, stats) {
   spinner.stop()

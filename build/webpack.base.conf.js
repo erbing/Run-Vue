@@ -16,13 +16,26 @@ var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
+var getPath = function(_path) {
+  var assetsPublicPath = ''
+  if (process.env.NODE_ENV === 'production') {
+      assetsPublicPath = config.build.assetsPublicPath
+  } else if (process.env.NODE_ENV === 'dist') {
+      assetsPublicPath = config.dist.assetsPublicPath
+  } else {
+      config.dev.assetsPublicPath
+  }
+  console.log(assetsPublicPath)
+  return path.posix.join(assetsPublicPath, _path)
+}
+
 module.exports = {
   entry: {
     app: './src/main.js'
   },
   output: {
     path: config.build.assetsRoot,
-    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,  // 指定了一个在浏览器中被引用的URL地址
+    publicPath: getPath(process.env.NODE_ENV),  // 指定了一个在浏览器中被引用的URL地址
     filename: '[name].js'
   },
   resolve: {
@@ -85,7 +98,7 @@ module.exports = {
         loader: 'url',
         query: {
           limit: 10000,
-          name: utils.assetsPath('../fonts/[name].[hash:7].[ext]')
+          name: utils.assetsPath('./fonts/[name].[hash:7].[ext]')
         }
       },
       //在原有基础上加上一个postcss的loader就可以了
