@@ -16,18 +16,19 @@ var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
 var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
 var useCssSourceMap = cssSourceMapDev || cssSourceMapProd
 
-var getPath = function(_path) {
-  var assetsPublicPath = ''
-  if (process.env.NODE_ENV === 'production') {
-      assetsPublicPath = config.build.assetsPublicPath
-  } else if (process.env.NODE_ENV === 'dist') {
-      assetsPublicPath = config.dist.assetsPublicPath
-  } else {
-      config.dev.assetsPublicPath
-  }
-  console.log(assetsPublicPath)
-  return path.posix.join(assetsPublicPath, _path)
-}
+// var getPath = function(_path) {
+//   var assetsPublicPath = ''
+//   if (process.env.NODE_ENV === 'production') {
+//       assetsPublicPath = config.build.assetsPublicPath
+//   } else if (process.env.NODE_ENV === 'dist') {
+//       assetsPublicPath = config.dist.assetsPublicPath
+//   } else {
+//       assetsPublicPath = config.dev.assetsPublicPath
+//   }
+//   return path.posix.join(assetsPublicPath, _path)
+// }
+
+// process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath
 
 module.exports = {
   entry: {
@@ -35,7 +36,8 @@ module.exports = {
   },
   output: {
     path: config.build.assetsRoot,
-    publicPath: getPath(process.env.NODE_ENV),  // 指定了一个在浏览器中被引用的URL地址
+    // publicPath: getPath(process.env.NODE_ENV),  // 指定了一个在浏览器中被引用的URL地址
+    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
     filename: '[name].js'
   },
   resolve: {
