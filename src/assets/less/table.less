@@ -1,0 +1,60 @@
+/**
+ * 表格
+ */
+
+@import "variable";
+@import "mixin";
+// 基础表格样式
+.m-table {
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border: 1px solid @color-gray-light;
+    }
+    td,
+    th {
+        padding: .5em;
+        text-align: center;
+        word-break: break-all;
+        border-bottom: 1px solid @color-gray-light;
+    }
+    td {
+        background-color: #fff;
+        transition: background-color .2s ease-in-out;
+    }
+    tr:hover td {
+        background-color: #ebf7ff;
+    }
+    th {
+        font-weight: bold;
+        color: @color-black;
+        background-color: lighten(@color-gray-light, 10%);
+    }
+    // .m-table__header table {
+    //     border-bottom: 1px solid @color-gray-light;
+    // }
+    // .m-table__body table {
+    //     td {
+    //         border-bottom: 1px solid @color-gray-light;
+    //     }
+    // }
+}
+
+// 有分隔线的表格
+.m-table.s-border {
+    td,
+    th {
+        border-right: 1px solid @color-gray-light;
+    }
+}
+
+// 灰白相间的表格
+.m-table.s-stripe {
+    tbody {
+        tr:nth-child(even) {
+            td {
+                background-color: lighten(@color-gray-light, 11%);
+            }
+        }
+    }
+}

@@ -88,25 +88,33 @@ module.exports = {
         loader: 'json'
       },
       {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        test: /\.(png|jpe?g|gif)(\?.*)?$/,
         loader: 'url',
         query: {
           limit: 10000,
           name: utils.assetsPath('img/[name].[hash:7].[ext]')
         }
       },
+      // {
+      //   test: /\.(woff|svg|eot|ttf)\??.*$/,
+      //   loader: 'url?limit=10000',
+      //   query: {
+      //     name: utils.assetsPath('./fonts/[name].[hash:7].[ext]')
+      //   }
+      // },
       {
         test: /\.(woff|eot|ttf|svg)(\?.*)?$/,
         loader: 'url',
         query: {
           limit: 10000,
-          name: utils.assetsPath('./fonts/[name].[hash:7].[ext]')
+          name: env === 'dist' ? utils.assetsPath('style/../fonts/[name].[hash:7].[ext]') : utils.assetsPath('./fonts/[name].[hash:7].[ext]')
         }
       },
       //在原有基础上加上一个postcss的loader就可以了
       {
         test:/\.css$/,
-        loaders:['css-loader','postcss-loader']
+        loaders:['css-loader','postcss-loader'],
+        // name: utils.assetsPath('./style/[name].css')
       }
     ]
   },

@@ -6,7 +6,7 @@ module.exports = {
     env: require('./dist.env'),
     entry: path.resolve(__dirname, '../src/index.js'),
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: '/',
+    assetsSubDirectory: '',
     assetsPublicPath: '/',
     productionSourceMap: false
   },

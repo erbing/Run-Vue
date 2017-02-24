@@ -10,6 +10,7 @@ var env = process.env.NODE_ENV === 'testing'
   ? require('../config/test.env')
   : config.dist.env
 
+
 delete baseWebpackConfig.entry
 
 var webpackConfig = merge(baseWebpackConfig, {
@@ -24,6 +25,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: false,
   output: {
     path: config.dist.assetsRoot,
+    publicPath: './',
     filename: utils.assetsPath('index.js'),
     library: 'RunVue',
     libraryTarget: 'umd'
@@ -54,7 +56,7 @@ var webpackConfig = merge(baseWebpackConfig, {
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
     // extract css into its own file
-    new ExtractTextPlugin(utils.assetsPath('style.css'))
+    new ExtractTextPlugin(utils.assetsPath('./style.css'))
   ]
 })
 
