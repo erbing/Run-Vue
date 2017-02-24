@@ -24,7 +24,7 @@ var webpackConfig = merge(baseWebpackConfig, {
   devtool: false,
   output: {
     path: config.dist.assetsRoot,
-    filename: utils.assetsPath('runvue.js'),
+    filename: utils.assetsPath('index.js'),
     library: 'RunVue',
     libraryTarget: 'umd'
   },
