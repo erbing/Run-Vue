@@ -120,7 +120,8 @@ export default {
                     {name: 'Color 色彩', router: '/base/color'},
                     {name: 'Typography 字体', router: '/base/typography'},
                     {name: 'Icon - loading', router: '/base/icon'},
-                    {name: 'Button', router: '/base/button'}
+                    {name: 'Button', router: '/base/button'},
+                    {name: 'Table', router: '/base/table'}
                 ]
             },
             fromCptData: {
