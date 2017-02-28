@@ -47,9 +47,13 @@ export default {
     },
     computed: {
         html () {
-            return `\`\`\`html
-${this.code.match(/<template>([\s\S]*?)<\/template>/)[1]}
-        \`\`\``
+            if (this.code.match(/<template>([\s\S]*?)<\/template>/)) {
+                return `\`\`\`html
+    ${this.code.match(/<template>([\s\S]*?)<\/template>/)[1]}
+            \`\`\``
+            } else {
+                return '暂无 HTML'
+            }
         },
         script () {
             return `\`\`\`javascript
@@ -57,9 +61,13 @@ ${this.code.match(/<script>([\s\S]*?)<\/script>/)[1]}
         \`\`\``
         },
         less () {
-            return `\`\`\`less
-${this.code.match(/<style lang="less">([\s\S]*?)<\/style>/)[1]}
-        \`\`\``
+            if (this.code.match(/<style lang="less">([\s\S]*?)<\/style>/)) {
+                return `\`\`\`less
+    ${this.code.match(/<style lang="less">([\s\S]*?)<\/style>/)[1]}
+            \`\`\``
+            } else {
+                return '暂无 LESS'
+            }
         }
     },
     methods: {

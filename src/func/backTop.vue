@@ -108,7 +108,7 @@
 <script>
     import uiButton from '../components/base/button'
     import codeBlock from '../components/codeBlock'
-    import codeButton from '!raw!../components/func/backTop'
+    import codeButton from '!raw!../components/func/go-top'
 
     import backTop from '../components/func/backTop'
     import goTop from '../components/func/go-top'
