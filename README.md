@@ -41,3 +41,25 @@ vuex
 
 然后针对 css 兼容 做了  postcss 兼容处理
 ```
+
+## install dependencies
+``` bash
+1、First of all need to add runvue to development depend on
+ 
+    "runvue": "^1.0.x"
+```
+
+``` bash
+2、In the place where you need to use the introduction
+ 
+    import RunVue form 'runvue'
+    import 'runvue/style.css'
+ 
+    Vue.use(RunVue)
+``` 
+
+``` bash
+3、 tpl or html 
+    <uiButton type="success"> test </uiButton>
+```
+    
