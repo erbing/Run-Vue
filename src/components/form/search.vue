@@ -92,6 +92,9 @@
         padding-right: 25px;
         padding-left: 5px;
     }
+    .ui-icon {
+        padding: 5px 0; 
+    }
     .ui-search-input:focus{
         outline: none;
     }
@@ -135,7 +138,7 @@
     }
     .ui-search-wrap .searchText{
         color: #666666;
-        line-height: 35px;
+        line-height: 32px;
         font-size: 16px;
     }
     .ui-search-wrap .ui-icon:before{

@@ -14,7 +14,12 @@
             <div class="codecontent">
                 <div class="codeabout">
                     <span class="spa">基础的 backTop 用法。</span>
-                        <uiBackTop></uiBackTop>
+                        <uiGoTop>
+                            <a class="scroll-top">
+                                <i class="icon-arraw-up"></i>
+                                顶部
+                            </a>
+                        </uiGoTop>
                     <span class="spa">滑动鼠标，注意右下角</span>    
                 </div>
             </div>
@@ -106,12 +111,14 @@
     import codeButton from '!raw!../components/func/backTop'
 
     import backTop from '../components/func/backTop'
+    import goTop from '../components/func/go-top'
     export default {
-        name: 'start',
+        name: 'backTop',
         components: {
             uiButton,
             codeBlock,
-            uiBackTop: backTop
+            uiBackTop: backTop,
+            uiGoTop: goTop
         },
         data () {
             return {

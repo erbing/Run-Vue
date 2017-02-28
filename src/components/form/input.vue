@@ -166,6 +166,7 @@
         height: 100%;
         right: 0;
         top: 0;
+        padding: 5px 0;
         text-align: center;
         color: #bfcbd9;
         transition: all .3s;
