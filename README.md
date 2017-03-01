@@ -52,7 +52,7 @@ vuex
 ``` bash
 2、In the place where you need to use the introduction
  
-    import RunVue form 'runvue'
+    import RunVue from 'runvue'
     import 'runvue/style.css'
  
     Vue.use(RunVue)

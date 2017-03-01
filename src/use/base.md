@@ -9,7 +9,7 @@ npm i runvue@1.0.2  --save      // 版本会有比较快速的升级
 #### 第二步  文件中引入
 
 ```javascript
-import RunVue form 'runvue'
+import RunVue from 'runvue'
 import 'runvue/style.css'
 
 Vue.use(RunVue)
