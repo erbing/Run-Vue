@@ -162,6 +162,10 @@ const routes = [{
         component: FuncLazyLoad
     }]
 }, {
+    path:'/plugins',
+    component: Use,
+    children: [{}]
+},{
     path: '/about',
     component: Use,
     children: [{
