@@ -149,7 +149,8 @@ export default {
                     {name: 'Modal', router: '/func/modal'},
                     {name: 'Progress', router: '/func/progress'},
                     {name: 'BackTop', router: '/func/backTop'},
-                    {name: 'Lazy load', router: '/func/lazyLoad'}
+                    {name: 'Lazy load', router: '/func/lazyLoad'},
+                    {name: 'AutoheightTextare', router: '/func/autoheightTextarea'}
                 ]
             },
             abouUs: {

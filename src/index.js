@@ -23,6 +23,7 @@ import uiToast from './components/func/toast'
 import uiModal from './components/func/modal'
 import uiProgress from './components/func/progress'
 import uiBackTop from './components/func/backTop'
+import uiAutoheightTextare from './components/func/autoheight-textarea'
 
 const runvue = {
     uiIcon,
@@ -44,7 +45,8 @@ const runvue = {
     uiToast,
     uiModal,
     uiProgress,
-    uiBackTop
+    uiBackTop,
+    uiAutoheightTextare
 }
 
 const install = function (Vue, opts = {}) {
