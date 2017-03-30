@@ -48,6 +48,7 @@ import FuncPicker from './func/picker'
 import FuncProgress from './func/progress'
 import FuncBackTop from './func/backTop'
 import FuncLazyLoad from './func/lazyLoad'
+import FuncAutoheightTextarea from './func/autoheight-textarea.vue'
 
 Vue.use(VueRouter)
 
@@ -160,6 +161,9 @@ const routes = [{
     }, {
         path: 'lazyLoad',
         component: FuncLazyLoad
+    }, {
+        path: 'autoheightTextarea',
+        component: FuncAutoheightTextarea
     }]
 }, {
     path: '/plugins',
