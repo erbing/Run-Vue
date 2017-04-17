@@ -25,7 +25,9 @@
                 return this.$store.state.showSlider
             }
         },
-        mounted () {}
+        mounted () {
+            // console.log(this)
+        }
     }
 </script>
 

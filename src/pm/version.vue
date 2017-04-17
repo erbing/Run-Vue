@@ -50,7 +50,10 @@
 
 <script>
     export default {
-        name: 'about'
+        name: 'about',
+        mounted () {
+            // console.log(this)
+        }
     }
 </script>
 

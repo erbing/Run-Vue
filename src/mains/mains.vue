@@ -1,7 +1,7 @@
 <template>
   <div class="main">
  
-    <ui-head :title="title"></ui-head>
+    <ui-head :title="title" ref="curComponent"></ui-head>
     
     <ui-slide>
     </ui-slide>
@@ -27,6 +27,9 @@ export default {
         title () {
             return '首页'
         }
+    },
+    mounted () {
+        // console.log(this.$refs.curComponent)
     }
 }
 </script>
