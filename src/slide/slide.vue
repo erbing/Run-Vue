@@ -24,6 +24,16 @@
           </div>
         </div>
 
+        <div class="slider-content" style="margin-bottom: 20px;">
+          <!-- <span class="slider-title">Q Q 群 : </span>
+          <div class="select-down select-content">
+              <a class="text-color" href="https://jq.qq.com/?_wv=1027&k=44jw2MJ" target="_blank">  &nbsp;58365308 </a>
+          </div> -->
+          <a href="http://xc.hubwiz.com/course/592ee9b2b343f27b0ae1ba99?affid=vuejs-cn" target="_blank" style="width: 100%;">
+            <img src="../assets/images/666.png" style="width: 100%; height: 260px;"/>
+          </a>
+        </div>
+
         <!--如何使用-->
         <ul class="useUl">
             <slide-tree
