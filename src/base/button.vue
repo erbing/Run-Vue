@@ -189,14 +189,14 @@
 </template>
 
 <script>
-    import uiButton from '../components/base/button'
+    // import uiButton from '../components/base/button'
     import codeBlock from '../components/codeBlock'
     import codeButton from '!raw!../components/base/button'
 
     export default {
         name: 'start',
         components: {
-            uiButton,
+            uiButton: resolve => { require(['../components/base/button.vue'], resolve) },
             codeBlock
         },
         data () {

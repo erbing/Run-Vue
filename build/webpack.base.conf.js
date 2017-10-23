@@ -38,7 +38,8 @@ module.exports = {
     path: config.build.assetsRoot,
     // publicPath: getPath(process.env.NODE_ENV),  // 指定了一个在浏览器中被引用的URL地址
     publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
-    filename: '[name].js'
+    filename: process.env.NODE_ENV === 'production' ? '[name].js?[chunkhash]' : '[name].js',
+    chunkFilename: process.env.NODE_ENV === 'production' ? 'chunk[id].js?[chunkhash]' : 'chunk[id].js'
   },
   resolve: {
     extensions: ['', '.js', '.vue'],

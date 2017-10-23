@@ -98,19 +98,19 @@
 </template>
 
 <script>
-    import uiButton from '../components/base/button'
-    import uiRow from '../components/base/row'
-    import uiCol from '../components/base/col'
+    // import uiButton from '../components/base/button'
+    // import uiRow from '../components/base/row'
+    // import uiCol from '../components/base/col'
     import codeBlock from '../components/codeBlock'
     import codeButton from '!raw!../components/base/button'
 
     export default {
         name: 'start',
         components: {
-            uiButton,
-            codeBlock,
-            uiRow,
-            uiCol
+            uiButton: resolve => { require(['../components/base/button.vue'], resolve) },
+            uiRow: resolve => { require(['../components/base/row.vue'], resolve) },
+            uiCol: resolve => { require(['../components/base/col.vue'], resolve) },
+            codeBlock
         },
         data () {
             return {

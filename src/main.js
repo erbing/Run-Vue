@@ -17,38 +17,43 @@ import PmPercent from './pm/percent'
 // 引入左边 如何使用 相关组件
 import Use from './use/use'
 // import UseStart from './use/start'
-import UseBase from './use/base'
-import UseDev from './use/dev'
-import UseResource from './use/resource'
+
+// import UseBase from './use/base'
+// import UseDev from './use/dev'
+// import UseResource from './use/resource'
+
 // 个性定制路由
 import CustomSkin from './customize/skin'
 import CustomTheme from './customize/theme'
+
 // 引入左边 基础组件
-import BaseLayout from './base/layout'
-import BaseColor from './base/color'
-import BaseTypography from './base/typography'
-import BaseIcon from './base/icon'
-import BaseButton from './base/button'
-import BaseTable from './base/table'
+// import BaseLayout from './base/layout'
+// import BaseColor from './base/color'
+// import BaseTypography from './base/typography'
+// import BaseIcon from './base/icon'
+// import BaseButton from './base/button'
+// import BaseTable from './base/table'
+
 // 引入左边 表单组件
-import BaseCheckbox from './form/checkbox'
-import BaseRadio from './form/radio'
-import BaseInput from './form/input'
-import BaseInputNumber from './form/inputnumber'
-import BaseAutocomplete from './form/autocomplete'
-import BaseSearch from './form/search'
-import BaseTextarea from './form/textarea'
-import BaseSwitch from './form/switch'
-import BaseSelect from './form/select'
+// import BaseCheckbox from './form/checkbox'
+// import BaseRadio from './form/radio'
+// import BaseInput from './form/input'
+// import BaseInputNumber from './form/inputnumber'
+// import BaseAutocomplete from './form/autocomplete'
+// import BaseSearch from './form/search'
+// import BaseTextarea from './form/textarea'
+// import BaseSwitch from './form/switch'
+// import BaseSelect from './form/select'
+
 // 引入左边 功能组件
-import FuncModal from './func/modal'
-import FuncToast from './func/toast'
-import FuncSwipe from './func/swipe'
-import FuncPicker from './func/picker'
-import FuncProgress from './func/progress'
-import FuncBackTop from './func/backTop'
-import FuncLazyLoad from './func/lazyLoad'
-import FuncAutoheightTextarea from './func/autoheight-textarea.vue'
+// import FuncModal from './func/modal'
+// import FuncToast from './func/toast'
+// import FuncSwipe from './func/swipe'
+// import FuncPicker from './func/picker'
+// import FuncProgress from './func/progress'
+// import FuncBackTop from './func/backTop'
+// import FuncLazyLoad from './func/lazyLoad'
+// import FuncAutoheightTextarea from './func/autoheight-textarea.vue'
 
 Vue.use(VueRouter)
 
@@ -63,13 +68,13 @@ const routes = [{
         component: Index
     }, {
         path: 'base',
-        component: UseBase
+        component: resolve => require(['./use/base.vue'], resolve)
     }, {
         path: 'dev',
-        component: UseDev
+        component: resolve => require(['./use/dev.vue'], resolve)
     }, {
         path: 'resource',
-        component: UseResource
+        component: resolve => require(['./use/resource.vue'], resolve)
     }]
 }, {
     path: '/customize',               // 个性定制
@@ -86,84 +91,84 @@ const routes = [{
     component: Use,
     children: [{
         path: 'layout',
-        component: BaseLayout
+        component: resolve => require(['./base/layout.vue'], resolve)
     }, {
         path: 'color',
-        component: BaseColor
+        component: resolve => require(['./base/color.vue'], resolve)
     }, {
         path: 'typography',
-        component: BaseTypography
+        component: resolve => require(['./base/typography.vue'], resolve)
     }, {
         path: 'icon',
-        component: BaseIcon
+        component: resolve => require(['./base/icon.vue'], resolve)
     }, {
         path: 'button',
-        component: BaseButton
+        component: resolve => require(['./base/button.vue'], resolve)
     }, {
         path: 'table',
-        component: BaseTable
+        component: resolve => require(['./base/table.vue'], resolve)
     }]
 }, {
     path: '/form',
     component: Use,
     children: [{
         path: 'checkbox',
-        component: BaseCheckbox
+        component: resolve => require(['./form/checkbox.vue'], resolve)
     }, {
         path: 'radio',
-        component: BaseRadio
+        component: resolve => require(['./form/radio.vue'], resolve)
     }, {
         path: 'input',
-        component: BaseInput
+        component: resolve => require(['./form/input.vue'], resolve)
     }, {
         path: 'inputNumber',
-        component: BaseInputNumber
+        component: resolve => require(['./form/inputNumber.vue'], resolve)
     }, {
         path: 'autocomplete',
-        component: BaseAutocomplete
+        component: resolve => require(['./form/autocomplete.vue'], resolve)
     }, {
         path: 'search',
-        component: BaseSearch
+        component: resolve => require(['./form/search.vue'], resolve)
     }, {
         path: 'textarea',
-        component: BaseTextarea
+        component: resolve => require(['./form/textarea.vue'], resolve)
     }, {
         path: 'switch',
-        component: BaseSwitch
+        component: resolve => require(['./form/switch.vue'], resolve)
     }, {
         path: 'select',
-        component: BaseSelect
+        component: resolve => require(['./form/select.vue'], resolve)
     }]
 }, {
     path: '/func',
     component: Use,
     children: [{
         path: 'swipe',
-        component: FuncSwipe
+        component: resolve => require(['./func/swipe.vue'], resolve)
     }, {
         path: 'picker',
-        component: FuncPicker
+        component: resolve => require(['./func/picker.vue'], resolve)
     }, {
         path: 'datePicker',
-        component: FuncPicker
+        component: resolve => require(['./func/picker.vue'], resolve)
     }, {
         path: 'toast',
-        component: FuncToast
+        component: resolve => require(['./func/toast.vue'], resolve)
     }, {
         path: 'modal',
-        component: FuncModal
+        component: resolve => require(['./func/modal.vue'], resolve)
     }, {
         path: 'progress',
-        component: FuncProgress
+        component: resolve => require(['./func/progress.vue'], resolve)
     }, {
         path: 'backTop',
-        component: FuncBackTop
+        component: resolve => require(['./func/backTop.vue'], resolve)
     }, {
         path: 'lazyLoad',
-        component: FuncLazyLoad
+        component: resolve => require(['./func/lazyLoad.vue'], resolve)
     }, {
         path: 'autoheightTextarea',
-        component: FuncAutoheightTextarea
+        component: resolve => require(['./func/autoheight-textarea.vue'], resolve)
     }]
 }, {
     path: '/plugins',

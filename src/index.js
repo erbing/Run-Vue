@@ -51,7 +51,9 @@ const runvue = {
 
 const install = function (Vue, opts = {}) {
     Object.keys(runvue).forEach((key) => {
-        Vue.component(key, runvue[key])
+        Vue.component(key, () => {
+            System.import(runvue[key])
+        })
     })
 }
 
