@@ -7,15 +7,17 @@ import store from './vuex/store'
 import VueRouter from 'vue-router'
 import Mains from './mains/mains'
 
-import Index from './components/index'
+// import Index from './components/index'
 // 引入 关于开发者
 import AboutDev from './about/dev'
 import AboutFeedback from './about/feedback'
 // 引入 关于项目版本以及进度
 import PmVersion from './pm/version'
 import PmPercent from './pm/percent'
+
 // 引入左边 如何使用 相关组件
-import Use from './use/use'
+// import Use from './use/use'
+
 // import UseStart from './use/start'
 
 // import UseBase from './use/base'
@@ -59,13 +61,13 @@ Vue.use(VueRouter)
 
 const routes = [{
     path: '/',
-    component: Index
+    component: resolve => require(['./components/index.vue'], resolve)
 }, {
     path: '/use',               // 如何使用
-    component: Use,
+    component: resolve => require(['./use/use.vue'], resolve),
     children: [{
         path: 'start',
-        component: Index
+        component: resolve => require(['./components/index.vue'], resolve)
     }, {
         path: 'base',
         component: resolve => require(['./use/base.vue'], resolve)
@@ -78,7 +80,7 @@ const routes = [{
     }]
 }, {
     path: '/customize',               // 个性定制
-    component: Use,
+    component: resolve => require(['./use/use.vue'], resolve),
     children: [{
         path: 'skin',
         component: CustomSkin
@@ -88,7 +90,7 @@ const routes = [{
     }]
 }, {
     path: '/base',
-    component: Use,
+    component: resolve => require(['./use/use.vue'], resolve),
     children: [{
         path: 'layout',
         component: resolve => require(['./base/layout.vue'], resolve)
@@ -110,7 +112,7 @@ const routes = [{
     }]
 }, {
     path: '/form',
-    component: Use,
+    component: resolve => require(['./use/use.vue'], resolve),
     children: [{
         path: 'checkbox',
         component: resolve => require(['./form/checkbox.vue'], resolve)
@@ -141,7 +143,7 @@ const routes = [{
     }]
 }, {
     path: '/func',
-    component: Use,
+    component: resolve => require(['./use/use.vue'], resolve),
     children: [{
         path: 'swipe',
         component: resolve => require(['./func/swipe.vue'], resolve)
@@ -172,14 +174,14 @@ const routes = [{
     }]
 }, {
     path: '/plugins',
-    component: Use,
+    component: resolve => require(['./use/use.vue'], resolve),
     children: [{
         path: 'ticks',
         component: AboutDev
     }]
 }, {
     path: '/about',
-    component: Use,
+    component: resolve => require(['./use/use.vue'], resolve),
     children: [{
         path: 'dev',
         component: AboutDev
@@ -189,7 +191,7 @@ const routes = [{
     }]
 }, {
     path: '/pm',
-    component: Use,
+    component: resolve => require(['./use/use.vue'], resolve),
     children: [{
         path: 'version',
         component: PmVersion
