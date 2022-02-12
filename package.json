@@ -15,7 +15,7 @@
   "author": "zigzag <447587073@qq.com>",
   "private": true,
   "scripts": {
-    "init": "npm i --registry=https://registry.npm.taobao.org ",
+    "init": "npm i --registry=https://registry.npmmirror.com ",
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",
     "dist": "node build/dist.js",
